@@ -14,13 +14,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 
 @Composable
-fun Portada(navController: NavHostController) {
+fun FrontPage(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -31,34 +32,33 @@ fun Portada(navController: NavHostController) {
             ) {
                 Text(
                     text = "T4",
-                    fontSize = 50.sp
+                    fontSize = 70.sp,
+                    fontWeight = FontWeight.ExtraBold,
                 )
-                Spacer(modifier = Modifier.size(50.dp))
+                Spacer(modifier = Modifier.size(30.dp))
                 Row {
                     Button(
                         onClick = {
-                            navController.navigate("Proyecto5")
+                            navController.navigate("Project5")
                         },
                         modifier = Modifier.width(200.dp)
                     ) {
-                        Text(text = "Proyecto 5")
+                        Text(text = "Project 5")
                     }
                     Spacer(modifier = Modifier.width(15.dp))
-                    Row {
+
                         Button(
-                            onClick = { navController.navigate("Proyecto6") },
+                            onClick = { navController.navigate("Project6") },
                             modifier = Modifier.width(200.dp)
                         ) {
-                            Text(text = "Proyecto 6")
+                            Text(text = "Project 6")
                         }
-
-                    }
                     Spacer(modifier = Modifier.width(15.dp))
                     Button(
-                        onClick = { navController.navigate("Proyecto7") },
+                        onClick = { navController.navigate("Project7") },
                         modifier = Modifier.width(200.dp)
                     ) {
-                        Text(text = "Proyecto 7")
+                        Text(text = "Project 7")
                     }
                 }
             }
@@ -71,37 +71,38 @@ fun Portada(navController: NavHostController) {
         ) {
             Text(
                 text = "T4",
-                fontSize = 50.sp
+                fontSize = 70.sp,
+                fontWeight = FontWeight.ExtraBold,
             )
-            Spacer(modifier = Modifier.size(50.dp))
+            Spacer(modifier = Modifier.size(30.dp))
             Row {
                 Button(
                     onClick = {
-                        navController.navigate("Proyecto5")
+                        navController.navigate("Project5")
                     },
                     modifier = Modifier.width(200.dp)
                 ) {
-                    Text(text = "Proyecto 5")
+                    Text(text = "Project 5")
                 }
                 Spacer(modifier = Modifier.width(15.dp))
             }
-            Spacer(modifier = Modifier.size(50.dp))
+            Spacer(modifier = Modifier.size(30.dp))
             Row {
                 Button(
-                    onClick = { navController.navigate("Proyecto6") },
+                    onClick = { navController.navigate("Project6") },
                     modifier = Modifier.width(200.dp)
                 ) {
-                    Text(text = "Proyecto 6")
+                    Text(text = "Project 6")
                 }
                 Spacer(modifier = Modifier.width(15.dp))
             }
-            Spacer(modifier = Modifier.size(50.dp))
+            Spacer(modifier = Modifier.size(30.dp))
             Row {
                 Button(
-                    onClick = { navController.navigate("Proyecto7") },
+                    onClick = { navController.navigate("Project7") },
                     modifier = Modifier.width(200.dp)
                 ) {
-                    Text(text = "Proyecto 7")
+                    Text(text = "Project 7")
                 }
                 Spacer(modifier = Modifier.width(15.dp))
             }

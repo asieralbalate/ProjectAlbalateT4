@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Proyecto6() {
+fun Project6() {
     Column(modifier = Modifier.padding(20.dp)) {
         Text(text = "Proyecto 5",textAlign = TextAlign.Center,color= Color.Green,
             fontWeight = FontWeight.Bold)
