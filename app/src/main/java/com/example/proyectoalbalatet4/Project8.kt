@@ -32,11 +32,13 @@ import com.example.proyectoalbalatet4.ui.theme.SoftBlue
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project7() {
+fun Project8() {
     val configuration = LocalConfiguration.current
-    var price by remember { mutableStateOf("") }
-    var amountOfArticles by remember { mutableStateOf("") }
+    var firstNumber by remember { mutableStateOf("") }
+    var secondNumber by remember { mutableStateOf("") }
+    var thirdNumber by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
+
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
@@ -51,7 +53,7 @@ fun Project7() {
                     horizontalArrangement = Arrangement.Center
                 ) {
                     Text(
-                        text = "Project 7",
+                        text = "Project 5",
                         textAlign = TextAlign.Center,
                         color = SoftBlue,
                         fontSize = 30.sp,
@@ -60,10 +62,10 @@ fun Project7() {
                 }
                 Spacer(modifier = Modifier.size(10.dp))
                 OutlinedTextField(
-                    value = price,
-                    onValueChange = { price = it },
+                    value = firstNumber,
+                    onValueChange = { firstNumber = it },
                     label = {
-                        Text("Price of the article")
+                        Text("First value")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -73,10 +75,22 @@ fun Project7() {
                 )
 
                 OutlinedTextField(
-                    value = amountOfArticles,
-                    onValueChange = { amountOfArticles = it },
+                    value = secondNumber,
+                    onValueChange = { secondNumber = it },
                     label = {
-                        Text("Amount")
+                        Text("Second value")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true,
+                    shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp)
+                )
+                OutlinedTextField(
+                    value = thirdNumber,
+                    onValueChange = { thirdNumber = it },
+                    label = {
+                        Text("Third value")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -91,17 +105,20 @@ fun Project7() {
                 ) {
                     Button(
                         onClick = {
-                            if (price.toFloatOrNull() != null && amountOfArticles.toIntOrNull() != null) {
-                                var total: Float = (price.toFloat() * amountOfArticles.toInt())
+                            if (firstNumber.toIntOrNull() != null && secondNumber.toIntOrNull() != null && thirdNumber.toIntOrNull() != null) {
+                                var addition = 0
+                                var product = 0
+                                addition = firstNumber.toInt() + secondNumber.toInt()
+                                product = addition + thirdNumber.toInt()
                                 outcome =
-                                    "The total to pay is: $total"
+                                    "The addition of $firstNumber and $secondNumber equals: $addition \n The product of $addition and $thirdNumber equals: $product"
                             } else {
-                                outcome = "Introduce numbers please"
+                                outcome = "Introduce all the numbers please"
                             }
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Total")
+                        Text(text = "Calculate")
                     }
                 }
                 Text(
@@ -124,7 +141,7 @@ fun Project7() {
                 horizontalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = "Project 7",
+                    text = "Project 5",
                     textAlign = TextAlign.Center,
                     color = SoftBlue,
                     fontSize = 30.sp,
@@ -133,10 +150,10 @@ fun Project7() {
             }
             Spacer(modifier = Modifier.size(10.dp))
             OutlinedTextField(
-                value = price,
-                onValueChange = { price = it },
+                value = firstNumber,
+                onValueChange = { firstNumber = it },
                 label = {
-                    Text("Price of the article")
+                    Text("First value")
                 },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -146,10 +163,22 @@ fun Project7() {
             )
 
             OutlinedTextField(
-                value = amountOfArticles,
-                onValueChange = { amountOfArticles = it },
+                value = secondNumber,
+                onValueChange = { secondNumber = it },
                 label = {
-                    Text("Amount")
+                    Text("Second value")
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(10.dp),
+                singleLine = true,
+                shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp)
+            )
+            OutlinedTextField(
+                value = thirdNumber,
+                onValueChange = { thirdNumber = it },
+                label = {
+                    Text("Third value")
                 },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -164,17 +193,20 @@ fun Project7() {
             ) {
                 Button(
                     onClick = {
-                        if (price.toFloatOrNull() != null && amountOfArticles.toIntOrNull() != null) {
-                            var total: Float = (price.toFloat() * amountOfArticles.toInt())
+                        if (firstNumber.toIntOrNull() != null && secondNumber.toIntOrNull() != null && thirdNumber.toIntOrNull() != null) {
+                            var addition = 0
+                            var product = 0
+                            addition = firstNumber.toInt() + secondNumber.toInt()
+                            product = addition + thirdNumber.toInt()
                             outcome =
-                                "The total to pay is: $total"
+                                "The addition of $firstNumber and $secondNumber equals: $addition \n The product of $addition and $thirdNumber equals: $product"
                         } else {
-                            outcome = "Introduce numbers please"
+                            outcome = "Introduce all the numbers please"
                         }
                     },
                     modifier = Modifier.padding(10.dp)
                 ) {
-                    Text(text = "Total")
+                    Text(text = "Calculate")
                 }
             }
             Text(
@@ -182,7 +214,6 @@ fun Project7() {
                 modifier = Modifier.padding(10.dp),
                 color = Dark
             )
-
         }
     }
     }

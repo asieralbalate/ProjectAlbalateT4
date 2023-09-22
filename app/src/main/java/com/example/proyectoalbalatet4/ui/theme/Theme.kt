@@ -30,7 +30,7 @@ private val LightColorScheme = lightColorScheme(
 
     surface = SoftPink,
     onPrimary = Color.White,
-    onSecondary = Color.White,
+    onSecondary = Color.Black,
     onTertiary = Color.White,
     onBackground = Color(0xFF1C1B1F),
     onSurface = Color(0xFF1C1B1F),

@@ -106,6 +106,26 @@ fun FrontPage(navController: NavHostController) {
                 }
                 Spacer(modifier = Modifier.width(15.dp))
             }
+            Spacer(modifier = Modifier.size(30.dp))
+            Row {
+                Button(
+                    onClick = { navController.navigate("Project8") },
+                    modifier = Modifier.width(200.dp)
+                ) {
+                    Text(text = "Project 8")
+                }
+                Spacer(modifier = Modifier.width(15.dp))
+            }
+            Spacer(modifier = Modifier.size(30.dp))
+            Row {
+                Button(
+                    onClick = { navController.navigate("Project9") },
+                    modifier = Modifier.width(200.dp)
+                ) {
+                    Text(text = "Project 9")
+                }
+                Spacer(modifier = Modifier.width(15.dp))
+            }
         }
     }
 }
