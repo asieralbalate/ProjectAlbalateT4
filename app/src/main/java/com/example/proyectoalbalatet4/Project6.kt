@@ -77,11 +77,11 @@ fun Project6() {
                 ) {
                     Button(
                         onClick = {
-                            if (squareSide.toIntOrNull() != null) {
-                                var result = 0
-                                result = squareSide.toInt() * 4
+                            if (squareSide.toFloatOrNull() != null) {
+                                var result: Float = squareSide.toFloat() * 4
+                                val formattedResult = String.format("%.2f", result)
                                 outcome =
-                                    "The perimeter of the square equals: $result"
+                                    "The perimeter of the square equals: $formattedResult"
                             } else {
                                 outcome = "Introduce a number please"
                             }
@@ -138,11 +138,11 @@ fun Project6() {
             ) {
                 Button(
                     onClick = {
-                        if (squareSide.toIntOrNull() != null) {
-                            var result = 0
-                            result = squareSide.toInt() * 4
+                        if (squareSide.toFloatOrNull() != null) {
+                            var result: Float = squareSide.toFloat() * 4
+                            val formattedResult = String.format("%.2f", result)
                             outcome =
-                                "The perimeter of the square equals: $result"
+                                "The perimeter of the square equals: $formattedResult"
                         } else {
                             outcome = "Introduce a number please"
                         }

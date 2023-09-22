@@ -93,8 +93,9 @@ fun Project7() {
                         onClick = {
                             if (price.toFloatOrNull() != null && amountOfArticles.toIntOrNull() != null) {
                                 var total: Float = (price.toFloat() * amountOfArticles.toInt())
+                                val formattedResult = String.format("%.2f", total)
                                 outcome =
-                                    "The total to pay is: $total"
+                                    "The total to pay is: $formattedResult"
                             } else {
                                 outcome = "Introduce numbers please"
                             }
@@ -166,8 +167,9 @@ fun Project7() {
                     onClick = {
                         if (price.toFloatOrNull() != null && amountOfArticles.toIntOrNull() != null) {
                             var total: Float = (price.toFloat() * amountOfArticles.toInt())
+                            val formattedResult = String.format("%.2f", total)
                             outcome =
-                                "The total to pay is: $total"
+                                "The total to pay is: $formattedResult"
                         } else {
                             outcome = "Introduce numbers please"
                         }

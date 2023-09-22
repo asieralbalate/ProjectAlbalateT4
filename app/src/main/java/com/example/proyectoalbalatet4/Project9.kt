@@ -38,7 +38,7 @@ fun Project9() {
     var firstNumber by remember { mutableStateOf("") }
     var secondNumber by remember { mutableStateOf("") }
     var thirdNumber by remember { mutableStateOf("") }
-    var additionOutcome by remember { mutableStateOf("") }
+    var outcome by remember { mutableStateOf("") }
     var productOutcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -97,10 +97,10 @@ fun Project9() {
                             if (firstNumber.toIntOrNull() != null && secondNumber.toIntOrNull() != null) {
                                 var result = 0
                                 result = firstNumber.toInt() + secondNumber.toInt()
-                                additionOutcome =
+                                outcome =
                                     "The addition of $firstNumber and $secondNumber equals: $result"
                             } else {
-                                additionOutcome = "Introduce numbers please"
+                                outcome = "Introduce numbers please"
                             }
                         },
                         modifier = Modifier.padding(10.dp)
@@ -109,13 +109,16 @@ fun Project9() {
                     }
                     Button(
                         onClick = {
-                            if (firstNumber.toIntOrNull() != null && secondNumber.toIntOrNull() != null) {
-                                var result = 0
-                                result = firstNumber.toInt() * secondNumber.toInt()
-                                additionOutcome =
-                                    "The multiplication of $firstNumber and $secondNumber equals: $result"
+                            if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
+                                var addition: Float = firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat()
+                                var average: Float = (firstNumber.toFloat() + secondNumber.toFloat()+ thirdNumber.toFloat())/3
+                                val formattedAdditionResult = String.format("%.2f", addition)
+                                val formattedAveragenResult = String.format("%.2f", average)
+                                outcome =
+                                    "The addition of $firstNumber and $secondNumber and $thirdNumber equals: $formattedAdditionResult \n" +
+                                            "The arithmetic average is: $formattedAveragenResult"
                             } else {
-                                additionOutcome = "Introduce numbers please"
+                                outcome = "Introduce all the numbers please"
                             }
                         },
                         modifier = Modifier.padding(10.dp)
@@ -124,7 +127,7 @@ fun Project9() {
                     }
                 }
                 Text(
-                    text = additionOutcome,
+                    text = outcome,
                     modifier = Modifier.padding(10.dp),
                     color = Dark
                 )
@@ -195,16 +198,16 @@ fun Project9() {
             ) {
                 Button(
                     onClick = {
-                        if (firstNumber.toIntOrNull() != null && secondNumber.toIntOrNull() != null && thirdNumber.toIntOrNull() != null) {
-                            var addition = 0
-                            var product = 0
-                            addition = firstNumber.toInt() + secondNumber.toInt()
-                            product = addition + thirdNumber.toInt()
-                            additionOutcome =
-                                "The addition of $firstNumber and $secondNumber equals: $addition"
-                            productOutcome = "The product of $addition and $thirdNumber equals: $product"
+                        if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
+                            var addition: Float = firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat()
+                            var average: Float = (firstNumber.toFloat() + secondNumber.toFloat()+ thirdNumber.toFloat())/3
+                            val formattedAdditionResult = String.format("%.2f", addition)
+                            val formattedAveragenResult = String.format("%.2f", average)
+                            outcome =
+                                "The addition of $firstNumber and $secondNumber and $thirdNumber equals: $formattedAdditionResult \n" +
+                                        "The arithmetic average is: $formattedAveragenResult"
                         } else {
-                            additionOutcome = "Introduce all the numbers please"
+                            outcome = "Introduce all the numbers please"
                         }
                     },
                     modifier = Modifier.padding(10.dp)
@@ -213,7 +216,7 @@ fun Project9() {
                 }
             }
             Text(
-                text = additionOutcome,
+                text = outcome,
                 modifier = Modifier.padding(10.dp),
                 color = Dark
             )

@@ -94,11 +94,11 @@ fun Project5() {
                 ) {
                     Button(
                         onClick = {
-                            if (firstNumber.toIntOrNull() != null && secondNumber.toIntOrNull() != null) {
-                                var result = 0
-                                result = firstNumber.toInt() + secondNumber.toInt()
+                            if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
+                                var result: Float = firstNumber.toFloat() + secondNumber.toFloat()
+                                val formattedResult = String.format("%.2f", result)
                                 outcome =
-                                    "The addition of $firstNumber and $secondNumber equals: $result"
+                                    "The addition of $firstNumber and $secondNumber equals: $formattedResult"
                             } else {
                                 outcome = "Introduce numbers please"
                             }
@@ -109,11 +109,11 @@ fun Project5() {
                     }
                     Button(
                         onClick = {
-                            if (firstNumber.toIntOrNull() != null && secondNumber.toIntOrNull() != null) {
-                                var result = 0
-                                result = firstNumber.toInt() * secondNumber.toInt()
+                            if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
+                                var result: Float = firstNumber.toFloat() * secondNumber.toFloat()
+                                val formattedResult = String.format("%.2f", result)
                                 outcome =
-                                    "The multiplication of $firstNumber and $secondNumber equals: $result"
+                                    "The multiplication of $firstNumber and $secondNumber equals: $formattedResult"
                             } else {
                                 outcome = "Introduce numbers please"
                             }
@@ -183,11 +183,11 @@ fun Project5() {
                 ) {
                     Button(
                         onClick = {
-                            if (firstNumber.toIntOrNull() != null && secondNumber.toIntOrNull() != null) {
-                                var result = 0
-                                result = firstNumber.toInt() + secondNumber.toInt()
+                            if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
+                                var result: Float = firstNumber.toFloat() + secondNumber.toFloat()
+                                val formattedResult = String.format("%.2f", result)
                                 outcome =
-                                    "The addition of $firstNumber and $secondNumber equals: $result"
+                                    "The addition of $firstNumber and $secondNumber equals: $formattedResult"
                             } else {
                                 outcome = "Introduce numbers please"
                             }
@@ -198,11 +198,11 @@ fun Project5() {
                     }
                     Button(
                         onClick = {
-                            if (firstNumber.toIntOrNull() != null && secondNumber.toIntOrNull() != null) {
-                                var result = 0
-                                result = firstNumber.toInt() * secondNumber.toInt()
+                            if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
+                                var result: Float = firstNumber.toFloat() * secondNumber.toFloat()
+                                val formattedResult = String.format("%.2f", result)
                                 outcome =
-                                    "The multiplication of $firstNumber and $secondNumber equals: $result"
+                                    "The multiplication of $firstNumber and $secondNumber equals: $formattedResult"
                             } else {
                                 outcome = "Introduce numbers please"
                             }

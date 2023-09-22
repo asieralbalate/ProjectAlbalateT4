@@ -105,13 +105,14 @@ fun Project8() {
                 ) {
                     Button(
                         onClick = {
-                            if (firstNumber.toIntOrNull() != null && secondNumber.toIntOrNull() != null && thirdNumber.toIntOrNull() != null) {
-                                var addition = 0
-                                var product = 0
-                                addition = firstNumber.toInt() + secondNumber.toInt()
-                                product = addition + thirdNumber.toInt()
+                            if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
+                                var addition: Float = firstNumber.toFloat() + secondNumber.toFloat()
+                                var product: Float = addition + thirdNumber.toFloat()
+                                val formattedAdditionResult = String.format("%.2f", addition)
+                                val formattedProductResult = String.format("%.2f", product)
                                 outcome =
-                                    "The addition of $firstNumber and $secondNumber equals: $addition \n The product of $addition and $thirdNumber equals: $product"
+                                    "The addition of $firstNumber and $secondNumber equals: $formattedAdditionResult \n " +
+                                            "The product of $addition and $thirdNumber equals: $formattedProductResult"
                             } else {
                                 outcome = "Introduce all the numbers please"
                             }
@@ -193,13 +194,14 @@ fun Project8() {
             ) {
                 Button(
                     onClick = {
-                        if (firstNumber.toIntOrNull() != null && secondNumber.toIntOrNull() != null && thirdNumber.toIntOrNull() != null) {
-                            var addition = 0
-                            var product = 0
-                            addition = firstNumber.toInt() + secondNumber.toInt()
-                            product = addition + thirdNumber.toInt()
+                        if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
+                            var addition: Float = firstNumber.toFloat() + secondNumber.toFloat()
+                            var product: Float = addition + thirdNumber.toFloat()
+                            val formattedAdditionResult = String.format("%.2f", addition)
+                            val formattedProductResult = String.format("%.2f", product)
                             outcome =
-                                "The addition of $firstNumber and $secondNumber equals: $addition \n The product of $addition and $thirdNumber equals: $product"
+                                "The addition of $firstNumber and $secondNumber equals: $formattedAdditionResult \n" +
+                                        "The product of $formattedAdditionResult and $thirdNumber equals: $formattedProductResult"
                         } else {
                             outcome = "Introduce all the numbers please"
                         }
