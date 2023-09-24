@@ -25,11 +25,13 @@ class MainActivity : ComponentActivity() {
                     ) {
                     val navController = rememberNavController()
                     NavHost(navController = navController, startDestination = "FrontPage") {
-                        composable("Project5") { Project5() }
-                        composable("Project6") { Project6() }
-                        composable("Project7") { Project7() }
-                        composable("Project8") { Project8() }
-                        composable("Project9") { Project9() }
+
+                        composable("Project5") { Project5(navController = navController) }
+                        composable("Project6") { Project6(navController = navController) }
+                        composable("Project7") { Project7(navController = navController) }
+                        composable("Project8") { Project8(navController = navController) }
+                        composable("Project9") { Project9(navController = navController) }
+                        composable("FrontPageU4") { FrontPageU4(navController = navController) }
                         composable("FrontPage") { FrontPage(navController = navController)
                         }
                     }
