@@ -59,7 +59,7 @@ fun FrontPageU5(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P10: Salary taxes")
+                            Text(text = "P10: Salary Taxes")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
 
@@ -70,7 +70,7 @@ fun FrontPageU5(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P11: Highest number")
+                            Text(text = "P11: Highest Number")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -99,13 +99,13 @@ fun FrontPageU5(navController: NavHostController) {
                         Spacer(modifier = Modifier.width(15.dp))
 
                         Button(
-                            onClick = { navController.navigate("Project9") },
+                            onClick = { navController.navigate("Project14") },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P14: ")
+                            Text(text = "P14: Number Digits ")
                         }
                     }
                 }
@@ -195,13 +195,13 @@ fun FrontPageU5(navController: NavHostController) {
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
                         Button(
-                            onClick = { navController.navigate("Project9") },
+                            onClick = { navController.navigate("Project14") },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P14: ")
+                            Text(text = "P14: Number Digits")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                     }

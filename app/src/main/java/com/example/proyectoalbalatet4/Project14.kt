@@ -43,11 +43,9 @@ import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project13(navController: NavHostController) {
+fun Project14(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var firstNumber by remember { mutableStateOf("") }
-    var secondNumber by remember { mutableStateOf("") }
-    var thirdNumber by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -83,7 +81,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 3 numbers to know if you are promoted",
+                            text = "Introduce a number between 0 and 99 to know if has 1 digit",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -91,39 +89,7 @@ fun Project13(navController: NavHostController) {
                         value = firstNumber,
                         onValueChange = { firstNumber = it },
                         label = {
-                            Text("First number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
-                        )
-                    )
-                    OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
-                        label = {
-                            Text("Second number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
-                        )
-                    )
-                    OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
-                        label = {
-                            Text("Third number")
+                            Text("Number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -143,15 +109,16 @@ fun Project13(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
                                 ) {
-                                    val result1 = (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat())/3
-                                    val formattedResult1 = String.format("%.2f", result1)
-                                    if (result1 > 7) {
-                                        outcome = "You are promoted"
+                                    val result = firstNumber.toFloat()
+                                    if (result < 99 || result > 0){
+                                        if (result < 10){
+                                            outcome = "Has one digit"
+                                        } else {
+                                            outcome = "Has two digit"
+                                        }
                                     } else {
-                                        outcome = "You are not promoted"
+                                        outcome = "Number out of range"
                                     }
                                 } else {
                                     outcome = "Introduce a number please"
@@ -217,7 +184,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 3 numbers to know if you are promoted",
+                            text = "Introduce a number between 0 and 99 \nto know if has 1 digit",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -226,7 +193,7 @@ fun Project13(navController: NavHostController) {
                         value = firstNumber,
                         onValueChange = { firstNumber = it },
                         label = {
-                            Text("First number")
+                            Text("Number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -239,40 +206,6 @@ fun Project13(navController: NavHostController) {
                         )
                     )
 
-                    Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
-                        label = {
-                            Text("Second number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
-                        )
-                    )
-                    Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
-                        label = {
-                            Text("Second number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
-                        )
-                    )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
@@ -281,15 +214,16 @@ fun Project13(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
                                 ) {
-                                    val result1 = (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat())/3
-                                    val formattedResult1 = String.format("%.2f", result1)
-                                    if (result1 > 7) {
-                                        outcome = "You are promoted"
+                                    val result = firstNumber.toFloat()
+                                    if (result < 99 || result > 0){
+                                        if (result < 10){
+                                            outcome = "Has one digit"
+                                        } else {
+                                            outcome = "Has two digit"
+                                        }
                                     } else {
-                                        outcome = "You are not promoted"
+                                        outcome = "Number out of range"
                                     }
                                 } else {
                                     outcome = "Introduce a number please"
