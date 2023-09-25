@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -17,11 +16,13 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -35,8 +36,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.proyectoalbalatet4.ui.theme.Dark
-import com.example.proyectoalbalatet4.ui.theme.SoftBlue
+import com.example.proyectoalbalatet4.ui.theme.MyBlack
+import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
+import com.example.proyectoalbalatet4.ui.theme.MyGrey
+import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,14 +55,15 @@ fun Project8(navController: NavHostController) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
                 Column(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier
+                        .fillMaxSize()
                         .verticalScroll(rememberScrollState()),
                     verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Row(
                         modifier = Modifier
-                            .padding(top = 5.dp)
+                            .padding(top = 10.dp)
                             .fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
@@ -67,9 +71,20 @@ fun Project8(navController: NavHostController) {
                         Text(
                             text = "Project 8",
                             textAlign = TextAlign.Center,
-                            color = SoftBlue,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
+                        )
+                    }
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 7.dp)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "Introduce 3 numbers: ",
+                            textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
@@ -80,9 +95,13 @@ fun Project8(navController: NavHostController) {
                         },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(5.dp),
+                            .padding(8.dp),
                         singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp)
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyGrey
+                        )
                     )
 
                     OutlinedTextField(
@@ -93,9 +112,13 @@ fun Project8(navController: NavHostController) {
                         },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(5.dp),
+                            .padding(8.dp),
                         singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp)
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyGrey
+                        )
                     )
                     OutlinedTextField(
                         value = thirdNumber,
@@ -105,9 +128,13 @@ fun Project8(navController: NavHostController) {
                         },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(5.dp),
+                            .padding(8.dp),
                         singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp)
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyGrey
+                        )
                     )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -129,7 +156,10 @@ fun Project8(navController: NavHostController) {
                                     outcome = "Introduce all the numbers please"
                                 }
                             },
-                            modifier = Modifier.padding(5.dp)
+                            modifier = Modifier.padding(5.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
                         ) {
                             Text(text = "Calculate")
                         }
@@ -137,16 +167,17 @@ fun Project8(navController: NavHostController) {
                     Text(
                         text = outcome,
                         modifier = Modifier.padding(5.dp),
-                        color = Dark
+                        color = MyBlack
                     )
-
                 }
                 FloatingActionButton(
                     onClick = { navController.popBackStack() },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
-                        .align(Alignment.BottomStart)
+                        .align(Alignment.BottomStart),
+                    containerColor = MyDarkBrown,
+                    contentColor = MyWhite
                     // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
@@ -155,110 +186,138 @@ fun Project8(navController: NavHostController) {
                     )
                 }
             }
-        } else -> {
-        Box(Modifier.fillMaxSize()) {
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.Top
-            ) {
-                Row(
-                    modifier = Modifier
-                        .padding(top = 20.dp)
-                        .fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
+        }
+        else -> {
+            Box(Modifier.fillMaxSize()) {
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    verticalArrangement = Arrangement.Top,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 10.dp)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "Project 8",
+                            textAlign = TextAlign.Center,
+                            fontSize = 30.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 10.dp)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "Introduce 3 numbers: ",
+                            textAlign = TextAlign.Center,
+                        )
+                    }
+                    OutlinedTextField(
+                        value = firstNumber,
+                        onValueChange = { firstNumber = it },
+                        label = {
+                            Text("First value")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyGrey
+                        )
+                    )
+                    OutlinedTextField(
+                        value = secondNumber,
+                        onValueChange = { secondNumber = it },
+                        label = {
+                            Text("Second value")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyGrey
+                        )
+                    )
+                    OutlinedTextField(
+                        value = thirdNumber,
+                        onValueChange = { thirdNumber = it },
+                        label = {
+                            Text("Third value")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyGrey
+                        )
+                    )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Button(
+                            onClick = {
+                                if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
+                                    var addition: Float =
+                                        firstNumber.toFloat() + secondNumber.toFloat()
+                                    var product: Float = addition + thirdNumber.toFloat()
+                                    val formattedAdditionResult = String.format("%.2f", addition)
+                                    val formattedProductResult = String.format("%.2f", product)
+                                    outcome =
+                                        "The addition of $firstNumber and $secondNumber equals: $formattedAdditionResult \n" +
+                                                "The product of $formattedAdditionResult and $thirdNumber equals: $formattedProductResult"
+                                } else {
+                                    outcome = "Introduce all the numbers please"
+                                }
+                            },
+                            modifier = Modifier.padding(10.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
+                        ) {
+                            Text(text = "Calculate")
+                        }
+                    }
                     Text(
-                        text = "Project 8",
-                        textAlign = TextAlign.Center,
-                        color = SoftBlue,
-                        fontSize = 30.sp,
-                        fontWeight = FontWeight.Bold
+                        text = outcome,
+                        modifier = Modifier.padding(10.dp),
+                        color = MyBlack
                     )
                 }
-                Spacer(modifier = Modifier.size(10.dp))
-                OutlinedTextField(
-                    value = firstNumber,
-                    onValueChange = { firstNumber = it },
-                    label = {
-                        Text("First value")
-                    },
+                FloatingActionButton(
+                    onClick = { navController.popBackStack() },
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true,
-                    shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp)
-                )
-
-                OutlinedTextField(
-                    value = secondNumber,
-                    onValueChange = { secondNumber = it },
-                    label = {
-                        Text("Second value")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true,
-                    shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp)
-                )
-                OutlinedTextField(
-                    value = thirdNumber,
-                    onValueChange = { thirdNumber = it },
-                    label = {
-                        Text("Third value")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true,
-                    shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp)
-                )
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomStart),
+                    containerColor = MyDarkBrown,
+                    contentColor = MyWhite
+                    // Posicionar en la esquina inferior izquierda
                 ) {
-                    Button(
-                        onClick = {
-                            if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
-                                var addition: Float = firstNumber.toFloat() + secondNumber.toFloat()
-                                var product: Float = addition + thirdNumber.toFloat()
-                                val formattedAdditionResult = String.format("%.2f", addition)
-                                val formattedProductResult = String.format("%.2f", product)
-                                outcome =
-                                    "The addition of $firstNumber and $secondNumber equals: $formattedAdditionResult \n" +
-                                            "The product of $formattedAdditionResult and $thirdNumber equals: $formattedProductResult"
-                            } else {
-                                outcome = "Introduce all the numbers please"
-                            }
-                        },
-                        modifier = Modifier.padding(10.dp)
-                    ) {
-                        Text(text = "Calculate")
-                    }
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null
+                    )
                 }
-                Text(
-                    text = outcome,
-                    modifier = Modifier.padding(10.dp),
-                    color = Dark
-                )
-            }
-            FloatingActionButton(
-                onClick = { navController.popBackStack() },
-                modifier = Modifier
-                    .padding(16.dp)
-                    .size(46.dp)
-                    .align(Alignment.BottomStart)
-                // Posicionar en la esquina inferior izquierda
-            ) {
-                Icon(
-                    imageVector = Icons.Default.ArrowBack,
-                    contentDescription = null
-                )
             }
         }
     }
-    }
 }
-

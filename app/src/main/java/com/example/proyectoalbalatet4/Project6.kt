@@ -14,11 +14,13 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -32,8 +34,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.proyectoalbalatet4.ui.theme.Dark
-import com.example.proyectoalbalatet4.ui.theme.SoftBlue
+import com.example.proyectoalbalatet4.ui.theme.MyBlack
+import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
+import com.example.proyectoalbalatet4.ui.theme.MyGrey
+import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -60,12 +64,22 @@ fun Project6(navController: NavHostController) {
                         Text(
                             text = "Project 6",
                             textAlign = TextAlign.Center,
-                            color = SoftBlue,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
                         )
                     }
-                    Spacer(modifier = Modifier.size(10.dp))
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 7.dp)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "Introduce the side of the square to calculate the perimeter: ",
+                            textAlign = TextAlign.Center,
+                        )
+                    }
                     OutlinedTextField(
                         value = squareSide,
                         onValueChange = { squareSide = it },
@@ -74,9 +88,13 @@ fun Project6(navController: NavHostController) {
                         },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(10.dp),
+                            .padding(8.dp),
                         singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp)
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyGrey
+                        )
                     )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -94,7 +112,10 @@ fun Project6(navController: NavHostController) {
                                     outcome = "Introduce a number please"
                                 }
                             },
-                            modifier = Modifier.padding(10.dp)
+                            modifier = Modifier.padding(10.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
                         ) {
                             Text(text = "Perimeter")
                         }
@@ -102,7 +123,7 @@ fun Project6(navController: NavHostController) {
                     Text(
                         text = outcome,
                         modifier = Modifier.padding(10.dp),
-                        color = Dark
+                        color = MyBlack
                     )
 
                 }
@@ -111,7 +132,9 @@ fun Project6(navController: NavHostController) {
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
-                        .align(Alignment.BottomStart)
+                        .align(Alignment.BottomStart),
+                    containerColor = MyDarkBrown,
+                    contentColor = MyWhite
                     // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
@@ -121,16 +144,16 @@ fun Project6(navController: NavHostController) {
                 }
             }
         }
-
         else -> {
             Box(modifier = Modifier.fillMaxSize()) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Top
+                    verticalArrangement = Arrangement.Top,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Row(
                         modifier = Modifier
-                            .padding(top = 20.dp)
+                            .padding(top = 10.dp)
                             .fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
@@ -138,12 +161,23 @@ fun Project6(navController: NavHostController) {
                         Text(
                             text = "Project 6",
                             textAlign = TextAlign.Center,
-                            color = SoftBlue,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
                         )
                     }
-                    Spacer(modifier = Modifier.size(10.dp))
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 10.dp)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "Introduce the side of the square \n to calculate the perimeter: ",
+                            textAlign = TextAlign.Center,
+                        )
+                    }
+                    Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
                         value = squareSide,
                         onValueChange = { squareSide = it },
@@ -154,7 +188,11 @@ fun Project6(navController: NavHostController) {
                             .fillMaxWidth()
                             .padding(10.dp),
                         singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp)
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyGrey
+                        )
                     )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -172,7 +210,10 @@ fun Project6(navController: NavHostController) {
                                     outcome = "Introduce a number please"
                                 }
                             },
-                            modifier = Modifier.padding(10.dp)
+                            modifier = Modifier.padding(10.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
                         ) {
                             Text(text = "Perimeter")
                         }
@@ -180,7 +221,7 @@ fun Project6(navController: NavHostController) {
                     Text(
                         text = outcome,
                         modifier = Modifier.padding(10.dp),
-                        color = Dark
+                        color = MyBlack
                     )
 
                 }
@@ -189,7 +230,9 @@ fun Project6(navController: NavHostController) {
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
-                        .align(Alignment.BottomStart)
+                        .align(Alignment.BottomStart),
+                    containerColor = MyDarkBrown,
+                    contentColor = MyWhite
                     // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
@@ -201,4 +244,3 @@ fun Project6(navController: NavHostController) {
         }
     }
 }
-

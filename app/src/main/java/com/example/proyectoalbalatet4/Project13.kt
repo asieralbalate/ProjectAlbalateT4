@@ -37,16 +37,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
+import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
-import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project7(navController: NavHostController) {
+fun Project13(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var price by remember { mutableStateOf("") }
-    var amountOfArticles by remember { mutableStateOf("") }
+    var firstNumber by remember { mutableStateOf("") }
+    var secondNumber by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -54,19 +54,21 @@ fun Project7(navController: NavHostController) {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .verticalScroll(rememberScrollState()),
+                        .verticalScroll(
+                            rememberScrollState()
+                        ),
                     verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Row(
                         modifier = Modifier
-                            .padding(top = 20.dp)
+                            .padding(top = 10.dp)
                             .fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 7",
+                            text = "Project 12",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -80,40 +82,40 @@ fun Project7(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce price and amount of an article to calculate the invoice",
+                            text = "Introduce 2 different",
                             textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
-                        value = price,
-                        onValueChange = { price = it },
+                        value = firstNumber,
+                        onValueChange = { firstNumber = it },
                         label = {
-                            Text("Price of the article")
+                            Text("First number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(10.dp),
+                            .padding(8.dp),
                         singleLine = true,
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
+                            focusedIndicatorColor = MyBrown
                         )
                     )
                     OutlinedTextField(
-                        value = amountOfArticles,
-                        onValueChange = { amountOfArticles = it },
+                        value = secondNumber,
+                        onValueChange = { secondNumber = it },
                         label = {
-                            Text("Amount")
+                            Text("Second number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(10.dp),
+                            .padding(8.dp),
                         singleLine = true,
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
+                            focusedIndicatorColor = MyBrown
                         )
                     )
                     Row(
@@ -123,26 +125,56 @@ fun Project7(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (price.toFloatOrNull() != null && amountOfArticles.toIntOrNull() != null) {
-                                    var total: Float = (price.toFloat() * amountOfArticles.toInt())
-                                    val formattedResult = String.format("%.2f", total)
-                                    outcome =
-                                        "The total to pay is: $formattedResult"
+                                if (firstNumber.toFloatOrNull() != null
+                                    && secondNumber.toFloatOrNull() != null
+                                ) {
+                                    val result1: Float
+                                    val result2: Float
+                                    if (firstNumber.toFloat() != secondNumber.toFloat()) {
+                                        if (firstNumber.toFloat() < secondNumber.toFloat()) {
+                                            result1 = firstNumber.toFloat() + secondNumber.toFloat()
+                                            result2 = firstNumber.toFloat() - secondNumber.toFloat()
+                                            val formattedResult1 = String.format("%.2f", result1)
+                                            val formattedResult2 = String.format("%.2f", result2)
+                                            outcome =
+                                                "The addition of both equals: $formattedResult1 \n" +
+                                                        "The subtraction of both equals: $formattedResult2"
+                                        } else {
+                                            if (secondNumber.toFloat().toInt() == 0) {
+                                                outcome =
+                                                    "The second number can't be 0"
+                                            } else {
+                                                result1 =
+                                                    firstNumber.toFloat() * secondNumber.toFloat()
+                                                result2 =
+                                                    firstNumber.toFloat() / secondNumber.toFloat()
+                                                val formattedResult1 =
+                                                    String.format("%.2f", result1)
+                                                val formattedResult2 =
+                                                    String.format("%.2f", result2)
+                                                outcome =
+                                                    "The product of both equals: $formattedResult1 \n" +
+                                                            "The division of both equals: $formattedResult2"
+                                            }
+                                        }
+                                    } else {
+                                        outcome = "The numbers have to be different"
+                                    }
                                 } else {
-                                    outcome = "Introduce numbers please"
+                                    outcome = "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
+                                containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "Total")
+                            Text(text = "Calculate")
                         }
                     }
                     Text(
                         text = outcome,
-                        modifier = Modifier.padding(10.dp),
+                        modifier = Modifier.padding(bottom = 10.dp),
                         color = MyBlack
                     )
                 }
@@ -164,7 +196,7 @@ fun Project7(navController: NavHostController) {
             }
         }
         else -> {
-            Box(Modifier.fillMaxSize()) {
+            Box(modifier = Modifier.fillMaxSize()) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.Top,
@@ -172,13 +204,13 @@ fun Project7(navController: NavHostController) {
                 ) {
                     Row(
                         modifier = Modifier
-                            .padding(top = 20.dp)
+                            .padding(top = 10.dp)
                             .fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 7",
+                            text = "Project 12",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -186,22 +218,22 @@ fun Project7(navController: NavHostController) {
                     }
                     Row(
                         modifier = Modifier
-                            .padding(top = 7.dp)
+                            .padding(top = 10.dp)
                             .fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce price and amount of an \narticle to calculate the invoice",
+                            text = "Introduce 2 different numbers",
                             textAlign = TextAlign.Center,
                         )
                     }
-                    Spacer(modifier = Modifier.size(10.dp))
+                    Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = price,
-                        onValueChange = { price = it },
+                        value = firstNumber,
+                        onValueChange = { firstNumber = it },
                         label = {
-                            Text("Price of the article")
+                            Text("First number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -210,14 +242,15 @@ fun Project7(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
+                            focusedIndicatorColor = MyBrown
                         )
                     )
+                    Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = amountOfArticles,
-                        onValueChange = { amountOfArticles = it },
+                        value = secondNumber,
+                        onValueChange = { secondNumber = it },
                         label = {
-                            Text("Amount")
+                            Text("Second number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -226,7 +259,7 @@ fun Project7(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
+                            focusedIndicatorColor = MyBrown
                         )
                     )
                     Row(
@@ -236,21 +269,51 @@ fun Project7(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (price.toFloatOrNull() != null && amountOfArticles.toIntOrNull() != null) {
-                                    var total: Float = (price.toFloat() * amountOfArticles.toInt())
-                                    val formattedResult = String.format("%.2f", total)
-                                    outcome =
-                                        "The total to pay is: $formattedResult"
+                                if (firstNumber.toFloatOrNull() != null
+                                    && secondNumber.toFloatOrNull() != null
+                                ) {
+                                    val result1: Float
+                                    val result2: Float
+                                    if (firstNumber.toFloat() != secondNumber.toFloat()) {
+                                        if (firstNumber.toFloat() < secondNumber.toFloat()) {
+                                            result1 = firstNumber.toFloat() + secondNumber.toFloat()
+                                            result2 = firstNumber.toFloat() - secondNumber.toFloat()
+                                            val formattedResult1 = String.format("%.2f", result1)
+                                            val formattedResult2 = String.format("%.2f", result2)
+                                            outcome =
+                                                "The addition of both equals: $formattedResult1 \n" +
+                                                        "The subtraction of both equals: $formattedResult2"
+                                        } else {
+                                            if (secondNumber.toFloat().toInt() == 0) {
+                                                outcome =
+                                                    "The second number can't be 0"
+                                            } else {
+                                                result1 =
+                                                    firstNumber.toFloat() * secondNumber.toFloat()
+                                                result2 =
+                                                    firstNumber.toFloat() / secondNumber.toFloat()
+                                                val formattedResult1 =
+                                                    String.format("%.2f", result1)
+                                                val formattedResult2 =
+                                                    String.format("%.2f", result2)
+                                                outcome =
+                                                    "The product of both equals: $formattedResult1 \n" +
+                                                            "The division of both equals: $formattedResult2"
+                                            }
+                                        }
+                                    } else {
+                                        outcome = "The numbers have to be different"
+                                    }
                                 } else {
-                                    outcome = "Introduce numbers please"
+                                    outcome = "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
+                                containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "Total")
+                            Text(text = "Calculate")
                         }
                     }
                     Text(
