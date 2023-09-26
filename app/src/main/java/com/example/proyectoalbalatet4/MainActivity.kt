@@ -37,6 +37,11 @@ class MainActivity : ComponentActivity() {
                         composable("Project15") { Project15(navController = navController) }
                         composable("Project16") { Project16(navController = navController) }
                         composable("Project17") { Project17(navController = navController) }
+                        composable("Project18") { Project18(navController = navController) }
+                        composable("Project19") { Project19(navController = navController) }
+                        composable("Project20") { Project20(navController = navController) }
+                        composable("Project21") { Project21(navController = navController) }
+                        composable("Project22") { Project22(navController = navController) }
                         composable("FrontPageU4") { FrontPageU4(navController = navController) }
                         composable("FrontPageU5") { FrontPageU5(navController = navController) }
                         composable("FrontPageU6") { FrontPageU6(navController = navController) }

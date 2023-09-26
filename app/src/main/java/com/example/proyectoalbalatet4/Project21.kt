@@ -43,11 +43,9 @@ import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project13(navController: NavHostController) {
+fun Project21(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var firstNumber by remember { mutableStateOf("") }
-    var secondNumber by remember { mutableStateOf("") }
-    var thirdNumber by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -69,7 +67,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 13",
+                            text = "Project 21",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -83,7 +81,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 3 grades to know if you are promoted",
+                            text = "Enter a number to know its integer digits",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -91,39 +89,7 @@ fun Project13(navController: NavHostController) {
                         value = firstNumber,
                         onValueChange = { firstNumber = it },
                         label = {
-                            Text("First grade")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
-                        )
-                    )
-                    OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
-                        label = {
-                            Text("Second grade")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
-                        )
-                    )
-                    OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
-                        label = {
-                            Text("Third grade")
+                            Text("Number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -143,18 +109,19 @@ fun Project13(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
                                 ) {
-                                    val result1 = (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat())/3
-
-                                    if (result1 > 7) {
-                                        outcome = "You are promoted"
+                                    outcome = if(firstNumber.toFloat() < 10 && firstNumber.toFloat() > -10) {
+                                        "The number has a digit"
+                                    }
+                                    else if (firstNumber.toFloat() < 100 && firstNumber.toFloat() > -100){
+                                        "The number has two digits"
+                                    } else if (firstNumber.toFloat() < 1000 && firstNumber.toFloat() > -1000){
+                                        "The number is 0"
                                     } else {
-                                        outcome = "You are not promoted"
+                                        "The number is out of the range"
                                     }
                                 } else {
-                                    outcome = "Introduce all the grades please"
+                                    outcome = "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -179,7 +146,6 @@ fun Project13(navController: NavHostController) {
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
@@ -203,7 +169,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 13",
+                            text = "Project 21",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -217,7 +183,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 3 grades to know if you are promoted",
+                            text = "Enter a number to know its integer digits",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -226,7 +192,7 @@ fun Project13(navController: NavHostController) {
                         value = firstNumber,
                         onValueChange = { firstNumber = it },
                         label = {
-                            Text("First grade")
+                            Text("Number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -239,40 +205,6 @@ fun Project13(navController: NavHostController) {
                         )
                     )
 
-                    Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
-                        label = {
-                            Text("Second grade")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
-                        )
-                    )
-                    Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
-                        label = {
-                            Text("Third grade")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
-                        )
-                    )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
@@ -281,15 +213,16 @@ fun Project13(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
                                 ) {
-                                    val result1 = (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat())/3
-
-                                    if (result1 > 7) {
-                                        outcome = "You are promoted"
+                                    outcome = if(firstNumber.toFloat() < 10 && firstNumber.toFloat() > -10) {
+                                        "The number has a digit"
+                                    }
+                                    else if (firstNumber.toFloat() < 100 && firstNumber.toFloat() > -100){
+                                        "The number has two digits"
+                                    } else if (firstNumber.toFloat() < 1000 && firstNumber.toFloat() > -1000){
+                                        "The number is 0"
                                     } else {
-                                        outcome = "You are not promoted"
+                                        "The number is out of the range"
                                     }
                                 } else {
                                     outcome = "Introduce a number please"
@@ -317,7 +250,6 @@ fun Project13(navController: NavHostController) {
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,

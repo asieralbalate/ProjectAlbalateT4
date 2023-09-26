@@ -43,11 +43,11 @@ import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project13(navController: NavHostController) {
+fun Project18(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var firstNumber by remember { mutableStateOf("") }
-    var secondNumber by remember { mutableStateOf("") }
-    var thirdNumber by remember { mutableStateOf("") }
+    var firstGrade by remember { mutableStateOf("") }
+    var secondGrade by remember { mutableStateOf("") }
+    var thirdGrade by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -69,7 +69,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 13",
+                            text = "Project 18",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -88,8 +88,8 @@ fun Project13(navController: NavHostController) {
                         )
                     }
                     OutlinedTextField(
-                        value = firstNumber,
-                        onValueChange = { firstNumber = it },
+                        value = firstGrade,
+                        onValueChange = { firstGrade = it },
                         label = {
                             Text("First grade")
                         },
@@ -104,8 +104,8 @@ fun Project13(navController: NavHostController) {
                         )
                     )
                     OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
+                        value = secondGrade,
+                        onValueChange = { secondGrade = it },
                         label = {
                             Text("Second grade")
                         },
@@ -120,8 +120,8 @@ fun Project13(navController: NavHostController) {
                         )
                     )
                     OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
+                        value = thirdGrade,
+                        onValueChange = { thirdGrade = it },
                         label = {
                             Text("Third grade")
                         },
@@ -142,17 +142,17 @@ fun Project13(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
+                                if (firstGrade.toFloatOrNull() != null
+                                    && secondGrade.toFloatOrNull() != null
+                                    && thirdGrade.toFloatOrNull() != null
                                 ) {
-                                    val result1 = (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat())/3
 
-                                    if (result1 > 7) {
-                                        outcome = "You are promoted"
-                                    } else {
-                                        outcome = "You are not promoted"
-                                    }
+                                    val averageGrades = (firstGrade.toFloat() + secondGrade.toFloat() + thirdGrade.toFloat())/3
+                                    outcome = if (averageGrades >= 7) {"Promoted"}
+                                    else if (7 > averageGrades && averageGrades >= 4) {"Regular"}
+                                    else if (4 > averageGrades && averageGrades >= 0) {"Failed"}
+                                    else {"You write wrong grades"}
+
                                 } else {
                                     outcome = "Introduce all the grades please"
                                 }
@@ -203,7 +203,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 13",
+                            text = "Project 18",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -223,8 +223,8 @@ fun Project13(navController: NavHostController) {
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = firstNumber,
-                        onValueChange = { firstNumber = it },
+                        value = firstGrade,
+                        onValueChange = { firstGrade = it },
                         label = {
                             Text("First grade")
                         },
@@ -241,8 +241,8 @@ fun Project13(navController: NavHostController) {
 
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
+                        value = secondGrade,
+                        onValueChange = { secondGrade = it },
                         label = {
                             Text("Second grade")
                         },
@@ -258,8 +258,8 @@ fun Project13(navController: NavHostController) {
                     )
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
+                        value = thirdGrade,
+                        onValueChange = { thirdGrade = it },
                         label = {
                             Text("Third grade")
                         },
@@ -280,19 +280,19 @@ fun Project13(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
+                                if (firstGrade.toFloatOrNull() != null
+                                    && secondGrade.toFloatOrNull() != null
+                                    && thirdGrade.toFloatOrNull() != null
                                 ) {
-                                    val result1 = (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat())/3
 
-                                    if (result1 > 7) {
-                                        outcome = "You are promoted"
-                                    } else {
-                                        outcome = "You are not promoted"
-                                    }
+                                    val averageGrades = (firstGrade.toFloat() + secondGrade.toFloat() + thirdGrade.toFloat())/3
+                                    outcome = if (averageGrades >= 7) {"Promoted"}
+                                    else if (7 > averageGrades && averageGrades >= 4) {"Regular"}
+                                    else if (4 > averageGrades && averageGrades >= 0) {"Failed"}
+                                    else {"You write wrong grades"}
+
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    outcome = "Introduce all the grades please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

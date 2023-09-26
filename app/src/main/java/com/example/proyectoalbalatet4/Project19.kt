@@ -43,7 +43,7 @@ import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project13(navController: NavHostController) {
+fun Project19(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var firstNumber by remember { mutableStateOf("") }
     var secondNumber by remember { mutableStateOf("") }
@@ -69,7 +69,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 13",
+                            text = "Project 19",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -83,7 +83,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 3 grades to know if you are promoted",
+                            text = "Introduce 3 numbers to know which is higher",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -91,7 +91,7 @@ fun Project13(navController: NavHostController) {
                         value = firstNumber,
                         onValueChange = { firstNumber = it },
                         label = {
-                            Text("First grade")
+                            Text("First number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -107,7 +107,7 @@ fun Project13(navController: NavHostController) {
                         value = secondNumber,
                         onValueChange = { secondNumber = it },
                         label = {
-                            Text("Second grade")
+                            Text("Second number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -123,7 +123,7 @@ fun Project13(navController: NavHostController) {
                         value = thirdNumber,
                         onValueChange = { thirdNumber = it },
                         label = {
-                            Text("Third grade")
+                            Text("Third number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -146,15 +146,15 @@ fun Project13(navController: NavHostController) {
                                     && secondNumber.toFloatOrNull() != null
                                     && thirdNumber.toFloatOrNull() != null
                                 ) {
-                                    val result1 = (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat())/3
 
-                                    if (result1 > 7) {
-                                        outcome = "You are promoted"
+                                    outcome = if (firstNumber.toFloat() > secondNumber.toFloat()) {
+                                        if (firstNumber.toFloat() > thirdNumber.toFloat()) {firstNumber}
+                                        else {thirdNumber}
                                     } else {
-                                        outcome = "You are not promoted"
-                                    }
+                                        if (secondNumber.toFloat() > thirdNumber.toFloat()) {secondNumber}
+                                        else {thirdNumber}}
                                 } else {
-                                    outcome = "Introduce all the grades please"
+                                    outcome = "Introduce all the numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -203,7 +203,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 13",
+                            text = "Project 19",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -217,7 +217,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 3 grades to know if you are promoted",
+                            text = "Introduce 3 numbers to know which is higher",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -226,7 +226,7 @@ fun Project13(navController: NavHostController) {
                         value = firstNumber,
                         onValueChange = { firstNumber = it },
                         label = {
-                            Text("First grade")
+                            Text("First number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -244,7 +244,7 @@ fun Project13(navController: NavHostController) {
                         value = secondNumber,
                         onValueChange = { secondNumber = it },
                         label = {
-                            Text("Second grade")
+                            Text("Second number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -261,7 +261,7 @@ fun Project13(navController: NavHostController) {
                         value = thirdNumber,
                         onValueChange = { thirdNumber = it },
                         label = {
-                            Text("Third grade")
+                            Text("Third number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -284,15 +284,15 @@ fun Project13(navController: NavHostController) {
                                     && secondNumber.toFloatOrNull() != null
                                     && thirdNumber.toFloatOrNull() != null
                                 ) {
-                                    val result1 = (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat())/3
 
-                                    if (result1 > 7) {
-                                        outcome = "You are promoted"
-                                    } else {
-                                        outcome = "You are not promoted"
-                                    }
+                                    outcome = if (firstNumber.toFloat() > secondNumber.toFloat()) {
+                                        if (firstNumber.toFloat() > thirdNumber.toFloat()) {firstNumber} else {thirdNumber}
+                                    } else {if (secondNumber.toFloat() > thirdNumber.toFloat()) {secondNumber} else {thirdNumber}}
+
+
+
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    outcome = "Introduce all the numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

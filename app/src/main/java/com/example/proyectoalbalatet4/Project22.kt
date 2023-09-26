@@ -43,11 +43,10 @@ import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project13(navController: NavHostController) {
+fun Project22(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var firstNumber by remember { mutableStateOf("") }
-    var secondNumber by remember { mutableStateOf("") }
-    var thirdNumber by remember { mutableStateOf("") }
+    var totalQuestions by remember { mutableStateOf("") }
+    var correctAnswers by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -69,7 +68,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 13",
+                            text = "Project 22",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -83,15 +82,15 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 3 grades to know if you are promoted",
+                            text = "Calculate the percentage of correct questions:",
                             textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
-                        value = firstNumber,
-                        onValueChange = { firstNumber = it },
+                        value = totalQuestions,
+                        onValueChange = { totalQuestions = it },
                         label = {
-                            Text("First grade")
+                            Text("Total questions")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -104,26 +103,10 @@ fun Project13(navController: NavHostController) {
                         )
                     )
                     OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
+                        value = correctAnswers,
+                        onValueChange = { correctAnswers = it },
                         label = {
-                            Text("Second grade")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
-                        )
-                    )
-                    OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
-                        label = {
-                            Text("Third grade")
+                            Text("Correct answers")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -142,19 +125,29 @@ fun Project13(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
+                                if (totalQuestions.toFloatOrNull() != null
+                                    && correctAnswers.toFloatOrNull() != null
                                 ) {
-                                    val result1 = (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat())/3
-
-                                    if (result1 > 7) {
-                                        outcome = "You are promoted"
+                                    val percentage = correctAnswers.toFloat() * 100 / totalQuestions.toFloat()
+                                    outcome = if (percentage <= 100 && percentage >= 0) {
+                                        if (percentage >= 90) {
+                                            "MAX LEVEL!"
+                                        } else {
+                                            if(percentage >= 75) {
+                                                "Medium level"
+                                            } else {
+                                                if (percentage >= 50) {
+                                                    "Regular level"
+                                                } else {
+                                                    "Out of level"
+                                                }
+                                            }
+                                        }
                                     } else {
-                                        outcome = "You are not promoted"
+                                        "You have introduced wrong parameters"
                                     }
                                 } else {
-                                    outcome = "Introduce all the grades please"
+                                    outcome = "Enter the data correctly please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -203,7 +196,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 13",
+                            text = "Project 22",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -217,34 +210,16 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 3 grades to know if you are promoted",
+                            text = "Calculate the percentage of correct questions:",
                             textAlign = TextAlign.Center,
                         )
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = firstNumber,
-                        onValueChange = { firstNumber = it },
+                        value = totalQuestions,
+                        onValueChange = { totalQuestions = it },
                         label = {
-                            Text("First grade")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
-                        )
-                    )
-
-                    Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
-                        label = {
-                            Text("Second grade")
+                            Text("Total questions")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -258,10 +233,10 @@ fun Project13(navController: NavHostController) {
                     )
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
+                        value = correctAnswers,
+                        onValueChange = { correctAnswers = it },
                         label = {
-                            Text("Third grade")
+                            Text("Correct answers")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -280,19 +255,29 @@ fun Project13(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
+                                if (totalQuestions.toFloatOrNull() != null
+                                    && correctAnswers.toFloatOrNull() != null
                                 ) {
-                                    val result1 = (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat())/3
-
-                                    if (result1 > 7) {
-                                        outcome = "You are promoted"
+                                    val percentage = correctAnswers.toFloat() * 100 / totalQuestions.toFloat()
+                                    outcome = if (percentage <= 100 && percentage >= 0) {
+                                        if (percentage >= 90) {
+                                            "MAX LEVEL!"
+                                        } else {
+                                            if(percentage >= 75) {
+                                                "Medium level"
+                                            } else {
+                                                if (percentage >= 50) {
+                                                    "Regular level"
+                                                } else {
+                                                    "Out of level"
+                                                }
+                                            }
+                                        }
                                     } else {
-                                        outcome = "You are not promoted"
+                                        "You have introduced wrong parameters"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    outcome = "Enter the data correctly please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
