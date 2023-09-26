@@ -110,9 +110,8 @@ fun Project14(navController: NavHostController) {
                             onClick = {
                                 if (firstNumber.toFloatOrNull() != null
                                 ) {
-                                    val result = firstNumber.toFloat()
-                                    if (result < 99 || result > 0){
-                                        if (result < 10){
+                                    if (firstNumber.toFloat() in 0.0..99.0){
+                                        if (firstNumber.toFloat() < 10){
                                             outcome = "Has one digit"
                                         } else {
                                             outcome = "Has two digit"
@@ -215,9 +214,8 @@ fun Project14(navController: NavHostController) {
                             onClick = {
                                 if (firstNumber.toFloatOrNull() != null
                                 ) {
-                                    val result = firstNumber.toFloat()
-                                    if (result < 99 || result > 0){
-                                        if (result < 10){
+                                    if (firstNumber.toFloat() <= 99 && firstNumber.toFloat() >= 0){
+                                        if (firstNumber.toFloat() < 10){
                                             outcome = "Has one digit"
                                         } else {
                                             outcome = "Has two digit"

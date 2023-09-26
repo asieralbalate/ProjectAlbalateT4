@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -34,6 +35,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -93,20 +95,24 @@ fun FrontPage(navController: NavHostController) {
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU6")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBrown, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 6")
+                            Text(text = "U6: If (expression)",
+                                fontSize = 12.sp)
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU7")
                             },
                             modifier = Modifier.width(150.dp)
                         ) {
-                            Text(text = "Unit 7")
+                            Text(text = "U7: If (nested)")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
@@ -651,7 +657,7 @@ fun FrontPage(navController: NavHostController) {
                     Text(
                         text = "Kotlin",
                         fontSize = 70.sp,
-                        fontWeight = FontWeight.ExtraBold,
+                        fontWeight = FontWeight.ExtraBold
                     )
                     Spacer(modifier = Modifier.size(10.dp))
                     Row {
@@ -683,20 +689,28 @@ fun FrontPage(navController: NavHostController) {
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU6")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBrown, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 6")
+                            Text(text = "U6: If (expression)",
+                                fontSize = 12.sp
+                            )
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU7")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBrown, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 7")
+                            Text(text = "U7: If (nested)")
                         }
                     }
 

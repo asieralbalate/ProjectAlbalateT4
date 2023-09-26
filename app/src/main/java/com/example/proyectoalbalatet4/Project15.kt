@@ -43,7 +43,7 @@ import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project12(navController: NavHostController) {
+fun Project15(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var firstNumber by remember { mutableStateOf("") }
     var secondNumber by remember { mutableStateOf("") }
@@ -68,7 +68,7 @@ fun Project12(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 12",
+                            text = "Project 15",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -82,7 +82,7 @@ fun Project12(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 2 different numbers",
+                            text = "Introduce 2 different numbers to save the higher",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -128,38 +128,19 @@ fun Project12(navController: NavHostController) {
                                 if (firstNumber.toFloatOrNull() != null
                                     && secondNumber.toFloatOrNull() != null
                                 ) {
-                                    val result1: Float
-                                    val result2: Float
-                                    if (firstNumber.toFloat() != secondNumber.toFloat()) {
-                                        if (firstNumber.toFloat() < secondNumber.toFloat()) {
-                                            result1 = firstNumber.toFloat() + secondNumber.toFloat()
-                                            result2 = firstNumber.toFloat() - secondNumber.toFloat()
-                                            val formattedResult1 = String.format("%.2f", result1)
-                                            val formattedResult2 = String.format("%.2f", result2)
-                                            outcome =
-                                                "The addition of both equals: $formattedResult1 \n" +
-                                                        "The subtraction of both equals: $formattedResult2"
-                                        } else {
-                                            if (secondNumber.toFloat().toInt() == 0) {
-                                                outcome =
-                                                    "The second number can't be 0"
-                                            } else {
-                                                result1 =
-                                                    firstNumber.toFloat() * secondNumber.toFloat()
-                                                result2 =
-                                                    firstNumber.toFloat() / secondNumber.toFloat()
-                                                val formattedResult1 =
-                                                    String.format("%.2f", result1)
-                                                val formattedResult2 =
-                                                    String.format("%.2f", result2)
-                                                outcome =
-                                                    "The product of both equals: $formattedResult1 \n" +
-                                                            "The division of both equals: $formattedResult2"
-                                            }
-                                        }
+                                    val firstValue = firstNumber.toFloat()
+                                    val secondValue = secondNumber.toFloat()
+                                    val firstValueFormattedResult = String.format("%.2f", firstValue)
+                                    val secondValueFormattedResult = String.format("%.2f", secondValue)
+                                    val greater = if (firstValue > secondValue) {
+                                        firstValue
                                     } else {
-                                        outcome = "The numbers have to be different"
+                                        secondValue
                                     }
+                                    val greaterValueFormattedResult = String.format("%.2f", greater)
+                                    outcome = "The greater between $firstValueFormattedResult and $secondValueFormattedResult is: $greaterValueFormattedResult"
+
+
                                 } else {
                                     outcome = "Introduce a number please"
                                 }
@@ -210,7 +191,7 @@ fun Project12(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 12",
+                            text = "Project 15",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -224,7 +205,7 @@ fun Project12(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 2 different numbers",
+                            text = "Introduce 2 different numbers \nto save the higher",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -272,38 +253,19 @@ fun Project12(navController: NavHostController) {
                                 if (firstNumber.toFloatOrNull() != null
                                     && secondNumber.toFloatOrNull() != null
                                 ) {
-                                    val result1: Float
-                                    val result2: Float
-                                    if (firstNumber.toFloat() != secondNumber.toFloat()) {
-                                        if (firstNumber.toFloat() < secondNumber.toFloat()) {
-                                            result1 = firstNumber.toFloat() + secondNumber.toFloat()
-                                            result2 = firstNumber.toFloat() - secondNumber.toFloat()
-                                            val formattedResult1 = String.format("%.2f", result1)
-                                            val formattedResult2 = String.format("%.2f", result2)
-                                            outcome =
-                                                "The addition of both equals: $formattedResult1 \n" +
-                                                        "The subtraction of both equals: $formattedResult2"
-                                        } else {
-                                            if (secondNumber.toFloat().toInt() == 0) {
-                                                outcome =
-                                                    "The second number can't be 0"
-                                            } else {
-                                                result1 =
-                                                    firstNumber.toFloat() * secondNumber.toFloat()
-                                                result2 =
-                                                    firstNumber.toFloat() / secondNumber.toFloat()
-                                                val formattedResult1 =
-                                                    String.format("%.2f", result1)
-                                                val formattedResult2 =
-                                                    String.format("%.2f", result2)
-                                                outcome =
-                                                    "The product of both equals: $formattedResult1 \n" +
-                                                            "The division of both equals: $formattedResult2"
-                                            }
-                                        }
+                                    val firstValue = firstNumber.toFloat()
+                                    val secondValue = secondNumber.toFloat()
+                                    val firstValueFormattedResult = String.format("%.2f", firstValue)
+                                    val secondValueFormattedResult = String.format("%.2f", secondValue)
+                                    val greater = if (firstValue > secondValue) {
+                                        firstValue
                                     } else {
-                                        outcome = "The numbers have to be different"
+                                        secondValue
                                     }
+                                    val greaterValueFormattedResult = String.format("%.2f", greater)
+                                    outcome = "The greater between $firstValueFormattedResult and $secondValueFormattedResult is: $greaterValueFormattedResult"
+
+
                                 } else {
                                     outcome = "Introduce a number please"
                                 }

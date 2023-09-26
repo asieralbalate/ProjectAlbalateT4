@@ -43,10 +43,9 @@ import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project12(navController: NavHostController) {
+fun Project17(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var firstNumber by remember { mutableStateOf("") }
-    var secondNumber by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -68,7 +67,7 @@ fun Project12(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 12",
+                            text = "Project 17",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -82,7 +81,7 @@ fun Project12(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 2 different numbers",
+                            text = "Introduce a number between 1 and 99 to know if has 1 digit",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -90,23 +89,7 @@ fun Project12(navController: NavHostController) {
                         value = firstNumber,
                         onValueChange = { firstNumber = it },
                         label = {
-                            Text("First number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
-                        )
-                    )
-                    OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
-                        label = {
-                            Text("Second number")
+                            Text("Number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -126,39 +109,14 @@ fun Project12(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
                                 ) {
-                                    val result1: Float
-                                    val result2: Float
-                                    if (firstNumber.toFloat() != secondNumber.toFloat()) {
-                                        if (firstNumber.toFloat() < secondNumber.toFloat()) {
-                                            result1 = firstNumber.toFloat() + secondNumber.toFloat()
-                                            result2 = firstNumber.toFloat() - secondNumber.toFloat()
-                                            val formattedResult1 = String.format("%.2f", result1)
-                                            val formattedResult2 = String.format("%.2f", result2)
-                                            outcome =
-                                                "The addition of both equals: $formattedResult1 \n" +
-                                                        "The subtraction of both equals: $formattedResult2"
-                                        } else {
-                                            if (secondNumber.toFloat().toInt() == 0) {
-                                                outcome =
-                                                    "The second number can't be 0"
-                                            } else {
-                                                result1 =
-                                                    firstNumber.toFloat() * secondNumber.toFloat()
-                                                result2 =
-                                                    firstNumber.toFloat() / secondNumber.toFloat()
-                                                val formattedResult1 =
-                                                    String.format("%.2f", result1)
-                                                val formattedResult2 =
-                                                    String.format("%.2f", result2)
-                                                outcome =
-                                                    "The product of both equals: $formattedResult1 \n" +
-                                                            "The division of both equals: $formattedResult2"
-                                            }
-                                        }
+                                    if (firstNumber.toFloat() in 1.0..99.0){
+                                        val number = firstNumber.toFloat()
+                                        val numberFormattedResult = String.format("%.2f", number)
+                                        val digits = if (number < 10) {1} else {2}
+                                        outcome = "The number $numberFormattedResult has $digits digit"
                                     } else {
-                                        outcome = "The numbers have to be different"
+                                        outcome = "Number out of range"
                                     }
                                 } else {
                                     outcome = "Introduce a number please"
@@ -210,7 +168,7 @@ fun Project12(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 12",
+                            text = "Project 17",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -224,7 +182,7 @@ fun Project12(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 2 different numbers",
+                            text = "Introduce a number between 1 and 99 \nto know if has 1 digit",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -233,7 +191,7 @@ fun Project12(navController: NavHostController) {
                         value = firstNumber,
                         onValueChange = { firstNumber = it },
                         label = {
-                            Text("First number")
+                            Text("Number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -245,23 +203,7 @@ fun Project12(navController: NavHostController) {
                             focusedIndicatorColor = MyBrown
                         )
                     )
-                    Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
-                        label = {
-                            Text("Second number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
-                        )
-                    )
+
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
@@ -270,39 +212,14 @@ fun Project12(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
                                 ) {
-                                    val result1: Float
-                                    val result2: Float
-                                    if (firstNumber.toFloat() != secondNumber.toFloat()) {
-                                        if (firstNumber.toFloat() < secondNumber.toFloat()) {
-                                            result1 = firstNumber.toFloat() + secondNumber.toFloat()
-                                            result2 = firstNumber.toFloat() - secondNumber.toFloat()
-                                            val formattedResult1 = String.format("%.2f", result1)
-                                            val formattedResult2 = String.format("%.2f", result2)
-                                            outcome =
-                                                "The addition of both equals: $formattedResult1 \n" +
-                                                        "The subtraction of both equals: $formattedResult2"
-                                        } else {
-                                            if (secondNumber.toFloat().toInt() == 0) {
-                                                outcome =
-                                                    "The second number can't be 0"
-                                            } else {
-                                                result1 =
-                                                    firstNumber.toFloat() * secondNumber.toFloat()
-                                                result2 =
-                                                    firstNumber.toFloat() / secondNumber.toFloat()
-                                                val formattedResult1 =
-                                                    String.format("%.2f", result1)
-                                                val formattedResult2 =
-                                                    String.format("%.2f", result2)
-                                                outcome =
-                                                    "The product of both equals: $formattedResult1 \n" +
-                                                            "The division of both equals: $formattedResult2"
-                                            }
-                                        }
+                                    if (firstNumber.toFloat() in 1.0..99.0){
+                                        val number = firstNumber.toFloat()
+                                        val numberFormattedResult = String.format("%.2f", number)
+                                        val digits = if (number < 10) {1} else {2}
+                                        outcome = "The number $numberFormattedResult has $digits digit"
                                     } else {
-                                        outcome = "The numbers have to be different"
+                                        outcome = "Number out of range"
                                     }
                                 } else {
                                     outcome = "Introduce a number please"

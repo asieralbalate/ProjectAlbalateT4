@@ -83,7 +83,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 3 numbers to know if you are promoted",
+                            text = "Introduce 3 grades to know if you are promoted",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -91,7 +91,7 @@ fun Project13(navController: NavHostController) {
                         value = firstNumber,
                         onValueChange = { firstNumber = it },
                         label = {
-                            Text("First number")
+                            Text("First grade")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -107,7 +107,7 @@ fun Project13(navController: NavHostController) {
                         value = secondNumber,
                         onValueChange = { secondNumber = it },
                         label = {
-                            Text("Second number")
+                            Text("Second grade")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -123,7 +123,7 @@ fun Project13(navController: NavHostController) {
                         value = thirdNumber,
                         onValueChange = { thirdNumber = it },
                         label = {
-                            Text("Third number")
+                            Text("Third grade")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -154,7 +154,7 @@ fun Project13(navController: NavHostController) {
                                         outcome = "You are not promoted"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    outcome = "Introduce all the grades please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -217,7 +217,7 @@ fun Project13(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 3 numbers to know if you are promoted",
+                            text = "Introduce 3 grades to know if you are promoted",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -226,7 +226,7 @@ fun Project13(navController: NavHostController) {
                         value = firstNumber,
                         onValueChange = { firstNumber = it },
                         label = {
-                            Text("First number")
+                            Text("First grade")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -244,7 +244,7 @@ fun Project13(navController: NavHostController) {
                         value = secondNumber,
                         onValueChange = { secondNumber = it },
                         label = {
-                            Text("Second number")
+                            Text("Second grade")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -261,7 +261,7 @@ fun Project13(navController: NavHostController) {
                         value = thirdNumber,
                         onValueChange = { thirdNumber = it },
                         label = {
-                            Text("Second number")
+                            Text("Third grade")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
