@@ -116,7 +116,7 @@ fun Project21(navController: NavHostController) {
                                     else if (firstNumber.toFloat() < 100 && firstNumber.toFloat() > -100){
                                         "The number has two digits"
                                     } else if (firstNumber.toFloat() < 1000 && firstNumber.toFloat() > -1000){
-                                        "The number is 0"
+                                        "The number has three digits"
                                     } else {
                                         "The number is out of the range"
                                     }
@@ -220,7 +220,7 @@ fun Project21(navController: NavHostController) {
                                     else if (firstNumber.toFloat() < 100 && firstNumber.toFloat() > -100){
                                         "The number has two digits"
                                     } else if (firstNumber.toFloat() < 1000 && firstNumber.toFloat() > -1000){
-                                        "The number is 0"
+                                        "The number has three digits"
                                     } else {
                                         "The number is out of the range"
                                     }

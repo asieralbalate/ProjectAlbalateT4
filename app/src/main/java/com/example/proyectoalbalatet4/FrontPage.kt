@@ -110,7 +110,10 @@ fun FrontPage(navController: NavHostController) {
                             onClick = {
                                 navController.navigate("FrontPageU7")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBrown, contentColor = MyWhite
+                            )
                         ) {
                             Text(text = "U7: If (nested)")
                         }
@@ -119,11 +122,14 @@ fun FrontPage(navController: NavHostController) {
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU8")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 8")
+                            Text(text = "U8: If (operators)")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -718,11 +724,14 @@ fun FrontPage(navController: NavHostController) {
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU8")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 8")
+                            Text(text = "U8: If (operator)")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(

@@ -46,6 +46,7 @@ class MainActivity : ComponentActivity() {
                         composable("FrontPageU5") { FrontPageU5(navController = navController) }
                         composable("FrontPageU6") { FrontPageU6(navController = navController) }
                         composable("FrontPageU7") { FrontPageU7(navController = navController) }
+                        composable("FrontPageU8") { FrontPageU8(navController = navController) }
                         composable("FrontPage") {
                             FrontPage(navController = navController)
                         }
