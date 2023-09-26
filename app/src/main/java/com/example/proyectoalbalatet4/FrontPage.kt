@@ -129,7 +129,7 @@ fun FrontPage(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "U8: If (operators)")
+                            Text(text = "U8: If (operator)")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
