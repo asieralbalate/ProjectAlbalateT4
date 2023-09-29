@@ -44,11 +44,11 @@ import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project23(navController: NavHostController) {
+fun Project24(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var firstNumber by remember { mutableStateOf("") }
-    var secondNumber by remember { mutableStateOf("") }
-    var thirdNumber by remember { mutableStateOf("") }
+    var day by remember { mutableStateOf("") }
+    var month by remember { mutableStateOf("") }
+    var year by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -89,8 +89,8 @@ fun Project23(navController: NavHostController) {
                         )
                     }
                     OutlinedTextField(
-                        value = firstNumber,
-                        onValueChange = { firstNumber = it },
+                        value = day,
+                        onValueChange = { day = it },
                         label = {
                             Text("First number")
                         },
@@ -105,8 +105,8 @@ fun Project23(navController: NavHostController) {
                         )
                     )
                     OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
+                        value = month,
+                        onValueChange = { month = it },
                         label = {
                             Text("Second number")
                         },
@@ -121,8 +121,8 @@ fun Project23(navController: NavHostController) {
                         )
                     )
                     OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
+                        value = year,
+                        onValueChange = { year = it },
                         label = {
                             Text("Third number")
                         },
@@ -143,15 +143,15 @@ fun Project23(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
+                                if (day.toFloatOrNull() != null
+                                    && month.toFloatOrNull() != null
+                                    && year.toFloatOrNull() != null
                                 ) {
 
-                                    outcome = if (firstNumber.toFloat() > secondNumber.toFloat() && firstNumber.toFloat() > thirdNumber.toFloat()) {
-                                        firstNumber
+                                    outcome = if (day.toFloat() > month.toFloat() && day.toFloat() > year.toFloat()) {
+                                        day
                                     } else {
-                                        if (secondNumber.toFloat() > thirdNumber.toFloat()) {secondNumber} else {thirdNumber}}
+                                        if (month.toFloat() > year.toFloat()) {month} else {year}}
                                 } else {
                                     outcome = "Introduce all the numbers please"
                                 }
@@ -202,7 +202,7 @@ fun Project23(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 23",
+                            text = "Project 24",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -216,16 +216,16 @@ fun Project23(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce 3 numbers to know which is higher",
+                            text = "Introduce a date to know the quarter",
                             textAlign = TextAlign.Center,
                         )
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = firstNumber,
-                        onValueChange = { firstNumber = it },
+                        value = day,
+                        onValueChange = { day = it },
                         label = {
-                            Text("First number")
+                            Text("Day")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -240,10 +240,10 @@ fun Project23(navController: NavHostController) {
 
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
+                        value = month,
+                        onValueChange = { month = it },
                         label = {
-                            Text("Second number")
+                            Text("Month")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -257,10 +257,10 @@ fun Project23(navController: NavHostController) {
                     )
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
+                        value = year,
+                        onValueChange = { year = it },
                         label = {
-                            Text("Third number")
+                            Text("Year")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -279,15 +279,27 @@ fun Project23(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
+                                if (day.toIntOrNull() != null
+                                    && month.toIntOrNull() != null
+                                    && year.toIntOrNull() != null
                                 ) {
+                                    if (day.toInt() < 31 && day.toInt() > 0 &&
+                                        month.toInt() > 0 && month.toInt() < 12) {
 
-                                    outcome = if (firstNumber.toFloat() > secondNumber.toFloat() && firstNumber.toFloat() > thirdNumber.toFloat()) {
-                                        firstNumber
+
+                                        outcome =
+                                            if (month.toInt() == 1 || month.toInt() == 2 || month.toInt() == 3) {
+                                                "Corresponds to the first quarter of the year"
+                                            } else if (month.toInt() == 4 || month.toInt() == 5 || month.toInt() == 6){
+                                                "Corresponds to the second quarter of the year"
+                                            } else if (month.toInt() == 7 || month.toInt() == 8 || month.toInt() == 9){
+                                                "Corresponds to the third quarter of the year"
+                                            } else {
+                                                "Corresponds to the forth quarter of the year"
+                                            }
                                     } else {
-                                        if (secondNumber.toFloat() > thirdNumber.toFloat()) {secondNumber} else {thirdNumber}}
+                                        outcome = "Wrong date"
+                                    }
                                 } else {
                                     outcome = "Introduce all the numbers please"
                                 }
