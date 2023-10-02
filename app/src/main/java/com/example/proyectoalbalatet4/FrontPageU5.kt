@@ -151,7 +151,7 @@ fun FrontPageU5(navController: NavHostController) {
                         ) {
                             Text(text = "P10: Salary taxes")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -164,7 +164,7 @@ fun FrontPageU5(navController: NavHostController) {
                         ) {
                             Text(text = "P11: Highest number")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -177,7 +177,7 @@ fun FrontPageU5(navController: NavHostController) {
                         ) {
                             Text(text = "P12: Highest Number*")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -190,7 +190,7 @@ fun FrontPageU5(navController: NavHostController) {
                         ) {
                             Text(text = "P13: Grade Average")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -203,7 +203,7 @@ fun FrontPageU5(navController: NavHostController) {
                         ) {
                             Text(text = "P14: Number Digits")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                 }
                 FloatingActionButton(

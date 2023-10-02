@@ -37,17 +37,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
+import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project24(navController: NavHostController) {
+fun Project29(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var day by remember { mutableStateOf("") }
-    var month by remember { mutableStateOf("") }
-    var year by remember { mutableStateOf("") }
+    var xValue by remember { mutableStateOf("") }
+    var yValue by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -69,7 +69,7 @@ fun Project24(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 24",
+                            text = "Project 29",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -83,15 +83,15 @@ fun Project24(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce a date to know the quarter",
+                            text = "Enter x and y to know which quadrant you are in",
                             textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
-                        value = day,
-                        onValueChange = { day = it },
+                        value = xValue,
+                        onValueChange = { xValue = it },
                         label = {
-                            Text("Day")
+                            Text("X")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -104,26 +104,10 @@ fun Project24(navController: NavHostController) {
                         )
                     )
                     OutlinedTextField(
-                        value = month,
-                        onValueChange = { month = it },
+                        value = yValue,
+                        onValueChange = { yValue = it },
                         label = {
-                            Text("Month")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
-                        )
-                    )
-                    OutlinedTextField(
-                        value = year,
-                        onValueChange = { year = it },
-                        label = {
-                            Text("Year")
+                            Text("Y")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -142,26 +126,14 @@ fun Project24(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (day.toIntOrNull() != null
-                                    && month.toIntOrNull() != null
-                                    && year.toIntOrNull() != null
+                                if (xValue.toFloatOrNull() != null
+                                    && yValue.toFloatOrNull() != null
                                 ) {
-                                    if (day.toInt() < 31 && day.toInt() > 0 &&
-                                        month.toInt() > 0 && month.toInt() < 12) {
 
-
-                                        outcome =
-                                            if (month.toInt() == 1 || month.toInt() == 2 || month.toInt() == 3) {
-                                                "Corresponds to the first quarter of the year"
-                                            } else if (month.toInt() == 4 || month.toInt() == 5 || month.toInt() == 6){
-                                                "Corresponds to the second quarter of the year"
-                                            } else if (month.toInt() == 7 || month.toInt() == 8 || month.toInt() == 9){
-                                                "Corresponds to the third quarter of the year"
-                                            } else {
-                                                "Corresponds to the forth quarter of the year"
-                                            }
+                                    outcome = if (xValue.toFloat() > 0) {
+                                        if (yValue.toFloat() > 0) {"First quadrant"} else {"Second quadrant"}
                                     } else {
-                                        outcome = "Wrong date"
+                                        if (yValue.toFloat() < 0) {"Third quadrant"} else {"Fourth quadrant"}
                                     }
                                 } else {
                                     outcome = "Introduce all the numbers please"
@@ -212,7 +184,7 @@ fun Project24(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 24",
+                            text = "Project 29",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -226,16 +198,16 @@ fun Project24(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce a date to know the quarter",
+                            text = "Enter x and y to know which quadrant you are in",
                             textAlign = TextAlign.Center,
                         )
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = day,
-                        onValueChange = { day = it },
+                        value = xValue,
+                        onValueChange = { xValue = it },
                         label = {
-                            Text("Day")
+                            Text("X")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -250,27 +222,10 @@ fun Project24(navController: NavHostController) {
 
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = month,
-                        onValueChange = { month = it },
+                        value = yValue,
+                        onValueChange = { yValue = it },
                         label = {
-                            Text("Month")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
-                        )
-                    )
-                    Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = year,
-                        onValueChange = { year = it },
-                        label = {
-                            Text("Year")
+                            Text("Y")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -289,26 +244,14 @@ fun Project24(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (day.toIntOrNull() != null
-                                    && month.toIntOrNull() != null
-                                    && year.toIntOrNull() != null
+                                if (xValue.toFloatOrNull() != null
+                                    && yValue.toFloatOrNull() != null
                                 ) {
-                                    if (day.toInt() < 31 && day.toInt() > 0 &&
-                                        month.toInt() > 0 && month.toInt() < 12) {
 
-
-                                        outcome =
-                                            if (month.toInt() == 1 || month.toInt() == 2 || month.toInt() == 3) {
-                                                "Corresponds to the first quarter of the year"
-                                            } else if (month.toInt() == 4 || month.toInt() == 5 || month.toInt() == 6){
-                                                "Corresponds to the second quarter of the year"
-                                            } else if (month.toInt() == 7 || month.toInt() == 8 || month.toInt() == 9){
-                                                "Corresponds to the third quarter of the year"
-                                            } else {
-                                                "Corresponds to the forth quarter of the year"
-                                            }
+                                    outcome = if (xValue.toFloat() > 0) {
+                                        if (yValue.toFloat() > 0) {"First quadrant"} else {"Second quadrant"}
                                     } else {
-                                        outcome = "Wrong date"
+                                        if (yValue.toFloat() < 0) {"Third quadrant"} else {"Fourth quadrant"}
                                     }
                                 } else {
                                     outcome = "Introduce all the numbers please"
@@ -336,7 +279,6 @@ fun Project24(navController: NavHostController) {
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
                     contentColor = MyWhite
-
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,

@@ -37,17 +37,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
+import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project24(navController: NavHostController) {
+fun Project30(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var day by remember { mutableStateOf("") }
-    var month by remember { mutableStateOf("") }
-    var year by remember { mutableStateOf("") }
+    var firstNumber by remember { mutableStateOf("") }
+    var secondNumber by remember { mutableStateOf("") }
+    var thirdNumber by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -69,7 +70,7 @@ fun Project24(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 24",
+                            text = "Project 30",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -83,15 +84,15 @@ fun Project24(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce a date to know the quarter",
+                            text = "Enter three numbers to find out which is the largest and the smallest",
                             textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
-                        value = day,
-                        onValueChange = { day = it },
+                        value = firstNumber,
+                        onValueChange = { firstNumber = it },
                         label = {
-                            Text("Day")
+                            Text("First number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -104,10 +105,10 @@ fun Project24(navController: NavHostController) {
                         )
                     )
                     OutlinedTextField(
-                        value = month,
-                        onValueChange = { month = it },
+                        value = secondNumber,
+                        onValueChange = { secondNumber = it },
                         label = {
-                            Text("Month")
+                            Text("Second number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -120,10 +121,10 @@ fun Project24(navController: NavHostController) {
                         )
                     )
                     OutlinedTextField(
-                        value = year,
-                        onValueChange = { year = it },
+                        value = thirdNumber,
+                        onValueChange = { thirdNumber = it },
                         label = {
-                            Text("Year")
+                            Text("Third number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -142,26 +143,28 @@ fun Project24(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (day.toIntOrNull() != null
-                                    && month.toIntOrNull() != null
-                                    && year.toIntOrNull() != null
+                                if (firstNumber.toFloatOrNull() != null
+                                    && secondNumber.toFloatOrNull() != null
+                                    && thirdNumber.toFloatOrNull() != null
                                 ) {
-                                    if (day.toInt() < 31 && day.toInt() > 0 &&
-                                        month.toInt() > 0 && month.toInt() < 12) {
-
-
-                                        outcome =
-                                            if (month.toInt() == 1 || month.toInt() == 2 || month.toInt() == 3) {
-                                                "Corresponds to the first quarter of the year"
-                                            } else if (month.toInt() == 4 || month.toInt() == 5 || month.toInt() == 6){
-                                                "Corresponds to the second quarter of the year"
-                                            } else if (month.toInt() == 7 || month.toInt() == 8 || month.toInt() == 9){
-                                                "Corresponds to the third quarter of the year"
-                                            } else {
-                                                "Corresponds to the forth quarter of the year"
-                                            }
+                                    outcome = if (firstNumber.toFloat() > secondNumber.toFloat() && firstNumber.toFloat() >  thirdNumber.toFloat()) {
+                                        if (secondNumber.toFloat() > thirdNumber.toFloat()) {
+                                            "The largest is $firstNumber and the smallest is $thirdNumber"
+                                        } else {
+                                            "The largest is $firstNumber and the smallest is $secondNumber"
+                                        }
+                                    } else if (secondNumber.toFloat() > firstNumber.toFloat() && secondNumber.toFloat() >  thirdNumber.toFloat()){
+                                        if (firstNumber.toFloat() > thirdNumber.toFloat()) {
+                                            "The largest is $secondNumber and the smallest is $thirdNumber"
+                                        } else {
+                                            "The largest is $secondNumber and the smallest is $firstNumber"
+                                        }
                                     } else {
-                                        outcome = "Wrong date"
+                                        if (firstNumber.toFloat() > secondNumber.toFloat()) {
+                                            "The largest is $thirdNumber and the smallest is $secondNumber"
+                                        } else {
+                                            "The largest is $thirdNumber and the smallest is $firstNumber"
+                                        }
                                     }
                                 } else {
                                     outcome = "Introduce all the numbers please"
@@ -212,7 +215,7 @@ fun Project24(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 24",
+                            text = "Project 30",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -226,16 +229,16 @@ fun Project24(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce a date to know the quarter",
+                            text = "Enter three numbers to find out which\nis the largest and the smallest",
                             textAlign = TextAlign.Center,
                         )
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = day,
-                        onValueChange = { day = it },
+                        value = firstNumber,
+                        onValueChange = { firstNumber = it },
                         label = {
-                            Text("Day")
+                            Text("First number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -250,10 +253,10 @@ fun Project24(navController: NavHostController) {
 
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = month,
-                        onValueChange = { month = it },
+                        value = secondNumber,
+                        onValueChange = { secondNumber = it },
                         label = {
-                            Text("Month")
+                            Text("Second number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -267,10 +270,10 @@ fun Project24(navController: NavHostController) {
                     )
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = year,
-                        onValueChange = { year = it },
+                        value = thirdNumber,
+                        onValueChange = { thirdNumber = it },
                         label = {
-                            Text("Year")
+                            Text("Third number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -289,26 +292,29 @@ fun Project24(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (day.toIntOrNull() != null
-                                    && month.toIntOrNull() != null
-                                    && year.toIntOrNull() != null
+                                if (firstNumber.toFloatOrNull() != null
+                                    && secondNumber.toFloatOrNull() != null
+                                    && thirdNumber.toFloatOrNull() != null
                                 ) {
-                                    if (day.toInt() < 31 && day.toInt() > 0 &&
-                                        month.toInt() > 0 && month.toInt() < 12) {
 
-
-                                        outcome =
-                                            if (month.toInt() == 1 || month.toInt() == 2 || month.toInt() == 3) {
-                                                "Corresponds to the first quarter of the year"
-                                            } else if (month.toInt() == 4 || month.toInt() == 5 || month.toInt() == 6){
-                                                "Corresponds to the second quarter of the year"
-                                            } else if (month.toInt() == 7 || month.toInt() == 8 || month.toInt() == 9){
-                                                "Corresponds to the third quarter of the year"
-                                            } else {
-                                                "Corresponds to the forth quarter of the year"
-                                            }
+                                    outcome = if (firstNumber.toFloat() > secondNumber.toFloat() && firstNumber.toFloat() >  thirdNumber.toFloat()) {
+                                        if (secondNumber.toFloat() > thirdNumber.toFloat()) {
+                                            "The largest is $firstNumber and the smallest is $thirdNumber"
+                                        } else {
+                                            "The largest is $firstNumber and the smallest is $secondNumber"
+                                        }
+                                    } else if (secondNumber.toFloat() > firstNumber.toFloat() && secondNumber.toFloat() >  thirdNumber.toFloat()){
+                                        if (firstNumber.toFloat() > thirdNumber.toFloat()) {
+                                            "The largest is $secondNumber and the smallest is $thirdNumber"
+                                        } else {
+                                            "The largest is $secondNumber and the smallest is $firstNumber"
+                                        }
                                     } else {
-                                        outcome = "Wrong date"
+                                        if (firstNumber.toFloat() > secondNumber.toFloat()) {
+                                            "The largest is $thirdNumber and the smallest is $secondNumber"
+                                        } else {
+                                            "The largest is $thirdNumber and the smallest is $firstNumber"
+                                        }
                                     }
                                 } else {
                                     outcome = "Introduce all the numbers please"
@@ -336,7 +342,6 @@ fun Project24(navController: NavHostController) {
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
                     contentColor = MyWhite
-
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,

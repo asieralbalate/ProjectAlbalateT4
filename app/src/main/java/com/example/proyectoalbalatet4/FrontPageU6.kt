@@ -125,7 +125,7 @@ fun FrontPageU6(navController: NavHostController) {
                         ) {
                             Text(text = "P15: 2 Numbers")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -138,7 +138,7 @@ fun FrontPageU6(navController: NavHostController) {
                         ) {
                             Text(text = "P16: Squared / Cubed")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -151,7 +151,7 @@ fun FrontPageU6(navController: NavHostController) {
                         ) {
                             Text(text = "P17: Number digits*")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                 }
                 FloatingActionButton(

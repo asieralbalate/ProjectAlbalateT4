@@ -92,17 +92,19 @@ fun FrontPageU8(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P26: 3 Numbers*")
+                            Text(text = "P26: 3 Numbers")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
-                            onClick = { navController.navigate("Project27") },
+                            onClick = {
+                                navController.navigate("Project27")
+                            },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P27: Ten or less")
+                            Text(text = "P27: 3 Numbers*")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -112,7 +114,7 @@ fun FrontPageU8(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P28: Coordinates")
+                            Text(text = "P28: Ten or less")
                         }
                     }
                     Spacer(modifier = Modifier.height(10.dp))
@@ -124,7 +126,17 @@ fun FrontPageU8(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P29: Major / Minor")
+                            Text(text = "P29: Coordinates")
+                        }
+                        Spacer(modifier = Modifier.width(15.dp))
+                        Button(
+                            onClick = { navController.navigate("Project30") },
+                            modifier = Modifier.width(200.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
+                        ) {
+                            Text(text = "P30: Major / Minor")
                         }
                     }
                 }
@@ -170,7 +182,7 @@ fun FrontPageU8(navController: NavHostController) {
                         ) {
                             Text(text = "P23: 3 Numbers")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -183,7 +195,7 @@ fun FrontPageU8(navController: NavHostController) {
                         ) {
                             Text(text = "P24: Quarter")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -196,34 +208,34 @@ fun FrontPageU8(navController: NavHostController) {
                         ) {
                             Text(text = "P25: Christmas")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
+                    }
+                    Spacer(modifier = Modifier.size(30.dp))
+                    Row {
+                        Button(
+                            onClick = { navController.navigate("Project26") },
+                            modifier = Modifier.width(200.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
+                        ) {
+                            Text(text = "P26: 3 Numbers")
+                        }
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("Project26")},
+                                navController.navigate("Project27")},
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P26: 3 Numbers*")
+                            Text(text = "P27: 3 Numbers*")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
-                    }
-                    Spacer(modifier = Modifier.size(30.dp))
-                    Row {
-                        Button(
-                            onClick = { navController.navigate("Project27") },
-                            modifier = Modifier.width(200.dp),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
-                            )
-                        ) {
-                            Text(text = "P27: Ten or less")
-                        }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -234,9 +246,9 @@ fun FrontPageU8(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P28: Coordinates")
+                            Text(text = "P28: Ten or less")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -247,20 +259,33 @@ fun FrontPageU8(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P29: Major / Minor")
+                            Text(text = "P29: Coordinates")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
+                    Spacer(modifier = Modifier.size(30.dp))
+                    Row {
+                        Button(
+                            onClick = { navController.navigate("Project30") },
+                            modifier = Modifier.width(200.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
+                        ) {
+                            Text(text = "P30: Major / Minor")
+                        }
+
+                    }
+
                 }
                 FloatingActionButton(
-                    onClick = { navController.popBackStack() },
+                    onClick = {navController.popBackStack()},
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,

@@ -43,7 +43,7 @@ import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project24(navController: NavHostController) {
+fun Project25(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var day by remember { mutableStateOf("") }
     var month by remember { mutableStateOf("") }
@@ -69,7 +69,7 @@ fun Project24(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 24",
+                            text = "Project 25",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -83,7 +83,7 @@ fun Project24(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce a date to know the quarter",
+                            text = "Introduce a date to know if it's Christmas",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -148,17 +148,11 @@ fun Project24(navController: NavHostController) {
                                 ) {
                                     if (day.toInt() < 31 && day.toInt() > 0 &&
                                         month.toInt() > 0 && month.toInt() < 12) {
-
-
                                         outcome =
-                                            if (month.toInt() == 1 || month.toInt() == 2 || month.toInt() == 3) {
-                                                "Corresponds to the first quarter of the year"
-                                            } else if (month.toInt() == 4 || month.toInt() == 5 || month.toInt() == 6){
-                                                "Corresponds to the second quarter of the year"
-                                            } else if (month.toInt() == 7 || month.toInt() == 8 || month.toInt() == 9){
-                                                "Corresponds to the third quarter of the year"
+                                            if (month.toInt() == 12 && day.toInt() == 25 ) {
+                                                "Christmas"
                                             } else {
-                                                "Corresponds to the forth quarter of the year"
+                                                "It hurts, it's not Christmas"
                                             }
                                     } else {
                                         outcome = "Wrong date"
@@ -212,7 +206,7 @@ fun Project24(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 24",
+                            text = "Project 25",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -226,7 +220,7 @@ fun Project24(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Introduce a date to know the quarter",
+                            text = "Introduce a date to know if it's Christmas",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -298,14 +292,10 @@ fun Project24(navController: NavHostController) {
 
 
                                         outcome =
-                                            if (month.toInt() == 1 || month.toInt() == 2 || month.toInt() == 3) {
-                                                "Corresponds to the first quarter of the year"
-                                            } else if (month.toInt() == 4 || month.toInt() == 5 || month.toInt() == 6){
-                                                "Corresponds to the second quarter of the year"
-                                            } else if (month.toInt() == 7 || month.toInt() == 8 || month.toInt() == 9){
-                                                "Corresponds to the third quarter of the year"
+                                            if (month.toInt() == 12 && day.toInt() == 25 ) {
+                                                "Christmas"
                                             } else {
-                                                "Corresponds to the forth quarter of the year"
+                                                "It hurts, it's not Christmas"
                                             }
                                     } else {
                                         outcome = "Wrong date"

@@ -152,7 +152,7 @@ fun FrontPageU7(navController: NavHostController) {
                         ) {
                             Text(text = "P18: Average Grades*")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -165,7 +165,7 @@ fun FrontPageU7(navController: NavHostController) {
                         ) {
                             Text(text = "P19: Highest Number")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -179,7 +179,7 @@ fun FrontPageU7(navController: NavHostController) {
                             Text(text = "P20: Positive / Null / Negative",
                                 fontSize = 11.sp)
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -192,7 +192,7 @@ fun FrontPageU7(navController: NavHostController) {
                         ) {
                             Text(text = "P21: Number Digits*")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                     Spacer(modifier = Modifier.size(30.dp))
                     Row {
@@ -205,7 +205,7 @@ fun FrontPageU7(navController: NavHostController) {
                         ) {
                             Text(text = "P22: Intelligence test")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+
                     }
                 }
                 FloatingActionButton(
