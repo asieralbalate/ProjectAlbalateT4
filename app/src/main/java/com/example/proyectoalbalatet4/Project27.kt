@@ -214,7 +214,7 @@ fun Project27(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter three numbers to see if they are less than ten",
+                            text = "Enter three numbers to see\nif they are less than ten",
                             textAlign = TextAlign.Center,
                         )
                     }

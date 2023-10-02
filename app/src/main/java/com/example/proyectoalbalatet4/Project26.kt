@@ -214,7 +214,7 @@ fun Project26(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter three numbers if all are equal calculate the cube",
+                            text = "Enter three numbers if all are\nequal calculate the cube",
                             textAlign = TextAlign.Center,
                         )
                     }

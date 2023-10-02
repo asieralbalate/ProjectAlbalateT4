@@ -134,11 +134,14 @@ fun FrontPage(navController: NavHostController) {
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU9")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBrown, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 9")
+                            Text(text = "U9: While")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -736,11 +739,14 @@ fun FrontPage(navController: NavHostController) {
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU9")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBrown, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 9")
+                            Text(text = "U9: While")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))

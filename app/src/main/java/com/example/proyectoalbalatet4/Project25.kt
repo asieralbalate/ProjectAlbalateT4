@@ -146,8 +146,8 @@ fun Project25(navController: NavHostController) {
                                     && month.toIntOrNull() != null
                                     && year.toIntOrNull() != null
                                 ) {
-                                    if (day.toInt() < 31 && day.toInt() > 0 &&
-                                        month.toInt() > 0 && month.toInt() < 12) {
+                                    if (day.toInt() <= 31 && day.toInt() > 0 &&
+                                        month.toInt() > 0 && month.toInt() <= 12) {
                                         outcome =
                                             if (month.toInt() == 12 && day.toInt() == 25 ) {
                                                 "Christmas"
@@ -287,8 +287,8 @@ fun Project25(navController: NavHostController) {
                                     && month.toIntOrNull() != null
                                     && year.toIntOrNull() != null
                                 ) {
-                                    if (day.toInt() < 31 && day.toInt() > 0 &&
-                                        month.toInt() > 0 && month.toInt() < 12) {
+                                    if (day.toInt() <= 31 && day.toInt() > 0 &&
+                                        month.toInt() > 0 && month.toInt() <= 12) {
 
 
                                         outcome =

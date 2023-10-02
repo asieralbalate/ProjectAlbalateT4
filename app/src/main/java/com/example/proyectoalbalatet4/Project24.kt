@@ -146,8 +146,8 @@ fun Project24(navController: NavHostController) {
                                     && month.toIntOrNull() != null
                                     && year.toIntOrNull() != null
                                 ) {
-                                    if (day.toInt() < 31 && day.toInt() > 0 &&
-                                        month.toInt() > 0 && month.toInt() < 12) {
+                                    if (day.toInt() <= 31 && day.toInt() > 0 &&
+                                        month.toInt() > 0 && month.toInt() <= 12) {
 
 
                                         outcome =
@@ -293,8 +293,8 @@ fun Project24(navController: NavHostController) {
                                     && month.toIntOrNull() != null
                                     && year.toIntOrNull() != null
                                 ) {
-                                    if (day.toInt() < 31 && day.toInt() > 0 &&
-                                        month.toInt() > 0 && month.toInt() < 12) {
+                                    if (day.toInt() <= 31 && day.toInt() > 0 &&
+                                        month.toInt() > 0 && month.toInt() <= 12) {
 
 
                                         outcome =

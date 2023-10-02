@@ -50,11 +50,23 @@ class MainActivity : ComponentActivity() {
                         composable("Project28") { Project28(navController = navController) }
                         composable("Project29") { Project29(navController = navController) }
                         composable("Project30") { Project30(navController = navController) }
+                        composable("Project31") { Project31(navController = navController) }
+                        composable("Project32") { Project32(navController = navController) }
+                        composable("Project33") { Project33(navController = navController) }
+                        composable("Project34") { Project34(navController = navController) }
+                        composable("Project35") { Project35(navController = navController) }
+                        composable("Project36") { Project36(navController = navController) }
+                        composable("Project37") { Project37(navController = navController) }
+                        composable("Project38") { Project38(navController = navController) }
+                        composable("Project39") { Project39(navController = navController) }
+                        composable("Project40") { Project40(navController = navController) }
+                        composable("Project41") { Project41(navController = navController) }
                         composable("FrontPageU4") { FrontPageU4(navController = navController) }
                         composable("FrontPageU5") { FrontPageU5(navController = navController) }
                         composable("FrontPageU6") { FrontPageU6(navController = navController) }
                         composable("FrontPageU7") { FrontPageU7(navController = navController) }
                         composable("FrontPageU8") { FrontPageU8(navController = navController) }
+                        composable("FrontPageU9") { FrontPageU9(navController = navController) }
                         composable("FrontPage") {
                             FrontPage(navController = navController)
                         }
