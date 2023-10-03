@@ -50,6 +50,9 @@ fun Project33(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var number by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
+    var x by remember { mutableStateOf(1) }
+    var addition by remember { mutableStateOf(0) }
+    var left by remember { mutableStateOf(10) }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -112,27 +115,30 @@ fun Project33(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (number.toIntOrNull() != null) {
-                                    var x = 1
-                                    var addition = 0
-                                    while (x <= 10) {
-                                        val left = 11 - x
+                                    if (x != 10) {
+                                        left--
+                                        outcome = "$left number/s left"
                                         addition += number.toInt()
-                                        outcome = "Missing $left number/s to add"
                                         x++
+                                    } else {
+                                        addition += number.toInt()
+                                        val average = addition / 10
+                                        outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
+                                        x = 1
+                                        left = 10
+                                        addition = 0
                                     }
-                                    number = ""
-                                    val average = addition/10
-                                    outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
                                 } else {
                                     outcome = "Introduce an integer"
                                 }
+                                number = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "Display")
+                            Text(text = "Add")
                         }
                     }
                     Text(
@@ -157,6 +163,7 @@ fun Project33(navController: NavHostController) {
                 }
             }
         }
+
         else -> {
             Box(modifier = Modifier.fillMaxSize()) {
                 Column(
@@ -208,8 +215,8 @@ fun Project33(navController: NavHostController) {
                         ),
                         keyboardOptions = KeyboardOptions.Default.copy(
                             keyboardType = KeyboardType.Number
+                        ),
                         )
-                    )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
@@ -218,23 +225,23 @@ fun Project33(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (number.toIntOrNull() != null) {
-                                    var x = 1
-                                    var left = 10
-                                    var addition = 0
-                                    while (left != 0) {
-                                        if (x == 10) {
-                                            val average = addition/10
-                                            outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
-                                        } else {
-                                            val left = 11 - x
-                                            addition += number.toInt()
-                                            outcome = "Missing $left number/s to add"
-                                        }
+                                    if (x != 10) {
+                                        left--
+                                        outcome = "$left number/s left"
+                                        addition += number.toInt()
+                                        x++
+                                    } else {
+                                        addition += number.toInt()
+                                        val average = addition / 10
+                                        outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
+                                        x = 1
+                                        left = 10
+                                        addition = 0
                                     }
                                 } else {
                                     outcome = "Introduce an integer"
                                 }
-                                number = TextFieldValue(" ").toString()
+                                number = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(

@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -32,6 +33,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -39,11 +41,276 @@ import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
 import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
-import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project34(navController: NavHostController) {
+    val configuration = LocalConfiguration.current
+    var profile by remember { mutableStateOf("") }
+    var pieces by remember { mutableStateOf("") }
+    var outcome by remember { mutableStateOf("") }
+    var x by remember { mutableStateOf(1) }
+    var addition by remember { mutableStateOf(0) }
+    var left by remember { mutableStateOf(10) }
+    when (configuration.orientation) {
+        Configuration.ORIENTATION_LANDSCAPE -> {
+            Box(Modifier.fillMaxSize()) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .verticalScroll(
+                            rememberScrollState()
+                        ),
+                    verticalArrangement = Arrangement.Top,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 10.dp)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "Project 33",
+                            textAlign = TextAlign.Center,
+                            fontSize = 30.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 7.dp)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "Enter ten integers to find out what is their sum and their average",
+                            textAlign = TextAlign.Center,
+                        )
+                    }
+                    OutlinedTextField(
+                        value = pieces,
+                        onValueChange = { pieces = it },
+                        label = {
+                            Text("Number of pieces")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyBrown
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
+                    )
+                    OutlinedTextField(
+                        value = profile,
+                        onValueChange = { profile = it },
+                        label = {
+                            Text("Number")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyBrown
+                        )
+                    )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Button(
+                            onClick = {
+                                if (profile.toIntOrNull() != null) {
+                                    if (x != 10) {
+                                        left--
+                                        outcome = "$left number/s left"
+                                        addition += profile.toInt()
+                                        x++
+                                    } else {
+                                        addition += profile.toInt()
+                                        val average = addition / 10
+                                        outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
+                                        x = 1
+                                        left = 10
+                                        addition = 0
+                                    }
+                                } else {
+                                    outcome = "Introduce an integer"
+                                }
+                                profile = ""
+                            },
+                            modifier = Modifier.padding(10.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBrown, contentColor = MyWhite
+                            )
+                        ) {
+                            Text(text = "Add")
+                        }
+                    }
+                    Text(
+                        text = outcome,
+                        modifier = Modifier.padding(bottom = 20.dp),
+                        color = MyBlack
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.popBackStack() },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomStart),
+                    containerColor = MyDarkBrown,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null
+                    )
+                }
+            }
+        }
 
+        else -> {
+            Box(modifier = Modifier.fillMaxSize()) {
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    verticalArrangement = Arrangement.Top,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 10.dp)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "Project 33",
+                            textAlign = TextAlign.Center,
+                            fontSize = 30.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 10.dp)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "Enter ten integers to find out what\nis their sum and their average",
+                            textAlign = TextAlign.Center,
+                        )
+                    }
+                    Spacer(modifier = Modifier.size(5.dp))
+                    OutlinedTextField(
+                        value = pieces,
+                        onValueChange = { pieces = it },
+                        label = {
+                            Text("Number of pieces")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyBrown
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
+                    )
+                    Spacer(modifier = Modifier.size(5.dp))
+                    OutlinedTextField(
+                        value = profile,
+                        onValueChange = { profile = it },
+                        label = {
+                            Text("Length of profile")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyBrown
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
+                    )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Button(
+                            onClick = {
+                                if (profile.toFloatOrNull() != null && pieces.toIntOrNull() != null) {
+                                    if (x != pieces.toInt()) {
+                                        left--
+                                        outcome = "$left number/s left"
+                                        addition += profile.toInt()
+                                        x++
+                                    } else {
+                                        addition += profile.toInt()
+                                        val average = addition / 10
+                                        outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
+                                        x = 1
+                                        left = 10
+                                        addition = 0
+                                    }
+                                } else {
+                                    outcome = "Introduce correct parameters"
+                                }
+                                profile = ""
+                            },
+                            modifier = Modifier.padding(10.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBrown, contentColor = MyWhite
+                            )
+                        ) {
+                            Text(text = "Add")
+                        }
+                    }
+                    Text(
+                        text = outcome,
+                        modifier = Modifier.padding(10.dp),
+                        color = MyBlack
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.popBackStack() },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomStart),
+                    containerColor = MyDarkBrown,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null
+                    )
+                }
+            }
+        }
+    }
 }

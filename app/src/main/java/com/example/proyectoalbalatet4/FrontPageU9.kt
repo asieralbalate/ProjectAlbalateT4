@@ -92,7 +92,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P34: ")
+                            Text(text = "P34: Profiles")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
 
@@ -249,7 +249,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P34: ")
+                            Text(text = "P34: Profiles")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
