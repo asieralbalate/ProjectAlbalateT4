@@ -59,7 +59,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P31:")
+                            Text(text = "P31: 100")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
 
@@ -70,7 +70,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P32:")
+                            Text(text = "P32: 1 to ?")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -80,8 +80,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P33: ",
-                                fontSize = 11.sp)
+                            Text(text = "P33: Sum / Avg")
                         }
                     }
                     Spacer(modifier = Modifier.height(10.dp))
@@ -214,7 +213,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P31: ")
+                            Text(text = "P31: 100")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -226,7 +225,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P32: ")
+                            Text(text = "P32: 1 to ?")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -238,8 +237,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P33: ",
-                                fontSize = 11.sp)
+                            Text(text = "P33: Sum / Avg")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
