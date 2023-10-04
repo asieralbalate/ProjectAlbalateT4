@@ -51,8 +51,7 @@ fun Project34(navController: NavHostController) {
     var pieces by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     var x by remember { mutableStateOf(1) }
-    var addition by remember { mutableStateOf(0) }
-    var left by remember { mutableStateOf(10) }
+    var validPieces by remember { mutableStateOf(0) }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -73,7 +72,7 @@ fun Project34(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 33",
+                            text = "Project 34",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -87,7 +86,7 @@ fun Project34(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter ten integers to find out what is their sum and their average",
+                            text = "Enter the number of parts and the profile\nsize to check if they are valid",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -133,31 +132,33 @@ fun Project34(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (profile.toIntOrNull() != null) {
-                                    if (x != 10) {
-                                        left--
-                                        outcome = "$left number/s left"
-                                        addition += profile.toInt()
+                                if (profile.toFloatOrNull() != null && pieces.toIntOrNull() != null) {
+                                    if (x < pieces.toInt()) {
+                                        val left = pieces.toInt() - x
+                                        outcome = "$left piece/s left"
+                                        if (profile.toFloat() in 1.20..1.30){
+                                            validPieces++
+                                        }
                                         x++
                                     } else {
-                                        addition += profile.toInt()
-                                        val average = addition / 10
-                                        outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
+                                        outcome = "Valid parts: $validPieces"
                                         x = 1
-                                        left = 10
-                                        addition = 0
+                                        validPieces = 0
                                     }
+                                    profile = ""
                                 } else {
-                                    outcome = "Introduce an integer"
+                                    outcome = "Introduce correct parameters"
+                                    profile = ""
+                                    pieces = ""
                                 }
-                                profile = ""
+
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "Add")
+                            Text(text = "Check")
                         }
                     }
                     Text(
@@ -198,7 +199,7 @@ fun Project34(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 33",
+                            text = "Project 34",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -212,7 +213,7 @@ fun Project34(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter ten integers to find out what\nis their sum and their average",
+                            text = "Enter the number of parts and the profile\nsize to check if they are valid",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -241,7 +242,7 @@ fun Project34(navController: NavHostController) {
                         value = profile,
                         onValueChange = { profile = it },
                         label = {
-                            Text("Length of profile")
+                            Text("Length of the profile")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -264,30 +265,32 @@ fun Project34(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (profile.toFloatOrNull() != null && pieces.toIntOrNull() != null) {
-                                    if (x != pieces.toInt()) {
-                                        left--
-                                        outcome = "$left number/s left"
-                                        addition += profile.toInt()
+                                    if (x < pieces.toInt()) {
+                                        val left = pieces.toInt() - x
+                                        outcome = "$left piece/s left"
+                                        if (profile.toFloat() in 1.20..1.30){
+                                            validPieces++
+                                        }
                                         x++
                                     } else {
-                                        addition += profile.toInt()
-                                        val average = addition / 10
-                                        outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
+                                        outcome = "Valid parts: $validPieces"
                                         x = 1
-                                        left = 10
-                                        addition = 0
+                                        validPieces = 0
                                     }
+                                    profile = ""
                                 } else {
                                     outcome = "Introduce correct parameters"
+                                    profile = ""
+                                    pieces = ""
                                 }
-                                profile = ""
+
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "Add")
+                            Text(text = "Check")
                         }
                     }
                     Text(

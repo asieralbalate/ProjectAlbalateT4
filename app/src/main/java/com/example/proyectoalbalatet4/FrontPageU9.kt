@@ -103,7 +103,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P35: ")
+                            Text(text = "P35: 10 Grades")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -113,7 +113,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P36: ")
+                            Text(text = "P36: Heights")
                         }
                     }
                     Spacer(modifier = Modifier.height(10.dp))
@@ -125,7 +125,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P37: ")
+                            Text(text = "P37: Wages")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
 
@@ -136,7 +136,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P38: ")
+                            Text(text = "P38: Series")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -261,7 +261,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P35: ")
+                            Text(text = "P35: 10 Grades")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -273,7 +273,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P36: ")
+                            Text(text = "P36: Heights")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -285,7 +285,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P37: ")
+                            Text(text = "P37: Wages")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -297,7 +297,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P38: ")
+                            Text(text = "P38: Series")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
