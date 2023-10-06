@@ -30,8 +30,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -43,7 +46,7 @@ import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class)
 @Composable
 fun Project34(navController: NavHostController) {
     val configuration = LocalConfiguration.current
@@ -51,7 +54,9 @@ fun Project34(navController: NavHostController) {
     var pieces by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     var x by remember { mutableStateOf(1) }
-    var validPieces by remember { mutableStateOf(0) }
+    var addition by remember { mutableStateOf(0) }
+    var left by remember { mutableStateOf(10) }
+    val keyboardController = LocalSoftwareKeyboardController.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -72,7 +77,7 @@ fun Project34(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 34",
+                            text = "Project 33",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -86,7 +91,7 @@ fun Project34(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter the number of parts and the profile\nsize to check if they are valid",
+                            text = "Enter ten integers to find out what is their sum and their average",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -132,33 +137,31 @@ fun Project34(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (profile.toFloatOrNull() != null && pieces.toIntOrNull() != null) {
-                                    if (x < pieces.toInt()) {
-                                        val left = pieces.toInt() - x
-                                        outcome = "$left piece/s left"
-                                        if (profile.toFloat() in 1.20..1.30){
-                                            validPieces++
-                                        }
+                                if (profile.toIntOrNull() != null) {
+                                    if (x != 10) {
+                                        left--
+                                        outcome = "$left number/s left"
+                                        addition += profile.toInt()
                                         x++
                                     } else {
-                                        outcome = "Valid parts: $validPieces"
+                                        addition += profile.toInt()
+                                        val average = addition / 10
+                                        outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
                                         x = 1
-                                        validPieces = 0
+                                        left = 10
+                                        addition = 0
                                     }
-                                    profile = ""
                                 } else {
-                                    outcome = "Introduce correct parameters"
-                                    profile = ""
-                                    pieces = ""
+                                    outcome = "Introduce an integer"
                                 }
-
+                                profile = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "Check")
+                            Text(text = "Add")
                         }
                     }
                     Text(
@@ -199,7 +202,7 @@ fun Project34(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 34",
+                            text = "Project 33",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -213,7 +216,7 @@ fun Project34(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter the number of parts and the profile\nsize to check if they are valid",
+                            text = "Enter ten integers to find out what\nis their sum and their average",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -242,7 +245,7 @@ fun Project34(navController: NavHostController) {
                         value = profile,
                         onValueChange = { profile = it },
                         label = {
-                            Text("Length of the profile")
+                            Text("Length of profile")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -265,32 +268,31 @@ fun Project34(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (profile.toFloatOrNull() != null && pieces.toIntOrNull() != null) {
-                                    if (x < pieces.toInt()) {
-                                        val left = pieces.toInt() - x
-                                        outcome = "$left piece/s left"
-                                        if (profile.toFloat() in 1.20..1.30){
-                                            validPieces++
-                                        }
+                                    if (x != pieces.toInt()) {
+                                        left--
+                                        outcome = "$left number/s left"
+                                        addition += profile.toInt()
                                         x++
                                     } else {
-                                        outcome = "Valid parts: $validPieces"
+                                        addition += profile.toInt()
+                                        val average = addition / 10
+                                        outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
                                         x = 1
-                                        validPieces = 0
+                                        left = 10
+                                        addition = 0
                                     }
-                                    profile = ""
                                 } else {
                                     outcome = "Introduce correct parameters"
-                                    profile = ""
-                                    pieces = ""
                                 }
-
+                                profile = ""
+                                keyboardController?.hide()
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "Check")
+                            Text(text = "Add")
                         }
                     }
                     Text(

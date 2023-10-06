@@ -189,7 +189,9 @@ fun Project41(navController: NavHostController) {
         }
 
         else -> {
-            Box(modifier = Modifier.fillMaxSize()) {
+            Box(modifier = Modifier.fillMaxSize().verticalScroll(
+                rememberScrollState()
+            )) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.Top,

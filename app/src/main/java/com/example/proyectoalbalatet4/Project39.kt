@@ -53,9 +53,7 @@ fun Project39(navController: NavHostController) {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .verticalScroll(
-                            rememberScrollState()
-                        ),
+                        .verticalScroll(rememberScrollState()),
                     verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -92,15 +90,17 @@ fun Project39(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
+                                outcome = ""
                                 number = 8
                                 while (number<=500){
                                     if (number == 496) {
-                                        outcome = "$number."
+                                        outcome += "$number."
                                     } else {
-                                        outcome = "$number - "
+                                        outcome += "$number - "
                                     }
                                     number += 8
                                 }
+
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -172,15 +172,17 @@ fun Project39(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
+                                outcome = ""
                                 number = 8
-                                while (number<=500){
+                                while (number <=500){
                                     if (number == 496) {
-                                        outcome = "$number."
+                                        outcome += "$number."
                                     } else {
-                                        outcome = "$number - "
+                                        outcome += "$number - "
                                     }
                                     number += 8
                                 }
+
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
