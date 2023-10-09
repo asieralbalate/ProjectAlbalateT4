@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.FloatingActionButton
@@ -28,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
+import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @Composable
@@ -83,20 +86,49 @@ fun FrontPageU6(navController: NavHostController) {
                     }
                     Spacer(modifier = Modifier.height(10.dp))
                 }
-                FloatingActionButton(
-                    onClick = { navController.popBackStack() },
-                    modifier = Modifier
-                        .padding(16.dp)
-                        .size(46.dp)
-                        .align(Alignment.BottomStart),
-                    containerColor = MyDarkBrown,
-                    contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null
-                    )
+                Box(modifier = Modifier.fillMaxSize()) {
+                    FloatingActionButton(
+                        onClick = { navController.navigate("FrontPageU5") },
+                        modifier = Modifier
+                            .padding(16.dp)
+                            .size(46.dp)
+                            .align(Alignment.TopStart),
+                        containerColor = MyBrown,
+                        contentColor = MyWhite
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.ArrowBack,
+                            contentDescription = null
+                        )
+                    }
+                    FloatingActionButton(
+                        onClick = { navController.navigate("FrontPage") },
+                        modifier = Modifier
+                            .padding(16.dp)
+                            .size(46.dp)
+                            .align(Alignment.BottomStart),
+                        containerColor = MyDarkBrown,
+                        contentColor = MyWhite
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.KeyboardArrowUp,
+                            contentDescription = null
+                        )
+                    }
+                    FloatingActionButton(
+                        onClick = { navController.navigate("FrontPageU7") },
+                        modifier = Modifier
+                            .padding(16.dp)
+                            .size(46.dp)
+                            .align(Alignment.TopEnd),
+                        containerColor = MyBrown,
+                        contentColor = MyWhite
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.ArrowForward,
+                            contentDescription = null
+                        )
+                    }
                 }
             }
         }
@@ -154,18 +186,48 @@ fun FrontPageU6(navController: NavHostController) {
 
                     }
                 }
+
+            }
+            Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.popBackStack() },
+                    onClick = { navController.navigate("FrontPageU5") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyDarkBrown,
+                    containerColor = MyBrown,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPage") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomCenter),
+                    containerColor = MyDarkBrown,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.KeyboardArrowUp,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPageU7") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomEnd),
+                    containerColor = MyBrown,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
                         contentDescription = null
                     )
                 }

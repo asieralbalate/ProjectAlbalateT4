@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -35,6 +37,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
+import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
@@ -127,18 +130,48 @@ fun Project6(navController: NavHostController) {
                     )
 
                 }
+
+            }
+            Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.popBackStack() },
+                    onClick = { navController.navigate("Project5") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.TopStart),
+                    containerColor = MyGrey,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPageU4") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
-                        imageVector = Icons.Default.ArrowBack,
+                        imageVector = Icons.Default.KeyboardArrowUp,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("Project7") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.TopEnd),
+                    containerColor = MyGrey,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
                         contentDescription = null
                     )
                 }
@@ -225,18 +258,48 @@ fun Project6(navController: NavHostController) {
                     )
 
                 }
+
+            }
+            Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.popBackStack() },
+                    onClick = { navController.navigate("Project5") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyDarkBrown,
+                    containerColor = MyGrey,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPageU4") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomCenter),
+                    containerColor = MyDarkBrown,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.KeyboardArrowUp,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("Project7") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomEnd),
+                    containerColor = MyGrey,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
                         contentDescription = null
                     )
                 }

@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -27,6 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
@@ -111,18 +114,34 @@ fun FrontPageU4(navController: NavHostController) {
                         }
                     }
                 }
+
+            }
+            Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.popBackStack() },
+                    onClick = { navController.navigate("FrontPage") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
-                        imageVector = Icons.Default.ArrowBack,
+                        imageVector = Icons.Default.KeyboardArrowUp,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPageU5") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.TopEnd),
+                    containerColor = MyBrown,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
                         contentDescription = null
                     )
                 }
@@ -203,18 +222,34 @@ fun FrontPageU4(navController: NavHostController) {
                         }
                     }
                 }
+
+            }
+            Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.popBackStack() },
+                    onClick = { navController.navigate("FrontPage") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
-                        .align(Alignment.BottomStart),
+                        .align(Alignment.BottomCenter),
                     containerColor = MyDarkBrown,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
-                        imageVector = Icons.Default.ArrowBack,
+                        imageVector = Icons.Default.KeyboardArrowUp,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPageU5") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomEnd),
+                    containerColor = MyBrown,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
                         contentDescription = null
                     )
                 }

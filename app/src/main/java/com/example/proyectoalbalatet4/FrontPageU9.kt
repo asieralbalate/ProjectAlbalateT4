@@ -15,6 +15,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -175,27 +177,58 @@ fun FrontPageU9(navController: NavHostController) {
                         }
                     }
                 }
+            }
+            Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.popBackStack() },
+                    onClick = { navController.navigate("FrontPageU8") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
-                        .align(Alignment.BottomStart),
-                    containerColor = MyDarkBrown,
+                        .align(Alignment.TopStart),
+                    containerColor = MyGrey,
                     contentColor = MyWhite
-
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         contentDescription = null
                     )
                 }
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPage") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomStart),
+                    containerColor = MyDarkBrown,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.KeyboardArrowUp,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPageU9") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.TopEnd),
+                    containerColor = MyBrown,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
+                        contentDescription = null
+                    )
+                }
             }
         }
         else -> {
-            Box(modifier = Modifier.fillMaxSize().verticalScroll(
-                rememberScrollState()
-            )) {
+            Box(modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(
+                    rememberScrollState()
+                )) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.Center,
@@ -340,19 +373,50 @@ fun FrontPageU9(navController: NavHostController) {
                             Text(text = "P41: Pairs")
                         }
                     }
+                    Spacer(modifier = Modifier.height(60.dp))
                 }
+
+            }
+            Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.popBackStack() },
+                    onClick = { navController.navigate("FrontPageU8") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyDarkBrown,
+                    containerColor = MyGrey,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPage") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomCenter),
+                    containerColor = MyDarkBrown,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.KeyboardArrowUp,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPageU9") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomEnd),
+                    containerColor = MyBrown,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
                         contentDescription = null
                     )
                 }

@@ -157,7 +157,10 @@ fun Project32(navController: NavHostController) {
         else -> {
             Box(modifier = Modifier.fillMaxSize()) {
                 Column(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier.fillMaxSize()
+                        .verticalScroll(
+                        rememberScrollState()
+                    ),
                     verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
