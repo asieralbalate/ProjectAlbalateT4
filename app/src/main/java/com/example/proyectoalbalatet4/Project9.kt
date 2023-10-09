@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -144,18 +143,17 @@ fun Project9(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
-                                    var addition: Float =
+                                outcome = if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
+                                    val addition: Float =
                                         firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat()
-                                    var average: Float =
+                                    val average: Float =
                                         (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat()) / 3
                                     val formattedAdditionResult = String.format("%.2f", addition)
                                     val formattedAveragenResult = String.format("%.2f", average)
-                                    outcome =
-                                        "The addition of $firstNumber and $secondNumber and $thirdNumber equals: $formattedAdditionResult \n" +
-                                                "The arithmetic average is: $formattedAveragenResult"
+                                    "The addition of $firstNumber and $secondNumber and $thirdNumber equals: $formattedAdditionResult \n" +
+                                            "The arithmetic average is: $formattedAveragenResult"
                                 } else {
-                                    outcome = "Introduce all the numbers please"
+                                    "Introduce all the numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -297,18 +295,17 @@ fun Project9(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
-                                    var addition: Float =
+                                outcome = if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
+                                    val addition: Float =
                                         firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat()
-                                    var average: Float =
+                                    val average: Float =
                                         (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat()) / 3
                                     val formattedAdditionResult = String.format("%.2f", addition)
                                     val formattedAveragenResult = String.format("%.2f", average)
-                                    outcome =
-                                        "The addition of $firstNumber and $secondNumber and $thirdNumber equals: $formattedAdditionResult \n" +
-                                                "The arithmetic average is: $formattedAveragenResult"
+                                    "The addition of $firstNumber and $secondNumber and $thirdNumber equals: $formattedAdditionResult \n" +
+                                            "The arithmetic average is: $formattedAveragenResult"
                                 } else {
-                                    outcome = "Introduce all the numbers please"
+                                    "Introduce all the numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

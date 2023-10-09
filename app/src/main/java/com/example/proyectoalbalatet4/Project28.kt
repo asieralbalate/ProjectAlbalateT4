@@ -39,7 +39,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
-import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
@@ -145,16 +144,16 @@ fun Project28(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                     && secondNumber.toFloatOrNull() != null
                                     && thirdNumber.toFloatOrNull() != null
                                 ) {
 
-                                    outcome = if (firstNumber.toFloat() < 10 || secondNumber.toFloat() < 10 || thirdNumber.toFloat() < 10) {
+                                    if (firstNumber.toFloat() < 10 || secondNumber.toFloat() < 10 || thirdNumber.toFloat() < 10) {
                                         "Some of the numbers are less than ten."
                                     } else {"No number is less than ten"}
                                 } else {
-                                    outcome = "Introduce all the numbers please"
+                                    "Introduce all the numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -300,16 +299,16 @@ fun Project28(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                     && secondNumber.toFloatOrNull() != null
                                     && thirdNumber.toFloatOrNull() != null
                                 ) {
 
-                                    outcome = if (firstNumber.toFloat() < 10 || secondNumber.toFloat() < 10 || thirdNumber.toFloat() < 10) {
+                                    if (firstNumber.toFloat() < 10 || secondNumber.toFloat() < 10 || thirdNumber.toFloat() < 10) {
                                         "Some of the numbers are less than ten."
                                     } else {"No number is less than ten"}
                                 } else {
-                                    outcome = "Introduce all the numbers please"
+                                    "Introduce all the numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

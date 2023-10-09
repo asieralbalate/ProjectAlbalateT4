@@ -11,11 +11,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
@@ -25,7 +22,6 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -41,7 +37,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
-import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
@@ -126,14 +121,13 @@ fun Project5(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
-                                    var result: Float =
+                                outcome = if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
+                                    val result: Float =
                                         firstNumber.toFloat() + secondNumber.toFloat()
                                     val formattedResult = String.format("%.2f", result)
-                                    outcome =
-                                        "The addition of $firstNumber and $secondNumber equals: $formattedResult"
+                                    "The addition of $firstNumber and $secondNumber equals: $formattedResult"
                                 } else {
-                                    outcome = "Introduce numbers please"
+                                    "Introduce numbers please"
                                 }
                             },
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -145,14 +139,13 @@ fun Project5(navController: NavHostController) {
                         Spacer(modifier = Modifier.width(30.dp))
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
-                                    var result: Float =
+                                outcome = if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
+                                    val result: Float =
                                         firstNumber.toFloat() * secondNumber.toFloat()
                                     val formattedResult = String.format("%.2f", result)
-                                    outcome =
-                                        "The multiplication of $firstNumber and $secondNumber equals: $formattedResult"
+                                    "The multiplication of $firstNumber and $secondNumber equals: $formattedResult"
                                 } else {
-                                    outcome = "Introduce numbers please"
+                                    "Introduce numbers please"
                                 }
                             },
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -275,14 +268,13 @@ fun Project5(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
-                                    var result: Float =
+                                outcome = if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
+                                    val result: Float =
                                         firstNumber.toFloat() + secondNumber.toFloat()
                                     val formattedResult = String.format("%.2f", result)
-                                    outcome =
-                                        "The addition of $firstNumber and $secondNumber equals: $formattedResult"
+                                    "The addition of $firstNumber and $secondNumber equals: $formattedResult"
                                 } else {
-                                    outcome = "Introduce numbers please"
+                                    "Introduce numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -294,14 +286,13 @@ fun Project5(navController: NavHostController) {
                         }
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
-                                    var result: Float =
+                                outcome = if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
+                                    val result: Float =
                                         firstNumber.toFloat() * secondNumber.toFloat()
                                     val formattedResult = String.format("%.2f", result)
-                                    outcome =
-                                        "The multiplication of $firstNumber and $secondNumber equals: $formattedResult"
+                                    "The multiplication of $firstNumber and $secondNumber equals: $formattedResult"
                                 } else {
-                                    outcome = "Introduce numbers please"
+                                    "Introduce numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

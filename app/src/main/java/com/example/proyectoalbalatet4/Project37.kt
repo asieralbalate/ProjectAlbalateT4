@@ -50,7 +50,7 @@ import com.example.proyectoalbalatet4.ui.theme.MyWhite
 fun Project37(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var salary by remember { mutableStateOf("") }
-    var numberEmpl by remember { mutableStateOf("") }
+    var numberEmployees by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     var x by remember { mutableStateOf(1) }
     var highSalary by remember { mutableStateOf(0) }
@@ -97,8 +97,8 @@ fun Project37(navController: NavHostController) {
                         )
                     }
                     OutlinedTextField(
-                        value = numberEmpl,
-                        onValueChange = { numberEmpl = it },
+                        value = numberEmployees,
+                        onValueChange = { numberEmployees = it },
                         label = {
                             Text("Number of employees")
                         },
@@ -138,9 +138,9 @@ fun Project37(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (salary.toFloatOrNull() != null && numberEmpl.toIntOrNull() != null && salary.toFloat() >= 100.0 && salary.toFloat() <= 500.0) {
-                                    if (x < numberEmpl.toInt()) {
-                                        val left = numberEmpl.toInt() - x
+                                if (salary.toFloatOrNull() != null && numberEmployees.toIntOrNull() != null && salary.toFloat() >= 100.0 && salary.toFloat() <= 500.0) {
+                                    if (x < numberEmployees.toInt()) {
+                                        val left = numberEmployees.toInt() - x
                                         outcome = "$left salary/s left"
                                         if(salary.toFloat() <= 300) {
                                             lowSalary++
@@ -168,7 +168,7 @@ fun Project37(navController: NavHostController) {
                                 } else {
                                     outcome = "Introduce correct parameters"
                                     salary = ""
-                                    numberEmpl = ""
+                                    numberEmployees = ""
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -260,8 +260,8 @@ fun Project37(navController: NavHostController) {
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = numberEmpl,
-                        onValueChange = { numberEmpl = it },
+                        value = numberEmployees,
+                        onValueChange = { numberEmployees = it },
                         label = {
                             Text("Number of employees")
                         },
@@ -305,9 +305,9 @@ fun Project37(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (salary.toFloatOrNull() != null && numberEmpl.toIntOrNull() != null && salary.toFloat() >= 100.0 && salary.toFloat() <= 500.0) {
-                                    if (x < numberEmpl.toInt()) {
-                                        val left = numberEmpl.toInt() - x
+                                if (salary.toFloatOrNull() != null && numberEmployees.toIntOrNull() != null && salary.toFloat() >= 100.0 && salary.toFloat() <= 500.0) {
+                                    if (x < numberEmployees.toInt()) {
+                                        val left = numberEmployees.toInt() - x
                                         outcome = "$left salary/s left"
                                         if(salary.toFloat() <= 300) {
                                             lowSalary++
@@ -335,7 +335,7 @@ fun Project37(navController: NavHostController) {
                                 } else {
                                     outcome = "Introduce correct parameters"
                                     salary = ""
-                                    numberEmpl = ""
+                                    numberEmployees = ""
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

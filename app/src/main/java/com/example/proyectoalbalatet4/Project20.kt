@@ -110,18 +110,17 @@ fun Project20(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                 ) {
-                                    outcome = if(firstNumber.toFloat() > 0) {
+                                    if(firstNumber.toFloat() > 0) {
                                         "The number is positive"
-                                    }
-                                    else if (firstNumber.toFloat() < 0){
+                                    } else if (firstNumber.toFloat() < 0){
                                         "The number is negative"
                                     } else {
                                         "The number is 0"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -233,18 +232,17 @@ fun Project20(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                 ) {
-                                    outcome = if(firstNumber.toFloat() > 0) {
+                                    if(firstNumber.toFloat() > 0) {
                                         "The number is positive"
-                                    }
-                                    else if (firstNumber.toFloat() < 0){
+                                    } else if (firstNumber.toFloat() < 0){
                                         "The number is negative"
                                     } else {
                                         "The number is 0"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

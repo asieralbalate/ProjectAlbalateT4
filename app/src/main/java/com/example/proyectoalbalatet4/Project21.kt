@@ -110,12 +110,11 @@ fun Project21(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                 ) {
-                                    outcome = if(firstNumber.toFloat() < 10 && firstNumber.toFloat() > -10) {
+                                    if(firstNumber.toFloat() < 10 && firstNumber.toFloat() > -10) {
                                         "The number has a digit"
-                                    }
-                                    else if (firstNumber.toFloat() < 100 && firstNumber.toFloat() > -100){
+                                    } else if (firstNumber.toFloat() < 100 && firstNumber.toFloat() > -100){
                                         "The number has two digits"
                                     } else if (firstNumber.toFloat() < 1000 && firstNumber.toFloat() > -1000){
                                         "The number has three digits"
@@ -123,7 +122,7 @@ fun Project21(navController: NavHostController) {
                                         "The number is out of the range"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -235,12 +234,11 @@ fun Project21(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                 ) {
-                                    outcome = if(firstNumber.toFloat() < 10 && firstNumber.toFloat() > -10) {
+                                    if(firstNumber.toFloat() < 10 && firstNumber.toFloat() > -10) {
                                         "The number has a digit"
-                                    }
-                                    else if (firstNumber.toFloat() < 100 && firstNumber.toFloat() > -100){
+                                    } else if (firstNumber.toFloat() < 100 && firstNumber.toFloat() > -100){
                                         "The number has two digits"
                                     } else if (firstNumber.toFloat() < 1000 && firstNumber.toFloat() > -1000){
                                         "The number has three digits"
@@ -248,7 +246,7 @@ fun Project21(navController: NavHostController) {
                                         "The number is out of the range"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

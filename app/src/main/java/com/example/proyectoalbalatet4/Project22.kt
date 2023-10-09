@@ -132,7 +132,7 @@ fun Project22(navController: NavHostController) {
                                     && correctAnswers.toFloatOrNull() != null
                                 ) {
                                     val percentage = correctAnswers.toFloat() * 100 / totalQuestions.toFloat()
-                                    outcome = if (percentage <= 100 && percentage >= 0) {
+                                    outcome = if (percentage in 0.0..100.0) {
                                         if (percentage >= 90) {
                                             "MAX LEVEL!"
                                         } else {
@@ -282,7 +282,7 @@ fun Project22(navController: NavHostController) {
                                     && correctAnswers.toFloatOrNull() != null
                                 ) {
                                     val percentage = correctAnswers.toFloat() * 100 / totalQuestions.toFloat()
-                                    outcome = if (percentage <= 100 && percentage >= 0) {
+                                    outcome = if (percentage in 0.0..100.0) {
                                         if (percentage >= 90) {
                                             "MAX LEVEL!"
                                         } else {

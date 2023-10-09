@@ -110,18 +110,18 @@ fun Project17(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                 ) {
                                     if (firstNumber.toFloat() in 1.0..99.0){
                                         val number = firstNumber.toFloat()
                                         val numberFormattedResult = String.format("%.2f", number)
                                         val digits = if (number < 10) {1} else {2}
-                                        outcome = "The number $numberFormattedResult has $digits digit"
+                                        "The number $numberFormattedResult has $digits digit"
                                     } else {
-                                        outcome = "Number out of range"
+                                        "Number out of range"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -233,18 +233,18 @@ fun Project17(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                 ) {
                                     if (firstNumber.toFloat() in 1.0..99.0){
                                         val number = firstNumber.toFloat()
                                         val numberFormattedResult = String.format("%.2f", number)
                                         val digits = if (number < 10) {1} else {2}
-                                        outcome = "The number $numberFormattedResult has $digits digit"
+                                        "The number $numberFormattedResult has $digits digit"
                                     } else {
-                                        outcome = "Number out of range"
+                                        "Number out of range"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

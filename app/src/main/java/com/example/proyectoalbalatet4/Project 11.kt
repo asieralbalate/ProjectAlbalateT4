@@ -39,7 +39,6 @@ import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
 import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
-import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -125,7 +124,7 @@ fun Project11(navController: NavHostController) {
                                 if (firstNumber.toFloatOrNull() != null
                                     && secondNumber.toFloatOrNull() != null
                                 ) {
-                                    var result: Float
+                                    val result: Float
                                     if (firstNumber.toFloat() != secondNumber.toFloat()) {
                                         if (firstNumber.toFloat() > secondNumber.toFloat()) {
                                             result = firstNumber.toFloat()

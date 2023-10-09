@@ -148,16 +148,15 @@ fun Project25(navController: NavHostController) {
                                     && month.toIntOrNull() != null
                                     && year.toIntOrNull() != null
                                 ) {
-                                    if (day.toInt() <= 31 && day.toInt() > 0 &&
+                                    outcome = if (day.toInt() in 1..31 &&
                                         month.toInt() > 0 && month.toInt() <= 12) {
-                                        outcome =
-                                            if (month.toInt() == 12 && day.toInt() == 25 ) {
-                                                "Christmas"
-                                            } else {
-                                                "It hurts, it's not Christmas"
-                                            }
+                                        if (month.toInt() == 12 && day.toInt() == 25 ) {
+                                            "Christmas"
+                                        } else {
+                                            "It hurts, it's not Christmas"
+                                        }
                                     } else {
-                                        outcome = "Wrong date"
+                                        "Wrong date"
                                     }
                                 } else {
                                     outcome = "Introduce all the numbers please"
@@ -310,18 +309,17 @@ fun Project25(navController: NavHostController) {
                                     && month.toIntOrNull() != null
                                     && year.toIntOrNull() != null
                                 ) {
-                                    if (day.toInt() <= 31 && day.toInt() > 0 &&
+                                    outcome = if (day.toInt() in 1..31 &&
                                         month.toInt() > 0 && month.toInt() <= 12) {
 
 
-                                        outcome =
-                                            if (month.toInt() == 12 && day.toInt() == 25 ) {
-                                                "Christmas"
-                                            } else {
-                                                "It hurts, it's not Christmas"
-                                            }
+                                        if (month.toInt() == 12 && day.toInt() == 25 ) {
+                                            "Christmas"
+                                        } else {
+                                            "It hurts, it's not Christmas"
+                                        }
                                     } else {
-                                        outcome = "Wrong date"
+                                        "Wrong date"
                                     }
                                 } else {
                                     outcome = "Introduce all the numbers please"

@@ -105,15 +105,15 @@ fun Project10(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (salary.toFloatOrNull() != null) {
-                                    var result: Float = salary.toFloat()
+                                outcome = if (salary.toFloatOrNull() != null) {
+                                    val result: Float = salary.toFloat()
                                     if (result > 3000.00) {
-                                        outcome = "You have to pay taxes"
+                                        "You have to pay taxes"
                                     } else {
-                                        outcome = "You don't have to pay taxes"
+                                        "You don't have to pay taxes"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -226,15 +226,15 @@ fun Project10(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (salary.toFloatOrNull() != null) {
-                                    var result: Float = salary.toFloat()
+                                outcome = if (salary.toFloatOrNull() != null) {
+                                    val result: Float = salary.toFloat()
                                     if (result > 3000.00) {
-                                        outcome = "You have to pay taxes"
+                                        "You have to pay taxes"
                                     } else {
-                                        outcome = "You don't have to pay taxes"
+                                        "You don't have to pay taxes"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

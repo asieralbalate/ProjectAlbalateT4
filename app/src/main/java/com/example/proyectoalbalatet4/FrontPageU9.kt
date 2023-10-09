@@ -17,7 +17,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.KeyboardArrowUp
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.FloatingActionButton
@@ -208,7 +207,7 @@ fun FrontPageU9(navController: NavHostController) {
                     )
                 }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU9") },
+                    onClick = { navController.navigate("FrontPageU10") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -407,7 +406,7 @@ fun FrontPageU9(navController: NavHostController) {
                     )
                 }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU9") },
+                    onClick = { navController.navigate("FrontPageU10") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)

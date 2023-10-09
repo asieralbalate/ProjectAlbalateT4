@@ -41,7 +41,6 @@ import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
 import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
-import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -116,10 +115,10 @@ fun Project32(navController: NavHostController) {
                                     outcome = ""
                                     var x = 1
                                     while (x <= number.toInt()) {
-                                        if (x == number.toInt()) {
-                                            outcome += "$x."
+                                        outcome += if (x == number.toInt()) {
+                                            "$x."
                                         } else {
-                                            outcome += "$x, "
+                                            "$x, "
                                         }
                                         x++
                                     }
@@ -242,10 +241,10 @@ fun Project32(navController: NavHostController) {
                                     outcome = ""
                                     var x = 1
                                     while (x <= number.toInt()) {
-                                        if (x == number.toInt()) {
-                                            outcome += "$x."
+                                        outcome += if (x == number.toInt()) {
+                                            "$x."
                                         } else {
-                                            outcome += "$x, "
+                                            "$x, "
                                         }
                                         x++
                                     }

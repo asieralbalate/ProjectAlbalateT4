@@ -41,7 +41,6 @@ import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
 import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
-import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)

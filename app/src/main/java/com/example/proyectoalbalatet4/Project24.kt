@@ -39,7 +39,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
-import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
@@ -149,7 +148,7 @@ fun Project24(navController: NavHostController) {
                                     && month.toIntOrNull() != null
                                     && year.toIntOrNull() != null
                                 ) {
-                                    if (day.toInt() <= 31 && day.toInt() > 0 &&
+                                    if (day.toInt() in 1..31 &&
                                         month.toInt() > 0 && month.toInt() <= 12) {
 
 
@@ -317,7 +316,7 @@ fun Project24(navController: NavHostController) {
                                     && month.toIntOrNull() != null
                                     && year.toIntOrNull() != null
                                 ) {
-                                    if (day.toInt() <= 31 && day.toInt() > 0 &&
+                                    if (day.toInt() in 1..31 &&
                                         month.toInt() > 0 && month.toInt() <= 12) {
 
 

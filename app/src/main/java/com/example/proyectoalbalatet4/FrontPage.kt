@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -35,7 +34,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -146,20 +144,26 @@ fun FrontPage(navController: NavHostController) {
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU10")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBrown, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 10")
+                            Text(text = "U10: Do/While")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU11")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBrown, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 11")
+                            Text(text = "U11: For")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
@@ -552,7 +556,6 @@ fun FrontPage(navController: NavHostController) {
                         .align(Alignment.TopStart),
                     containerColor = MyDarkBrown,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
                         imageVector = Icons.Default.Menu,
@@ -574,7 +577,7 @@ fun FrontPage(navController: NavHostController) {
                             verticalArrangement = Arrangement.spacedBy(4.dp),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
-                            Row() {
+                            Row {
                                 Text(text = "Unit Colors")
                             }
                             Row(
@@ -753,20 +756,26 @@ fun FrontPage(navController: NavHostController) {
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU10")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBrown, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 10")
+                            Text(text = "U10: Do/While")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU11")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBrown, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 11")
+                            Text(text = "U11: For")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
@@ -1159,7 +1168,6 @@ fun FrontPage(navController: NavHostController) {
                         .align(Alignment.TopStart),
                     containerColor = MyDarkBrown,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
                         imageVector = Icons.Default.Menu,
@@ -1181,7 +1189,7 @@ fun FrontPage(navController: NavHostController) {
                             verticalArrangement = Arrangement.spacedBy(8.dp),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
-                            Row() {
+                            Row {
                                 Text(text = "Unit Colors")
                             }
                             Row(

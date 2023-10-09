@@ -61,12 +61,31 @@ class MainActivity : ComponentActivity() {
                         composable("Project39") { Project39(navController = navController) }
                         composable("Project40") { Project40(navController = navController) }
                         composable("Project41") { Project41(navController = navController) }
+                        composable("Project42") { Project42(navController = navController) }
+                        composable("Project43") { Project43(navController = navController) }
+                        composable("Project44") { Project44(navController = navController) }
+                        composable("Project45") { Project45(navController = navController) }
+                        composable("Project46") { Project46(navController = navController) }
+                        composable("Project47") { Project47(navController = navController) }
+                        composable("Project48") { Project48(navController = navController) }
+                        composable("Project49") { Project49(navController = navController) }
+                        composable("Project50") { Project50(navController = navController) }
+                        composable("Project51") { Project51(navController = navController) }
+                        composable("Project52") { Project52(navController = navController) }
+                        composable("Project53") { Project53(navController = navController) }
+                        composable("Project54") { Project54(navController = navController) }
+                        composable("Project55") { Project55(navController = navController) }
+                        composable("Project56") { Project56(navController = navController) }
+                        composable("Project57") { Project57(navController = navController) }
+                        composable("Project58") { Project58(navController = navController) }
                         composable("FrontPageU4") { FrontPageU4(navController = navController) }
                         composable("FrontPageU5") { FrontPageU5(navController = navController) }
                         composable("FrontPageU6") { FrontPageU6(navController = navController) }
                         composable("FrontPageU7") { FrontPageU7(navController = navController) }
                         composable("FrontPageU8") { FrontPageU8(navController = navController) }
                         composable("FrontPageU9") { FrontPageU9(navController = navController) }
+                        composable("FrontPageU10") { FrontPageU10(navController = navController) }
+                        composable("FrontPageU11") { FrontPageU11(navController = navController) }
                         composable("FrontPage") {
                             FrontPage(navController = navController)
                         }

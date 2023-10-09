@@ -39,7 +39,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
-import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
@@ -128,17 +127,17 @@ fun Project29(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (xValue.toFloatOrNull() != null
+                                outcome = if (xValue.toFloatOrNull() != null
                                     && yValue.toFloatOrNull() != null
                                 ) {
 
-                                    outcome = if (xValue.toFloat() > 0) {
+                                    if (xValue.toFloat() > 0) {
                                         if (yValue.toFloat() > 0) {"First quadrant"} else {"Second quadrant"}
                                     } else {
                                         if (yValue.toFloat() < 0) {"Third quadrant"} else {"Fourth quadrant"}
                                     }
                                 } else {
-                                    outcome = "Introduce all the numbers please"
+                                    "Introduce all the numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -267,17 +266,17 @@ fun Project29(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (xValue.toFloatOrNull() != null
+                                outcome = if (xValue.toFloatOrNull() != null
                                     && yValue.toFloatOrNull() != null
                                 ) {
 
-                                    outcome = if (xValue.toFloat() > 0) {
+                                    if (xValue.toFloat() > 0) {
                                         if (yValue.toFloat() > 0) {"First quadrant"} else {"Second quadrant"}
                                     } else {
                                         if (yValue.toFloat() < 0) {"Third quadrant"} else {"Fourth quadrant"}
                                     }
                                 } else {
-                                    outcome = "Introduce all the numbers please"
+                                    "Introduce all the numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

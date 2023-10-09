@@ -145,12 +145,12 @@ fun Project40(navController: NavHostController) {
                                     } else {
                                         totalList1 += firstList.toFloat()
                                         totalList2 += secondList.toFloat()
-                                        if (totalList1 > totalList2) {
-                                            outcome = "The biggest list is the first"
+                                        outcome = if (totalList1 > totalList2) {
+                                            "The biggest list is the first"
                                         } else if (totalList2 > totalList1){
-                                            outcome = "The biggest list is the second"
+                                            "The biggest list is the second"
                                         } else {
-                                            outcome = "The lisThe lists are equal."
+                                            "The lisThe lists are equal."
                                         }
                                         x = 1
                                         totalList1 = 0.0
@@ -317,12 +317,12 @@ fun Project40(navController: NavHostController) {
                                     } else {
                                         totalList1 += firstList.toFloat()
                                         totalList2 += secondList.toFloat()
-                                        if (totalList1 > totalList2) {
-                                            outcome = "The biggest list is the first"
+                                        outcome = if (totalList1 > totalList2) {
+                                            "The biggest list is the first"
                                         } else if (totalList2 > totalList1){
-                                            outcome = "The biggest list is the second"
+                                            "The biggest list is the second"
                                         } else {
-                                            outcome = "The lisThe lists are equal."
+                                            "The lisThe lists are equal."
                                         }
                                         x = 1
                                         totalList1 = 0.0

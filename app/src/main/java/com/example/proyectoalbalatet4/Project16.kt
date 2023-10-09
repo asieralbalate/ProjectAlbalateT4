@@ -110,15 +110,15 @@ fun Project16(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toIntOrNull() != null
+                                outcome = if (firstNumber.toIntOrNull() != null
                                 ) {
                                     val number = firstNumber.toInt()
 
                                     val result = if (number % 2 == 0) {"Squared equals: " + number*number} else {"Cubed equals: " + number*number*number}
 
-                                    outcome = "The number $number $result"
+                                    "The number $number $result"
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -230,15 +230,15 @@ fun Project16(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toIntOrNull() != null
+                                outcome = if (firstNumber.toIntOrNull() != null
                                 ) {
                                     val number = firstNumber.toInt()
 
                                     val result = if (number % 2 == 0) {"Squared equals: " + number*number} else {"Cubed equals: " + number*number*number}
 
-                                    outcome = "The number $number $result"
+                                    "The number $number $result"
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

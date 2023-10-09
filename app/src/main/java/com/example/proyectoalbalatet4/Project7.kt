@@ -39,7 +39,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
-import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
@@ -126,13 +125,12 @@ fun Project7(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (price.toFloatOrNull() != null && amountOfArticles.toIntOrNull() != null) {
-                                    var total: Float = (price.toFloat() * amountOfArticles.toInt())
+                                outcome = if (price.toFloatOrNull() != null && amountOfArticles.toIntOrNull() != null) {
+                                    val total: Float = (price.toFloat() * amountOfArticles.toInt())
                                     val formattedResult = String.format("%.2f", total)
-                                    outcome =
-                                        "The total to pay is: $formattedResult"
+                                    "The total to pay is: $formattedResult"
                                 } else {
-                                    outcome = "Introduce numbers please"
+                                    "Introduce numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -260,13 +258,12 @@ fun Project7(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (price.toFloatOrNull() != null && amountOfArticles.toIntOrNull() != null) {
-                                    var total: Float = (price.toFloat() * amountOfArticles.toInt())
+                                outcome = if (price.toFloatOrNull() != null && amountOfArticles.toIntOrNull() != null) {
+                                    val total: Float = (price.toFloat() * amountOfArticles.toInt())
                                     val formattedResult = String.format("%.2f", total)
-                                    outcome =
-                                        "The total to pay is: $formattedResult"
+                                    "The total to pay is: $formattedResult"
                                 } else {
-                                    outcome = "Introduce numbers please"
+                                    "Introduce numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

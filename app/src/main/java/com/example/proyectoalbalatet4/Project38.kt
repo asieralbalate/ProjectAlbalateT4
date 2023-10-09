@@ -5,13 +5,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -19,12 +17,9 @@ import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -43,7 +38,6 @@ import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project38(navController: NavHostController) {
     val configuration = LocalConfiguration.current
@@ -98,10 +92,10 @@ fun Project38(navController: NavHostController) {
                                 var x = 1
                                 number = 11
                                 while (x<=25){
-                                    if (x == 25) {
-                                        outcome += "$number."
+                                    outcome += if (x == 25) {
+                                        "$number."
                                     } else {
-                                        outcome += "$number, "
+                                        "$number, "
                                     }
                                     number += 11
                                     x++
@@ -202,10 +196,10 @@ fun Project38(navController: NavHostController) {
                                 var x = 1
                                 number = 11
                                 while (x<=25){
-                                    if (x == 25) {
-                                        outcome += "$number."
+                                    outcome += if (x == 25) {
+                                        "$number."
                                     } else {
-                                        outcome += "$number, "
+                                        "$number, "
                                     }
                                     number += 11
                                     x++

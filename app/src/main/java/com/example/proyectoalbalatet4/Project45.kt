@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -34,23 +35,23 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
+import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
-import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project26(navController: NavHostController) {
+fun Project45(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var firstNumber by remember { mutableStateOf("") }
-    var secondNumber by remember { mutableStateOf("") }
-    var thirdNumber by remember { mutableStateOf("") }
+    var number by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
+    var sum by remember { mutableStateOf(0.0) }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -71,7 +72,7 @@ fun Project26(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 26",
+                            text = "Project 45",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -85,57 +86,28 @@ fun Project26(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter three numbers if all are equal calculate the cube",
+                            text = "Enter numbers to add them and find out if they are greater than 0.\n(9999 to be completed)",
                             textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
-                        value = firstNumber,
-                        onValueChange = { firstNumber = it },
+                        value = number,
+                        onValueChange = { number = it },
                         label = {
-                            Text("First number")
+                            Text("Numbers")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(8.dp),
+                            .padding(10.dp),
                         singleLine = true,
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
-                        )
-                    )
-                    OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
-                        label = {
-                            Text("Second number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
-                        )
-                    )
-                    OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
-                        label = {
-                            Text("Third number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
-                        )
+                            focusedIndicatorColor = MyBrown
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
                     )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -144,47 +116,53 @@ fun Project26(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                outcome = if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
-                                ) {
-
-                                    if (firstNumber.toFloat() == secondNumber.toFloat() && firstNumber.toFloat() == thirdNumber.toFloat()) ({
-                                        "The cube of $firstNumber is " + firstNumber.toFloat()*firstNumber.toFloat()*firstNumber.toFloat()
-                                    }).toString() else {"More luck next time"}
+                                if (number.toFloatOrNull() != null) {
+                                    if (number.toInt() != 9999) {
+                                        sum += number.toFloat()
+                                    } else {
+                                        outcome = if (sum < 0.00) {
+                                            "Below 0: $sum"
+                                        } else if (sum > 0.00) {
+                                            "Above 0: $sum"
+                                        } else {
+                                            "0"
+                                        }
+                                        sum = 0.0
+                                    }
                                 } else {
-                                    "Introduce all the numbers please"
+                                    outcome = "Introduce correct parameters"
                                 }
+                                number = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
+                                containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "Calculate")
+                            Text(text = "Add")
                         }
                     }
                     Text(
                         text = outcome,
-                        modifier = Modifier.padding(bottom = 10.dp),
+                        modifier = Modifier.padding(bottom = 20.dp),
                         color = MyBlack
                     )
                 }
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project25") },
+                    onClick = { navController.navigate("Project44") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
-                    containerColor = MyGrey,
+                    containerColor = MyBrown,
                     contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU8") },
+                    onClick = { navController.navigate("FrontPageU10") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -195,18 +173,19 @@ fun Project26(navController: NavHostController) {
                         imageVector = Icons.Default.KeyboardArrowUp,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project27") },
+                    onClick = { navController.navigate("Project46") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
-                    containerColor = MyGrey,
+                    containerColor = MyBrown,
                     contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
                         contentDescription = null) }
             }
         }
+
         else -> {
             Box(modifier = Modifier.fillMaxSize()) {
                 Column(
@@ -222,7 +201,7 @@ fun Project26(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 26",
+                            text = "Project 45",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -236,16 +215,16 @@ fun Project26(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter three numbers if all are\nequal calculate the cube",
+                            text = "Enter numbers to add them and find\nout if they are greater than 0.\n(9999 to be completed)",
                             textAlign = TextAlign.Center,
                         )
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = firstNumber,
-                        onValueChange = { firstNumber = it },
+                        value = number,
+                        onValueChange = { number = it },
                         label = {
-                            Text("First number")
+                            Text("Numbers")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -254,44 +233,13 @@ fun Project26(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
-                        )
-                    )
-
-                    Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
-                        label = {
-                            Text("Second number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
-                        )
+                            focusedIndicatorColor = MyBrown
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
                     )
                     Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
-                        label = {
-                            Text("Third number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
-                        )
-                    )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
@@ -299,24 +247,30 @@ fun Project26(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                outcome = if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
-                                ) {
-
-                                    if (firstNumber.toFloat() == secondNumber.toFloat() && firstNumber.toFloat() == thirdNumber.toFloat()) ({
-                                        "The cube of $firstNumber is " + firstNumber.toFloat()*firstNumber.toFloat()*firstNumber.toFloat()
-                                    }).toString() else {"More luck next time"}
+                                if (number.toFloatOrNull() != null) {
+                                    if (number.toInt() != 9999) {
+                                        sum += number.toFloat()
+                                    } else {
+                                        outcome = if (sum < 0.00) {
+                                            "Below 0: $sum"
+                                        } else if (sum > 0.00) {
+                                            "Above 0: $sum"
+                                        } else {
+                                            "0"
+                                        }
+                                        sum = 0.0
+                                    }
                                 } else {
-                                    "Introduce all the numbers please"
+                                    outcome = "Introduce correct parameters"
                                 }
+                                number = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
+                                containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "Calculate")
+                            Text(text = "Add")
                         }
                     }
                     Text(
@@ -328,18 +282,18 @@ fun Project26(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project25") },
+                    onClick = { navController.navigate("Project44") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyGrey,
+                    containerColor = MyBrown,
                     contentColor = MyWhite){
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU8") },
+                    onClick = { navController.navigate("FrontPageU10") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -350,12 +304,12 @@ fun Project26(navController: NavHostController) {
                         imageVector = Icons.Default.KeyboardArrowUp,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project27") },
+                    onClick = { navController.navigate("Project46") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomEnd),
-                    containerColor = MyGrey,
+                    containerColor = MyBrown,
                     contentColor = MyWhite
                 ) {
                     Icon(

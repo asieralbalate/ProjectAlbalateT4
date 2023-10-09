@@ -39,17 +39,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
+import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
-import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project26(navController: NavHostController) {
+fun Project42(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var firstNumber by remember { mutableStateOf("") }
-    var secondNumber by remember { mutableStateOf("") }
-    var thirdNumber by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -71,7 +69,7 @@ fun Project26(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 26",
+                            text = "Project 42",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -85,7 +83,7 @@ fun Project26(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter three numbers if all are equal calculate the cube",
+                            text = "Enter a number between 0 and 999 to know the digits",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -93,7 +91,7 @@ fun Project26(navController: NavHostController) {
                         value = firstNumber,
                         onValueChange = { firstNumber = it },
                         label = {
-                            Text("First number")
+                            Text("Number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -102,39 +100,7 @@ fun Project26(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
-                        )
-                    )
-                    OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
-                        label = {
-                            Text("Second number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
-                        )
-                    )
-                    OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
-                        label = {
-                            Text("Third number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
+                            focusedIndicatorColor = MyBrown
                         )
                     )
                     Row(
@@ -144,21 +110,26 @@ fun Project26(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                outcome = if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
+                                if (firstNumber.toFloatOrNull() != null
                                 ) {
-
-                                    if (firstNumber.toFloat() == secondNumber.toFloat() && firstNumber.toFloat() == thirdNumber.toFloat()) ({
-                                        "The cube of $firstNumber is " + firstNumber.toFloat()*firstNumber.toFloat()*firstNumber.toFloat()
-                                    }).toString() else {"More luck next time"}
+                                    outcome = if (firstNumber.toFloat() in 0.0..999.99){
+                                        if (firstNumber.toFloat() < 10.0){
+                                            "Has one digit"
+                                        } else if (firstNumber.toFloat() < 100.00){
+                                            "Has two digits"
+                                        } else {
+                                            "Has three digits"
+                                        }
+                                    } else {
+                                        "Number out of range"
+                                    }
                                 } else {
-                                    "Introduce all the numbers please"
+                                    outcome = "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
+                                containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Calculate")
@@ -170,21 +141,22 @@ fun Project26(navController: NavHostController) {
                         color = MyBlack
                     )
                 }
+
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project25") },
+                    onClick = { navController.navigate("Project41") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
-                    containerColor = MyGrey,
+                    containerColor = MyBrown,
                     contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU8") },
+                    onClick = { navController.navigate("FrontPageU10") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -195,12 +167,12 @@ fun Project26(navController: NavHostController) {
                         imageVector = Icons.Default.KeyboardArrowUp,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project27") },
+                    onClick = { navController.navigate("Project43") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
-                    containerColor = MyGrey,
+                    containerColor = MyBrown,
                     contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
@@ -222,7 +194,7 @@ fun Project26(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 26",
+                            text = "Project 42",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -236,7 +208,7 @@ fun Project26(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter three numbers if all are\nequal calculate the cube",
+                            text = "Enter a number between 0 and 999\nto know the digits",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -245,7 +217,7 @@ fun Project26(navController: NavHostController) {
                         value = firstNumber,
                         onValueChange = { firstNumber = it },
                         label = {
-                            Text("First number")
+                            Text("Number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -254,44 +226,10 @@ fun Project26(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
+                            focusedIndicatorColor = MyBrown
                         )
                     )
 
-                    Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = secondNumber,
-                        onValueChange = { secondNumber = it },
-                        label = {
-                            Text("Second number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
-                        )
-                    )
-                    Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = thirdNumber,
-                        onValueChange = { thirdNumber = it },
-                        label = {
-                            Text("Third number")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyGrey
-                        )
-                    )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
@@ -299,21 +237,26 @@ fun Project26(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                outcome = if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
+                                if (firstNumber.toFloatOrNull() != null
                                 ) {
-
-                                    if (firstNumber.toFloat() == secondNumber.toFloat() && firstNumber.toFloat() == thirdNumber.toFloat()) ({
-                                        "The cube of $firstNumber is " + firstNumber.toFloat()*firstNumber.toFloat()*firstNumber.toFloat()
-                                    }).toString() else {"More luck next time"}
+                                    outcome = if (firstNumber.toFloat() in 0.0..999.99){
+                                        if (firstNumber.toFloat() < 10.0){
+                                            "Has one digit"
+                                        } else if (firstNumber.toFloat() < 100.00){
+                                            "Has two digits"
+                                        } else {
+                                            "Has three digits"
+                                        }
+                                    } else {
+                                        "Number out of range"
+                                    }
                                 } else {
-                                    "Introduce all the numbers please"
+                                    outcome = "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
+                                containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Calculate")
@@ -328,18 +271,18 @@ fun Project26(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project25") },
+                    onClick = { navController.navigate("Project41") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyGrey,
+                    containerColor = MyBrown,
                     contentColor = MyWhite){
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU8") },
+                    onClick = { navController.navigate("FrontPageU10") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -350,12 +293,12 @@ fun Project26(navController: NavHostController) {
                         imageVector = Icons.Default.KeyboardArrowUp,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project27") },
+                    onClick = { navController.navigate("Project43") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomEnd),
-                    containerColor = MyGrey,
+                    containerColor = MyBrown,
                     contentColor = MyWhite
                 ) {
                     Icon(

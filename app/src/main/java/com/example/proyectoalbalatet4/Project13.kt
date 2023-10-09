@@ -41,7 +41,6 @@ import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
 import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
-import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -145,19 +144,19 @@ fun Project13(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                     && secondNumber.toFloatOrNull() != null
                                     && thirdNumber.toFloatOrNull() != null
                                 ) {
                                     val result1 = (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat())/3
 
                                     if (result1 > 7) {
-                                        outcome = "You are promoted"
+                                        "You are promoted"
                                     } else {
-                                        outcome = "You are not promoted"
+                                        "You are not promoted"
                                     }
                                 } else {
-                                    outcome = "Introduce all the grades please"
+                                    "Introduce all the grades please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -303,19 +302,19 @@ fun Project13(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                     && secondNumber.toFloatOrNull() != null
                                     && thirdNumber.toFloatOrNull() != null
                                 ) {
                                     val result1 = (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat())/3
 
                                     if (result1 > 7) {
-                                        outcome = "You are promoted"
+                                        "You are promoted"
                                     } else {
-                                        outcome = "You are not promoted"
+                                        "You are not promoted"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

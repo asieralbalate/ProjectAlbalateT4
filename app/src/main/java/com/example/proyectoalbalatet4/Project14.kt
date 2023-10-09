@@ -69,7 +69,7 @@ fun Project14(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 13",
+                            text = "Project 14",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -110,19 +110,19 @@ fun Project14(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                 ) {
                                     if (firstNumber.toFloat() in 0.0..99.0){
                                         if (firstNumber.toFloat() < 10){
-                                            outcome = "Has one digit"
+                                            "Has one digit"
                                         } else {
-                                            outcome = "Has two digit"
+                                            "Has two digit"
                                         }
                                     } else {
-                                        outcome = "Number out of range"
+                                        "Number out of range"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -192,7 +192,7 @@ fun Project14(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 13",
+                            text = "Project 14",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -235,19 +235,19 @@ fun Project14(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                 ) {
-                                    if (firstNumber.toFloat() <= 99 && firstNumber.toFloat() >= 0){
+                                    if (firstNumber.toFloat() in 0.0..99.0){
                                         if (firstNumber.toFloat() < 10){
-                                            outcome = "Has one digit"
+                                            "Has one digit"
                                         } else {
-                                            outcome = "Has two digit"
+                                            "Has two digit"
                                         }
                                     } else {
-                                        outcome = "Number out of range"
+                                        "Number out of range"
                                     }
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

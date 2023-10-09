@@ -144,19 +144,16 @@ fun Project18(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstGrade.toFloatOrNull() != null
+                                outcome = if (firstGrade.toFloatOrNull() != null
                                     && secondGrade.toFloatOrNull() != null
                                     && thirdGrade.toFloatOrNull() != null
                                 ) {
 
                                     val averageGrades = (firstGrade.toFloat() + secondGrade.toFloat() + thirdGrade.toFloat())/3
-                                    outcome = if (averageGrades >= 7) {"Promoted"}
-                                    else if (7 > averageGrades && averageGrades >= 4) {"Regular"}
-                                    else if (4 > averageGrades && averageGrades >= 0) {"Failed"}
-                                    else {"You write wrong grades"}
+                                    if (averageGrades >= 7) {"Promoted"} else if (7 > averageGrades && averageGrades >= 4) {"Regular"} else if (4 > averageGrades && averageGrades >= 0) {"Failed"} else {"You write wrong grades"}
 
                                 } else {
-                                    outcome = "Introduce all the grades please"
+                                    "Introduce all the grades please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -302,19 +299,16 @@ fun Project18(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstGrade.toFloatOrNull() != null
+                                outcome = if (firstGrade.toFloatOrNull() != null
                                     && secondGrade.toFloatOrNull() != null
                                     && thirdGrade.toFloatOrNull() != null
                                 ) {
 
                                     val averageGrades = (firstGrade.toFloat() + secondGrade.toFloat() + thirdGrade.toFloat())/3
-                                    outcome = if (averageGrades >= 7) {"Promoted"}
-                                    else if (7 > averageGrades && averageGrades >= 4) {"Regular"}
-                                    else if (4 > averageGrades && averageGrades >= 0) {"Failed"}
-                                    else {"You write wrong grades"}
+                                    if (averageGrades >= 7) {"Promoted"} else if (7 > averageGrades && averageGrades >= 4) {"Regular"} else if (4 > averageGrades && averageGrades >= 0) {"Failed"} else {"You write wrong grades"}
 
                                 } else {
-                                    outcome = "Introduce all the grades please"
+                                    "Introduce all the grades please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

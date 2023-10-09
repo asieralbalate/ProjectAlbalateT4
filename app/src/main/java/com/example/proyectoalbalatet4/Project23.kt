@@ -145,17 +145,17 @@ fun Project23(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                     && secondNumber.toFloatOrNull() != null
                                     && thirdNumber.toFloatOrNull() != null
                                 ) {
 
-                                    outcome = if (firstNumber.toFloat() > secondNumber.toFloat() && firstNumber.toFloat() > thirdNumber.toFloat()) {
+                                    if (firstNumber.toFloat() > secondNumber.toFloat() && firstNumber.toFloat() > thirdNumber.toFloat()) {
                                         firstNumber
                                     } else {
                                         if (secondNumber.toFloat() > thirdNumber.toFloat()) {secondNumber} else {thirdNumber}}
                                 } else {
-                                    outcome = "Introduce all the numbers please"
+                                    "Introduce all the numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -301,17 +301,17 @@ fun Project23(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
+                                outcome = if (firstNumber.toFloatOrNull() != null
                                     && secondNumber.toFloatOrNull() != null
                                     && thirdNumber.toFloatOrNull() != null
                                 ) {
 
-                                    outcome = if (firstNumber.toFloat() > secondNumber.toFloat() && firstNumber.toFloat() > thirdNumber.toFloat()) {
+                                    if (firstNumber.toFloat() > secondNumber.toFloat() && firstNumber.toFloat() > thirdNumber.toFloat()) {
                                         firstNumber
                                     } else {
                                         if (secondNumber.toFloat() > thirdNumber.toFloat()) {secondNumber} else {thirdNumber}}
                                 } else {
-                                    outcome = "Introduce all the numbers please"
+                                    "Introduce all the numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

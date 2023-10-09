@@ -32,7 +32,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
@@ -46,7 +45,7 @@ import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project34(navController: NavHostController) {
     val configuration = LocalConfiguration.current
@@ -140,12 +139,12 @@ fun Project34(navController: NavHostController) {
                                     if (x != pieces.toInt()) {
                                         left = pieces.toInt() - 1
                                         outcome = "$left piece/s left"
-                                        if (profile.toFloat() <= 1.30 && profile.toFloat() >= 1.20){
+                                        if (profile.toFloat() in 1.20..1.30){
                                             validPieces++
                                         }
                                         x++
                                     } else {
-                                        if (profile.toFloat() <= 1.30 && profile.toFloat() >= 1.20){
+                                        if (profile.toFloat() in 1.20..1.30){
                                             validPieces++
                                         }
                                         outcome = "Number of valid pieces: $validPieces."
@@ -293,12 +292,12 @@ fun Project34(navController: NavHostController) {
                                     if (x != pieces.toInt()) {
                                         left = pieces.toInt() - 1
                                         outcome = "$left piece/s left"
-                                        if (profile.toFloat() <= 1.30 && profile.toFloat() >= 1.20){
+                                        if (profile.toFloat() in 1.20..1.30){
                                             validPieces++
                                         }
                                         x++
                                     } else {
-                                        if (profile.toFloat() <= 1.30 && profile.toFloat() >= 1.20){
+                                        if (profile.toFloat() in 1.20..1.30){
                                             validPieces++
                                         }
                                         outcome = "Number of valid pieces: $validPieces."

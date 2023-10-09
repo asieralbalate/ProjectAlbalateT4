@@ -37,7 +37,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBlack
-import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
 import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
@@ -106,13 +105,12 @@ fun Project6(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (squareSide.toFloatOrNull() != null) {
-                                    var result: Float = squareSide.toFloat() * 4
+                                outcome = if (squareSide.toFloatOrNull() != null) {
+                                    val result: Float = squareSide.toFloat() * 4
                                     val formattedResult = String.format("%.2f", result)
-                                    outcome =
-                                        "The perimeter of the square equals: $formattedResult"
+                                    "The perimeter of the square equals: $formattedResult"
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -234,13 +232,12 @@ fun Project6(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (squareSide.toFloatOrNull() != null) {
-                                    var result: Float = squareSide.toFloat() * 4
+                                outcome = if (squareSide.toFloatOrNull() != null) {
+                                    val result: Float = squareSide.toFloat() * 4
                                     val formattedResult = String.format("%.2f", result)
-                                    outcome =
-                                        "The perimeter of the square equals: $formattedResult"
+                                    "The perimeter of the square equals: $formattedResult"
                                 } else {
-                                    outcome = "Introduce a number please"
+                                    "Introduce a number please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

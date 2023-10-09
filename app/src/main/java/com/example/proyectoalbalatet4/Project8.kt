@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -145,17 +144,16 @@ fun Project8(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
-                                    var addition: Float =
+                                outcome = if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
+                                    val addition: Float =
                                         firstNumber.toFloat() + secondNumber.toFloat()
-                                    var product: Float = addition + thirdNumber.toFloat()
+                                    val product: Float = addition + thirdNumber.toFloat()
                                     val formattedAdditionResult = String.format("%.2f", addition)
                                     val formattedProductResult = String.format("%.2f", product)
-                                    outcome =
-                                        "The addition of $firstNumber and $secondNumber equals: $formattedAdditionResult \n" +
-                                                "The product of $addition and $thirdNumber equals: $formattedProductResult"
+                                    "The addition of $firstNumber and $secondNumber equals: $formattedAdditionResult \n" +
+                                            "The product of $addition and $thirdNumber equals: $formattedProductResult"
                                 } else {
-                                    outcome = "Introduce all the numbers please"
+                                    "Introduce all the numbers please"
                                 }
                             },
                             modifier = Modifier.padding(5.dp),
@@ -297,17 +295,15 @@ fun Project8(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
-                                    var addition: Float =
-                                        firstNumber.toFloat() + secondNumber.toFloat()
-                                    var product: Float = addition + thirdNumber.toFloat()
+                                outcome = if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null && thirdNumber.toFloatOrNull() != null) {
+                                    val addition: Float = firstNumber.toFloat() + secondNumber.toFloat()
+                                    val product: Float = addition + thirdNumber.toFloat()
                                     val formattedAdditionResult = String.format("%.2f", addition)
                                     val formattedProductResult = String.format("%.2f", product)
-                                    outcome =
-                                        "The addition of $firstNumber and $secondNumber equals: $formattedAdditionResult \n" +
-                                                "The product of $formattedAdditionResult and $thirdNumber equals: $formattedProductResult"
+                                    "The addition of $firstNumber and $secondNumber equals: $formattedAdditionResult \n" +
+                                            "The product of $formattedAdditionResult and $thirdNumber equals: $formattedProductResult"
                                 } else {
-                                    outcome = "Introduce all the numbers please"
+                                    "Introduce all the numbers please"
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
