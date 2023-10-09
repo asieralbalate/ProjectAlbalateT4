@@ -159,13 +159,10 @@ fun Project7(navController: NavHostController) {
                         .size(46.dp)
                         .align(Alignment.TopStart),
                     containerColor = MyGrey,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
                 FloatingActionButton(
                     onClick = { navController.navigate("FrontPageU4") },
                     modifier = Modifier
@@ -173,13 +170,10 @@ fun Project7(navController: NavHostController) {
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
                 FloatingActionButton(
                     onClick = { navController.navigate("Project8") },
                     modifier = Modifier
@@ -187,13 +181,10 @@ fun Project7(navController: NavHostController) {
                         .size(46.dp)
                         .align(Alignment.TopEnd),
                     containerColor = MyGrey,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null) }
             }
         }
         else -> {
@@ -205,7 +196,7 @@ fun Project7(navController: NavHostController) {
                 ) {
                     Row(
                         modifier = Modifier
-                            .padding(top = 20.dp)
+                            .padding(top = 10.dp)
                             .fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
@@ -302,13 +293,10 @@ fun Project7(navController: NavHostController) {
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyGrey,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite){
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
                 FloatingActionButton(
                     onClick = { navController.navigate("FrontPageU4") },
                     modifier = Modifier
@@ -316,13 +304,10 @@ fun Project7(navController: NavHostController) {
                         .size(46.dp)
                         .align(Alignment.BottomCenter),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite){
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
                 FloatingActionButton(
                     onClick = { navController.navigate("Project8") },
                     modifier = Modifier
@@ -334,9 +319,7 @@ fun Project7(navController: NavHostController) {
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
             }
         }
     }

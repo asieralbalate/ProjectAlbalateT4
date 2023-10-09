@@ -16,6 +16,8 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -169,20 +171,41 @@ fun Project34(navController: NavHostController) {
                         color = MyBlack
                     )
                 }
+            }
+            Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.popBackStack() },
+                    onClick = { navController.navigate("Project33") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.TopStart),
+                    containerColor = MyBrown,
+                    contentColor = MyWhite) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null)}
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPageU9") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite) {
                     Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null
-                    )
-                }
+                        imageVector = Icons.Default.KeyboardArrowUp,
+                        contentDescription = null)}
+                FloatingActionButton(
+                    onClick = { navController.navigate("Project35") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.TopEnd),
+                    containerColor = MyBrown,
+                    contentColor = MyWhite) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
+                        contentDescription = null) }
             }
         }
 
@@ -301,20 +324,42 @@ fun Project34(navController: NavHostController) {
                         color = MyBlack
                     )
                 }
+            }
+            Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.popBackStack() },
+                    onClick = { navController.navigate("Project33") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
+                    containerColor = MyBrown,
+                    contentColor = MyWhite){
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null)}
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPageU9") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomCenter),
                     containerColor = MyDarkBrown,
+                    contentColor = MyWhite){
+                    Icon(
+                        imageVector = Icons.Default.KeyboardArrowUp,
+                        contentDescription = null)}
+                FloatingActionButton(
+                    onClick = { navController.navigate("Project35") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomEnd),
+                    containerColor = MyBrown,
                     contentColor = MyWhite
                 ) {
                     Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null
-                    )
-                }
+                        imageVector = Icons.Default.ArrowForward,
+                        contentDescription = null)}
             }
         }
     }
