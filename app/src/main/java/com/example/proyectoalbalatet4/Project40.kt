@@ -141,7 +141,8 @@ fun Project40(navController: NavHostController) {
                                         totalList2 += secondList.toFloat()
                                         x++
                                     } else {
-
+                                        totalList1 += firstList.toFloat()
+                                        totalList2 += secondList.toFloat()
                                         if (totalList1 > totalList2) {
                                             outcome = "The biggest list is the first"
                                         } else if (totalList2 > totalList1){
@@ -280,7 +281,8 @@ fun Project40(navController: NavHostController) {
                                         totalList2 += secondList.toFloat()
                                         x++
                                     } else {
-
+                                        totalList1 += firstList.toFloat()
+                                        totalList2 += secondList.toFloat()
                                         if (totalList1 > totalList2) {
                                             outcome = "The biggest list is the first"
                                         } else if (totalList2 > totalList1){

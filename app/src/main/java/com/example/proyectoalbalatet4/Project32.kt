@@ -108,7 +108,9 @@ fun Project32(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
+
                                 if (number.toIntOrNull() != null) {
+                                    outcome = ""
                                     var x = 1
                                     while (x <= number.toInt()) {
                                         if (x == number.toInt()) {
@@ -132,7 +134,7 @@ fun Project32(navController: NavHostController) {
                     }
                     Text(
                         text = outcome,
-                        modifier = Modifier.padding(bottom = 20.dp),
+                        modifier = Modifier.padding(20.dp),
                         color = MyBlack
                     )
                 }
@@ -210,6 +212,7 @@ fun Project32(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (number.toIntOrNull() != null) {
+                                    outcome = ""
                                     var x = 1
                                     while (x <= number.toInt()) {
                                         if (x == number.toInt()) {

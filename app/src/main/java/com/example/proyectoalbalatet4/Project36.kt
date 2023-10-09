@@ -135,10 +135,11 @@ fun Project36(navController: NavHostController) {
                                 if (height.toFloatOrNull() != null && people.toIntOrNull() != null) {
                                     if (x < people.toInt()) {
                                         val left = people.toInt() - x
-                                        outcome = "$left piece/s left"
+                                        outcome = "$left height/s left"
                                         totalHeight += height.toFloat()
                                         x++
                                     } else {
+                                        totalHeight += height.toFloat()
                                         val averageHeight = totalHeight / people.toInt()
                                         outcome = "The average height is: $averageHeight"
                                         x = 1
@@ -265,10 +266,11 @@ fun Project36(navController: NavHostController) {
                                 if (height.toFloatOrNull() != null && people.toIntOrNull() != null) {
                                     if (x < people.toInt()) {
                                         val left = people.toInt() - x
-                                        outcome = "$left piece/s left"
+                                        outcome = "$left height/s left"
                                         totalHeight += height.toFloat()
                                         x++
                                     } else {
+                                        totalHeight += height.toFloat()
                                         val averageHeight = totalHeight / people.toInt()
                                         outcome = "The average height is: $averageHeight"
                                         x = 1

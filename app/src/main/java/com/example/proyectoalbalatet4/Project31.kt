@@ -91,6 +91,7 @@ fun Project31(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
+                                outcome = ""
                                 var x = 1
                                 while (x<=100){
                                     if (x == 100) {
@@ -171,6 +172,7 @@ fun Project31(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
+                                outcome = ""
                                 var x = 1
                                 while (x<=100){
                                     if (x == 100) {

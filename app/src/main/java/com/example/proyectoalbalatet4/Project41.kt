@@ -136,7 +136,7 @@ fun Project41(navController: NavHostController) {
                                 if (values.toIntOrNull() != null && amountValues.toIntOrNull() != null) {
                                     if (x < amountValues.toInt()) {
                                         val left = amountValues.toInt() - x
-                                        outcome = "$left piece/s left"
+                                        outcome = "$left number/s left"
                                         if (values.toInt() % 2 == 0) {
                                             pairs++
                                         } else {
@@ -144,6 +144,11 @@ fun Project41(navController: NavHostController) {
                                         }
                                         x++
                                     } else {
+                                        if (values.toInt() % 2 == 0) {
+                                            pairs++
+                                        } else {
+                                            odd++
+                                        }
                                         outcome = "The number of pairs is: $pairs\n" +
                                                 "The amount of odd is: $odd"
                                         x = 1
@@ -273,7 +278,7 @@ fun Project41(navController: NavHostController) {
                                 if (values.toIntOrNull() != null && amountValues.toIntOrNull() != null) {
                                     if (x < amountValues.toInt()) {
                                         val left = amountValues.toInt() - x
-                                        outcome = "$left piece/s left"
+                                        outcome = "$left number/s left"
                                         if (values.toInt() % 2 == 0) {
                                             pairs++
                                         } else {
@@ -281,6 +286,11 @@ fun Project41(navController: NavHostController) {
                                         }
                                         x++
                                     } else {
+                                        if (values.toInt() % 2 == 0) {
+                                            pairs++
+                                        } else {
+                                            odd++
+                                        }
                                         outcome = "The number of pairs is: $pairs\n" +
                                                 "The amount of odd is: $odd"
                                         x = 1

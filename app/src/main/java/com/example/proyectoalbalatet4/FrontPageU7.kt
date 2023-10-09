@@ -44,7 +44,7 @@ fun FrontPageU7(navController: NavHostController) {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "U5: If",
+                        text = "U7: If (expression)",
                         fontSize = 65.sp,
                         fontWeight = FontWeight.ExtraBold,
                     )
@@ -118,7 +118,6 @@ fun FrontPageU7(navController: NavHostController) {
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
@@ -135,8 +134,8 @@ fun FrontPageU7(navController: NavHostController) {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "U5: If",
-                        fontSize = 65.sp,
+                        text = "U7: If (expression)",
+                        fontSize = 45.sp,
                         fontWeight = FontWeight.ExtraBold,
                     )
                     Spacer(modifier = Modifier.size(30.dp))

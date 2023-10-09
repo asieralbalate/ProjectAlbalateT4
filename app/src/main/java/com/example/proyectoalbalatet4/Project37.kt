@@ -148,6 +148,12 @@ fun Project37(navController: NavHostController) {
                                         totalWages += salary.toFloat()
                                         x++
                                     } else {
+                                        if(salary.toFloat() <= 300) {
+                                            lowSalary++
+                                        } else {
+                                            highSalary++
+                                        }
+                                        totalWages += salary.toFloat()
                                         outcome = "Number of employees with salaries between 100 and 300: $lowSalary\n" +
                                                 "Number of employees with salaries greater than 300:$highSalary\n" +
                                                 "Total expenditure of the company on salaries: $totalWages"
@@ -288,6 +294,12 @@ fun Project37(navController: NavHostController) {
                                         totalWages += salary.toFloat()
                                         x++
                                     } else {
+                                        if(salary.toFloat() <= 300) {
+                                            lowSalary++
+                                        } else {
+                                            highSalary++
+                                        }
+                                        totalWages += salary.toFloat()
                                         outcome = "Number of employees with salaries between 100 and 300: $lowSalary\n" +
                                                 "Number of employees with salaries greater than 300:$highSalary\n" +
                                                 "Total expenditure of the company on salaries: $totalWages"

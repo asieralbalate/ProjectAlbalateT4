@@ -125,6 +125,11 @@ fun Project35(navController: NavHostController) {
                                         }
                                         x++
                                     } else {
+                                        if(grades.toFloat() >= 7.00){
+                                            goodGrades++
+                                        } else {
+                                            badGrades++
+                                        }
                                         outcome = "Number of students with grades greater than or equal to 7: $goodGrades\n" +
                                                 "Number of students with grades below 7: $badGrades"
                                         x = 1
@@ -239,6 +244,11 @@ fun Project35(navController: NavHostController) {
                                         }
                                         x++
                                     } else {
+                                        if(grades.toFloat() >= 7.00){
+                                            goodGrades++
+                                        } else {
+                                            badGrades++
+                                        }
                                         outcome = "Number of students with grades greater than or equal to 7: $goodGrades\n" +
                                                 "Number of students with grades below 7: $badGrades"
                                         x = 1

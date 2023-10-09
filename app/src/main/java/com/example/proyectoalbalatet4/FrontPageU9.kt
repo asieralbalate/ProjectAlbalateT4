@@ -148,7 +148,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P39: ")
+                            Text(text = "P39: Eights")
                         }
                     }
                     Spacer(modifier = Modifier.height(10.dp))
@@ -160,7 +160,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P40: ")
+                            Text(text = "P40: Lists")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
 
@@ -171,7 +171,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P41: ")
+                            Text(text = "P41: Pairs")
                         }
                     }
                 }
@@ -183,7 +183,7 @@ fun FrontPageU9(navController: NavHostController) {
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
                     contentColor = MyWhite
-                    // Posicionar en la esquina inferior izquierda
+
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
@@ -313,7 +313,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P39: ")
+                            Text(text = "P39: Eights")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -325,7 +325,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P40: ")
+                            Text(text = "P40: Lists")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -337,7 +337,7 @@ fun FrontPageU9(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P41: ")
+                            Text(text = "P41: Pairs")
                         }
                     }
                 }

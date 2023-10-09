@@ -92,6 +92,7 @@ fun Project38(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
+                                outcome = ""
                                 var x = 1
                                 number = 11
                                 while (x<=25){
@@ -174,6 +175,7 @@ fun Project38(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
+                                outcome = ""
                                 var x = 1
                                 number = 11
                                 while (x<=25){

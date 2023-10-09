@@ -32,9 +32,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -54,9 +52,8 @@ fun Project34(navController: NavHostController) {
     var pieces by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     var x by remember { mutableStateOf(1) }
-    var addition by remember { mutableStateOf(0) }
+    var validPieces by remember { mutableStateOf(0) }
     var left by remember { mutableStateOf(10) }
-    val keyboardController = LocalSoftwareKeyboardController.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -77,7 +74,7 @@ fun Project34(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 33",
+                            text = "Project 34",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -91,7 +88,7 @@ fun Project34(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter ten integers to find out what is their sum and their average",
+                            text = "Enter the number of pieces and their profile to know how many are suitable\n(between 1.2 and 1.3)",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -118,7 +115,7 @@ fun Project34(navController: NavHostController) {
                         value = profile,
                         onValueChange = { profile = it },
                         label = {
-                            Text("Number")
+                            Text("Length of profile")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -137,22 +134,24 @@ fun Project34(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (profile.toIntOrNull() != null) {
-                                    if (x != 10) {
-                                        left--
-                                        outcome = "$left number/s left"
-                                        addition += profile.toInt()
+                                if (profile.toFloatOrNull() != null && pieces.toIntOrNull() != null) {
+                                    if (x != pieces.toInt()) {
+                                        left = pieces.toInt() - 1
+                                        outcome = "$left piece/s left"
+                                        if (profile.toFloat() <= 1.30 && profile.toFloat() >= 1.20){
+                                            validPieces++
+                                        }
                                         x++
                                     } else {
-                                        addition += profile.toInt()
-                                        val average = addition / 10
-                                        outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
+                                        if (profile.toFloat() <= 1.30 && profile.toFloat() >= 1.20){
+                                            validPieces++
+                                        }
+                                        outcome = "Number of valid pieces: $validPieces."
                                         x = 1
-                                        left = 10
-                                        addition = 0
+                                        validPieces = 0
                                     }
                                 } else {
-                                    outcome = "Introduce an integer"
+                                    outcome = "Introduce correct parameters"
                                 }
                                 profile = ""
                             },
@@ -161,7 +160,7 @@ fun Project34(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "Add")
+                            Text(text = "Check")
                         }
                     }
                     Text(
@@ -202,7 +201,7 @@ fun Project34(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 33",
+                            text = "Project 34",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -216,7 +215,7 @@ fun Project34(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter ten integers to find out what\nis their sum and their average",
+                            text = "Enter the number of pieces and their profile\nto know how many are suitable\n(between 1.2 and 1.3)",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -269,30 +268,31 @@ fun Project34(navController: NavHostController) {
                             onClick = {
                                 if (profile.toFloatOrNull() != null && pieces.toIntOrNull() != null) {
                                     if (x != pieces.toInt()) {
-                                        left--
-                                        outcome = "$left number/s left"
-                                        addition += profile.toInt()
+                                        left = pieces.toInt() - 1
+                                        outcome = "$left piece/s left"
+                                        if (profile.toFloat() <= 1.30 && profile.toFloat() >= 1.20){
+                                            validPieces++
+                                        }
                                         x++
                                     } else {
-                                        addition += profile.toInt()
-                                        val average = addition / 10
-                                        outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
+                                        if (profile.toFloat() <= 1.30 && profile.toFloat() >= 1.20){
+                                            validPieces++
+                                        }
+                                        outcome = "Number of valid pieces: $validPieces."
                                         x = 1
-                                        left = 10
-                                        addition = 0
+                                        validPieces = 0
                                     }
                                 } else {
                                     outcome = "Introduce correct parameters"
                                 }
                                 profile = ""
-                                keyboardController?.hide()
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "Add")
+                            Text(text = "Check")
                         }
                     }
                     Text(
