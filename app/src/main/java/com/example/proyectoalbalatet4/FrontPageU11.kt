@@ -32,7 +32,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalatet4.ui.theme.MyBrown
 import com.example.proyectoalbalatet4.ui.theme.MyDarkBrown
-import com.example.proyectoalbalatet4.ui.theme.MyGrey
 import com.example.proyectoalbalatet4.ui.theme.MyWhite
 
 @Composable
@@ -193,7 +192,7 @@ fun FrontPageU11(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
-                    containerColor = MyGrey,
+                    containerColor = MyBrown,
                     contentColor = MyWhite
                 ) {
                     Icon(
@@ -404,7 +403,7 @@ fun FrontPageU11(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyGrey,
+                    containerColor = MyBrown,
                     contentColor = MyWhite
                 ) {
                     Icon(
