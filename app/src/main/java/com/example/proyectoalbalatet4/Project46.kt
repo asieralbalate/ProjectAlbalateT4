@@ -49,8 +49,8 @@ import com.example.proyectoalbalatet4.ui.theme.MyWhite
 @Composable
 fun Project46(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var profile by remember { mutableStateOf("") }
-    var pieces by remember { mutableStateOf("") }
+    var balance by remember { mutableStateOf("") }
+    var accountNum by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     var x by remember { mutableStateOf(1) }
     var validPieces by remember { mutableStateOf(0) }
@@ -75,7 +75,7 @@ fun Project46(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 34",
+                            text = "Project 46",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -89,15 +89,15 @@ fun Project46(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter the number of pieces and their profile to know how many are suitable\n(between 1.2 and 1.3)",
+                            text = "Enter an account number and your operations",
                             textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
-                        value = pieces,
-                        onValueChange = { pieces = it },
+                        value = accountNum,
+                        onValueChange = { accountNum = it },
                         label = {
-                            Text("Number of pieces")
+                            Text("Account Number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -113,10 +113,10 @@ fun Project46(navController: NavHostController) {
                         ),
                     )
                     OutlinedTextField(
-                        value = profile,
-                        onValueChange = { profile = it },
+                        value = balance,
+                        onValueChange = { balance = it },
                         label = {
-                            Text("Length of profile")
+                            Text("Balance")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -135,16 +135,16 @@ fun Project46(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (profile.toFloatOrNull() != null && pieces.toIntOrNull() != null) {
-                                    if (x != pieces.toInt()) {
-                                        left = pieces.toInt() - 1
+                                if (balance.toFloatOrNull() != null && accountNum.toIntOrNull() != null) {
+                                    if (x != accountNum.toInt()) {
+                                        left = accountNum.toInt() - 1
                                         outcome = "$left piece/s left"
-                                        if (profile.toFloat() in 1.20..1.30){
+                                        if (balance.toFloat() in 1.20..1.30){
                                             validPieces++
                                         }
                                         x++
                                     } else {
-                                        if (profile.toFloat() in 1.20..1.30){
+                                        if (balance.toFloat() in 1.20..1.30){
                                             validPieces++
                                         }
                                         outcome = "Number of valid pieces: $validPieces."
@@ -154,7 +154,7 @@ fun Project46(navController: NavHostController) {
                                 } else {
                                     outcome = "Introduce correct parameters"
                                 }
-                                profile = ""
+                                balance = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -243,8 +243,8 @@ fun Project46(navController: NavHostController) {
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = pieces,
-                        onValueChange = { pieces = it },
+                        value = accountNum,
+                        onValueChange = { accountNum = it },
                         label = {
                             Text("Number of pieces")
                         },
@@ -263,8 +263,8 @@ fun Project46(navController: NavHostController) {
                     )
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = profile,
-                        onValueChange = { profile = it },
+                        value = balance,
+                        onValueChange = { balance = it },
                         label = {
                             Text("Length of profile")
                         },
@@ -288,16 +288,16 @@ fun Project46(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (profile.toFloatOrNull() != null && pieces.toIntOrNull() != null) {
-                                    if (x != pieces.toInt()) {
-                                        left = pieces.toInt() - 1
+                                if (balance.toFloatOrNull() != null && accountNum.toIntOrNull() != null) {
+                                    if (x != accountNum.toInt()) {
+                                        left = accountNum.toInt() - 1
                                         outcome = "$left piece/s left"
-                                        if (profile.toFloat() in 1.20..1.30){
+                                        if (balance.toFloat() in 1.20..1.30){
                                             validPieces++
                                         }
                                         x++
                                     } else {
-                                        if (profile.toFloat() in 1.20..1.30){
+                                        if (balance.toFloat() in 1.20..1.30){
                                             validPieces++
                                         }
                                         outcome = "Number of valid pieces: $validPieces."
@@ -307,7 +307,7 @@ fun Project46(navController: NavHostController) {
                                 } else {
                                     outcome = "Introduce correct parameters"
                                 }
-                                profile = ""
+                                balance = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
