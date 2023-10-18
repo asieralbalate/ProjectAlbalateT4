@@ -11,6 +11,63 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.proyectoalbalatet4.U10.Project42
+import com.example.proyectoalbalatet4.U10.Project43
+import com.example.proyectoalbalatet4.U10.Project44
+import com.example.proyectoalbalatet4.U10.Project45
+import com.example.proyectoalbalatet4.U10.Project46
+import com.example.proyectoalbalatet4.U11.Project47
+import com.example.proyectoalbalatet4.U11.Project48
+import com.example.proyectoalbalatet4.U11.Project49
+import com.example.proyectoalbalatet4.U11.Project50
+import com.example.proyectoalbalatet4.U11.Project51
+import com.example.proyectoalbalatet4.U11.Project52
+import com.example.proyectoalbalatet4.U11.Project53
+import com.example.proyectoalbalatet4.U11.Project54
+import com.example.proyectoalbalatet4.U11.Project55
+import com.example.proyectoalbalatet4.U11.Project56
+import com.example.proyectoalbalatet4.U11.Project57
+import com.example.proyectoalbalatet4.U11.Project58
+import com.example.proyectoalbalatet4.U12.Project63
+import com.example.proyectoalbalatet4.U12.Project64
+import com.example.proyectoalbalatet4.U12.Project65
+import com.example.proyectoalbalatet4.U4.Project5
+import com.example.proyectoalbalatet4.U4.Project6
+import com.example.proyectoalbalatet4.U4.Project7
+import com.example.proyectoalbalatet4.U4.Project8
+import com.example.proyectoalbalatet4.U4.Project9
+import com.example.proyectoalbalatet4.U5.Project10
+import com.example.proyectoalbalatet4.U5.Project11
+import com.example.proyectoalbalatet4.U5.Project12
+import com.example.proyectoalbalatet4.U5.Project13
+import com.example.proyectoalbalatet4.U5.Project14
+import com.example.proyectoalbalatet4.U6.Project15
+import com.example.proyectoalbalatet4.U6.Project16
+import com.example.proyectoalbalatet4.U6.Project17
+import com.example.proyectoalbalatet4.U7.Project18
+import com.example.proyectoalbalatet4.U7.Project19
+import com.example.proyectoalbalatet4.U7.Project20
+import com.example.proyectoalbalatet4.U7.Project21
+import com.example.proyectoalbalatet4.U7.Project22
+import com.example.proyectoalbalatet4.U8.Project23
+import com.example.proyectoalbalatet4.U8.Project24
+import com.example.proyectoalbalatet4.U8.Project25
+import com.example.proyectoalbalatet4.U8.Project26
+import com.example.proyectoalbalatet4.U8.Project27
+import com.example.proyectoalbalatet4.U8.Project28
+import com.example.proyectoalbalatet4.U8.Project29
+import com.example.proyectoalbalatet4.U8.Project30
+import com.example.proyectoalbalatet4.U9.Project31
+import com.example.proyectoalbalatet4.U9.Project32
+import com.example.proyectoalbalatet4.U9.Project33
+import com.example.proyectoalbalatet4.U9.Project34
+import com.example.proyectoalbalatet4.U9.Project35
+import com.example.proyectoalbalatet4.U9.Project36
+import com.example.proyectoalbalatet4.U9.Project37
+import com.example.proyectoalbalatet4.U9.Project38
+import com.example.proyectoalbalatet4.U9.Project39
+import com.example.proyectoalbalatet4.U9.Project40
+import com.example.proyectoalbalatet4.U9.Project41
 import com.example.proyectoalbalatet4.ui.theme.ProyectoAlbalateT4Theme
 
 
@@ -78,6 +135,9 @@ class MainActivity : ComponentActivity() {
                         composable("Project56") { Project56(navController = navController) }
                         composable("Project57") { Project57(navController = navController) }
                         composable("Project58") { Project58(navController = navController) }
+                        composable("Project63") { Project63(navController = navController) }
+                        composable("Project64") { Project64(navController = navController) }
+                        composable("Project65") { Project65(navController = navController) }
                         composable("FrontPageU4") { FrontPageU4(navController = navController) }
                         composable("FrontPageU5") { FrontPageU5(navController = navController) }
                         composable("FrontPageU6") { FrontPageU6(navController = navController) }
@@ -86,6 +146,7 @@ class MainActivity : ComponentActivity() {
                         composable("FrontPageU9") { FrontPageU9(navController = navController) }
                         composable("FrontPageU10") { FrontPageU10(navController = navController) }
                         composable("FrontPageU11") { FrontPageU11(navController = navController) }
+                        composable("FrontPageU12") { FrontPageU12(navController = navController) }
                         composable("FrontPage") {
                             FrontPage(navController = navController)
                         }

@@ -61,7 +61,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P47: ")
+                            Text(text = "P47: 100")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
 
@@ -72,7 +72,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P48: ")
+                            Text(text = "P48: Average")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -82,7 +82,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P49: ")
+                            Text(text = "P49: Grades")
                         }
                     }
                     Spacer(modifier = Modifier.height(10.dp))
@@ -94,7 +94,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P50: ")
+                            Text(text = "P50: 3,5,9")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
 
@@ -105,7 +105,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P51: ")
+                            Text(text = "P51: Pair / Odd")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -115,7 +115,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P52: ")
+                            Text(text = "P52: Area")
                         }
                     }
                     Spacer(modifier = Modifier.height(10.dp))
@@ -127,7 +127,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P53:")
+                            Text(text = "P53: Last 5")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
 
@@ -138,7 +138,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P54: ")
+                            Text(text = "P54: Table 5")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -148,7 +148,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P55: ")
+                            Text(text = "P55: N Table")
                         }
                     }
                     Spacer(modifier = Modifier.height(10.dp))
@@ -160,7 +160,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P56: ")
+                            Text(text = "P56: Triangles")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -170,7 +170,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P57: ")
+                            Text(text = "P57: Coordinates")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -180,7 +180,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P58: ")
+                            Text(text = "P58: 10 Numbers")
                         }
                     }
                 }
@@ -257,7 +257,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P47: ")
+                            Text(text = "P47: 100")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -269,7 +269,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P48: ")
+                            Text(text = "P48: Average")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -281,7 +281,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P49: ")
+                            Text(text = "P49: Grades")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -293,7 +293,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P50: ")
+                            Text(text = "P50: 3,5,9")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -305,7 +305,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P51: ")
+                            Text(text = "P51: Pair / Odd")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -317,7 +317,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P52: ")
+                            Text(text = "P52: Area")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -329,7 +329,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P53:")
+                            Text(text = "P53: Last 5")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -341,7 +341,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P54: ")
+                            Text(text = "P54: Table 5")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -353,7 +353,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P55: ")
+                            Text(text = "P55: N Table")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -365,7 +365,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P56: ")
+                            Text(text = "P56: Triangles")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -377,7 +377,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P57: ")
+                            Text(text = "P57: Coordinates")
                         }
                     }
                     Spacer(modifier = Modifier.size(30.dp))
@@ -389,7 +389,7 @@ fun FrontPageU11(navController: NavHostController) {
                                 containerColor = MyBrown, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P58: ")
+                            Text(text = "P58: 10 Numbers")
                         }
                     }
                     Spacer(modifier = Modifier.height(60.dp))
