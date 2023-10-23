@@ -1,4 +1,4 @@
-package com.example.proyectoalbalate
+package com.example.proyectoalbalatet4
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,24 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.proyectoalbalate.fronts.FrontPage
-import com.example.proyectoalbalate.fronts.FrontPageU10
-import com.example.proyectoalbalate.fronts.FrontPageU11
-import com.example.proyectoalbalate.fronts.FrontPageU12
-import com.example.proyectoalbalate.fronts.FrontPageU13
-import com.example.proyectoalbalate.fronts.FrontPageU14
-import com.example.proyectoalbalate.fronts.FrontPageU15
-import com.example.proyectoalbalate.fronts.FrontPageU16
-import com.example.proyectoalbalate.fronts.FrontPageU17
-import com.example.proyectoalbalate.fronts.FrontPageU18
-import com.example.proyectoalbalate.fronts.FrontPageU19
-import com.example.proyectoalbalate.fronts.FrontPageU20
-import com.example.proyectoalbalate.fronts.FrontPageU4
-import com.example.proyectoalbalate.fronts.FrontPageU5
-import com.example.proyectoalbalate.fronts.FrontPageU6
-import com.example.proyectoalbalate.fronts.FrontPageU7
-import com.example.proyectoalbalate.fronts.FrontPageU8
-import com.example.proyectoalbalate.fronts.FrontPageU9
+import com.example.proyectoalbalate.fronts.*
 import com.example.proyectoalbalate.u10.Project42
 import com.example.proyectoalbalate.u10.Project43
 import com.example.proyectoalbalate.u10.Project44
@@ -203,19 +186,12 @@ class MainActivity : ComponentActivity() {
                         composable("FrontPageU18") { FrontPageU18(navController = navController) }
                         composable("FrontPageU19") { FrontPageU19(navController = navController) }
                         composable("FrontPageU20") { FrontPageU20(navController = navController) }
-                        composable("FrontPage") {
-                            FrontPage(navController = navController)
+                        composable("FrontPage") { FrontPage(navController = navController)}
                         }
                     }
                 }
             }
         }
     }
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ProyectoAlbalateT4Theme {
-    }
-}
+
