@@ -116,7 +116,7 @@ fun Project53(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (number.toFloatOrNull() != null) {
-                                    if (x < 5) {
+                                    if (x < 6) {
                                         left--
                                         outcome = "$left number/s left"
                                         x++
@@ -126,6 +126,7 @@ fun Project53(navController: NavHostController) {
                                         add += number.toFloat()
                                         x++
                                     } else {
+                                        add += number.toFloat()
                                         outcome = "The 5 last number added equals: $add"
                                         x = 1
                                         left = 10
@@ -248,7 +249,7 @@ fun Project53(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (number.toFloatOrNull() != null) {
-                                    if (x < 5) {
+                                    if (x < 6) {
                                         left--
                                         outcome = "$left number/s left"
                                         x++
@@ -258,6 +259,7 @@ fun Project53(navController: NavHostController) {
                                         add += number.toFloat()
                                         x++
                                     } else {
+                                        add += number.toFloat()
                                         outcome = "The 5 last number added equals: $add"
                                         x = 1
                                         left = 10

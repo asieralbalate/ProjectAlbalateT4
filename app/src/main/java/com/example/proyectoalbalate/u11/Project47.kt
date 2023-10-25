@@ -88,14 +88,14 @@ fun Project47(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                var x = 1
-                                while (x<=100){
-                                    outcome += if (x == 100) {
-                                        "$x."
+
+                                for (i in 1..100){
+                                    outcome += if (i == 100) {
+                                        "$i."
                                     } else {
-                                        "$x, "
+                                        "$i, "
                                     }
-                                    x++
+
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -190,14 +190,13 @@ fun Project47(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                var x = 1
-                                while (x<=100){
-                                    outcome += if (x == 100) {
-                                        "$x."
+                                for (i in 1..100){
+                                    outcome += if (i == 100) {
+                                        "$i."
                                     } else {
-                                        "$x, "
+                                        "$i, "
                                     }
-                                    x++
+
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

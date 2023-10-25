@@ -88,10 +88,9 @@ fun Project54(navController: NavHostController) {
                             onClick = {
                                 outcome = ""
 
-                                while (number<=10){
+                                for (number in 1..10){
                                     val product = number * 5
                                     outcome += "$number * 5 = $product\n"
-                                    number++
                                 }
                                 number = 1
                             },
@@ -197,11 +196,9 @@ fun Project54(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-
-                                while (number<=10){
+                                for (number in 1..10){
                                     val product = number * 5
                                     outcome += "$number * 5 = $product\n"
-                                    number++
                                 }
                                 number = 1
                             },

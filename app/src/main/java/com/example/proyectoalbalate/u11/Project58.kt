@@ -119,7 +119,6 @@ fun Project58(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (number.toFloatOrNull() != null) {
-
                                     if (x < 10){
                                         left--
                                         outcome = "$left number/s left"

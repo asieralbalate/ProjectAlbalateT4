@@ -43,6 +43,7 @@ import androidx.navigation.NavHostController
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
+import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -118,51 +119,72 @@ fun Project69(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (numberOfKids.toIntOrNull() != null) {
+                                when {
+                                    numberOfKids.toIntOrNull() != null -> {
+                                        when {
+                                            x < 10 -> {
+                                                left--
+                                                outcome = "$left families left"
+                                                when {
+                                                    numberOfKids.toInt() == 0 -> {
+                                                        noKids++
+                                                    }
+                                                }
+                                                when {
+                                                    numberOfKids.toInt() == 1 -> {
+                                                        oneKid++
+                                                    }
+                                                }
+                                                when {
+                                                    numberOfKids.toInt() == 2 -> {
+                                                        twoKids++
+                                                    }
+                                                }
+                                                when {
+                                                    numberOfKids.toInt() > 2 -> {
+                                                        moreKids++
+                                                    }
+                                                }
+                                                x++
+                                            }
+                                            else -> {
+                                                when {
+                                                    numberOfKids.toInt() == 0 -> {
+                                                        noKids++
+                                                    }
+                                                }
+                                                when {
+                                                    numberOfKids.toInt() == 1 -> {
+                                                        oneKid++
+                                                    }
+                                                }
+                                                when {
+                                                    numberOfKids.toInt() == 2 -> {
+                                                        twoKids++
+                                                    }
+                                                }
+                                                when {
+                                                    numberOfKids.toInt() > 2 -> {
+                                                        moreKids++
+                                                    }
+                                                }
 
-                                    if (x < 10){
-                                        left--
-                                        outcome = "$left families left"
-                                        if (numberOfKids.toInt() == 0) {
-                                            noKids++
+                                                outcome = "Number of families with 0 children: $noKids\n" +
+                                                        "Number of families with 1 child: $oneKid\n" +
+                                                        "Number of families with 2 children: $twoKids\n" +
+                                                        "Number of families with more than 2 children: $moreKids"
+                                                oneKid = 0
+                                                noKids = 0
+                                                twoKids = 0
+                                                moreKids = 0
+                                                x = 1
+                                                left = 10
+                                            }
                                         }
-                                        if (numberOfKids.toInt() == 1) {
-                                            oneKid++
-                                        }
-                                        if (numberOfKids.toInt() == 2) {
-                                            twoKids++
-                                        }
-                                        if (numberOfKids.toInt() > 2) {
-                                            moreKids++
-                                        }
-                                        x++
-                                    } else {
-                                        if (numberOfKids.toInt() == 0) {
-                                            noKids++
-                                        }
-                                        if (numberOfKids.toInt() == 1) {
-                                            oneKid++
-                                        }
-                                        if (numberOfKids.toInt() == 2) {
-                                            twoKids++
-                                        }
-                                        if (numberOfKids.toInt() > 2) {
-                                            moreKids++
-                                        }
-
-                                        outcome = "Number of families with 0 children: $noKids\n" +
-                                                "Number of families with 1 child: $oneKid\n" +
-                                                "Number of families with 2 children: $twoKids\n" +
-                                                "Number of families with more than 2 children: $moreKids"
-                                        oneKid = 0
-                                        noKids = 0
-                                        twoKids = 0
-                                        moreKids = 0
-                                        x = 1
-                                        left = 10
                                     }
-                                } else {
-                                    outcome = "Introduce a number"
+                                    else -> {
+                                        outcome = "Introduce a number"
+                                    }
                                 }
                                 numberOfKids = ""
                             },
@@ -210,7 +232,7 @@ fun Project69(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
-                    containerColor = MyBrown,
+                    containerColor = MyPurple,
                     contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
@@ -278,51 +300,72 @@ fun Project69(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (numberOfKids.toIntOrNull() != null) {
+                                when {
+                                    numberOfKids.toIntOrNull() != null -> {
+                                        when {
+                                            x < 10 -> {
+                                                left--
+                                                outcome = "$left families left"
+                                                when {
+                                                    numberOfKids.toInt() == 0 -> {
+                                                        noKids++
+                                                    }
+                                                }
+                                                when {
+                                                    numberOfKids.toInt() == 1 -> {
+                                                        oneKid++
+                                                    }
+                                                }
+                                                when {
+                                                    numberOfKids.toInt() == 2 -> {
+                                                        twoKids++
+                                                    }
+                                                }
+                                                when {
+                                                    numberOfKids.toInt() > 2 -> {
+                                                        moreKids++
+                                                    }
+                                                }
+                                                x++
+                                            }
+                                            else -> {
+                                                when {
+                                                    numberOfKids.toInt() == 0 -> {
+                                                        noKids++
+                                                    }
+                                                }
+                                                when {
+                                                    numberOfKids.toInt() == 1 -> {
+                                                        oneKid++
+                                                    }
+                                                }
+                                                when {
+                                                    numberOfKids.toInt() == 2 -> {
+                                                        twoKids++
+                                                    }
+                                                }
+                                                when {
+                                                    numberOfKids.toInt() > 2 -> {
+                                                        moreKids++
+                                                    }
+                                                }
 
-                                    if (x < 10){
-                                        left--
-                                        outcome = "$left families left"
-                                        if (numberOfKids.toInt() == 0) {
-                                            noKids++
+                                                outcome = "Number of families with 0 children: $noKids\n" +
+                                                        "Number of families with 1 child: $oneKid\n" +
+                                                        "Number of families with 2 children: $twoKids\n" +
+                                                        "Number of families with more than 2 children: $moreKids"
+                                                oneKid = 0
+                                                noKids = 0
+                                                twoKids = 0
+                                                moreKids = 0
+                                                x = 1
+                                                left = 10
+                                            }
                                         }
-                                        if (numberOfKids.toInt() == 1) {
-                                            oneKid++
-                                        }
-                                        if (numberOfKids.toInt() == 2) {
-                                            twoKids++
-                                        }
-                                        if (numberOfKids.toInt() > 2) {
-                                            moreKids++
-                                        }
-                                        x++
-                                    } else {
-                                        if (numberOfKids.toInt() == 0) {
-                                            noKids++
-                                        }
-                                        if (numberOfKids.toInt() == 1) {
-                                            oneKid++
-                                        }
-                                        if (numberOfKids.toInt() == 2) {
-                                            twoKids++
-                                        }
-                                        if (numberOfKids.toInt() > 2) {
-                                            moreKids++
-                                        }
-
-                                        outcome = "Number of families with 0 children: $noKids\n" +
-                                                "Number of families with 1 child: $oneKid\n" +
-                                                "Number of families with 2 children: $twoKids\n" +
-                                                "Number of families with more than 2 children: $moreKids"
-                                        oneKid = 0
-                                        noKids = 0
-                                        twoKids = 0
-                                        moreKids = 0
-                                        x = 1
-                                        left = 10
                                     }
-                                } else {
-                                    outcome = "Introduce a number"
+                                    else -> {
+                                        outcome = "Introduce a number"
+                                    }
                                 }
                                 numberOfKids = ""
                             },
@@ -370,7 +413,7 @@ fun Project69(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomEnd),
-                    containerColor = MyBrown,
+                    containerColor = MyPurple,
                     contentColor = MyWhite
                 ) {
                     Icon(

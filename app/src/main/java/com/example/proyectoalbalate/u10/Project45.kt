@@ -86,7 +86,7 @@ fun Project45(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter numbers to add them and find out if they are greater than 0.\n(9999 to be completed)",
+                            text = "Enter numbers to add them and find out if they are greater than 0.(9999 to be completed)",
                             textAlign = TextAlign.Center,
                         )
                     }

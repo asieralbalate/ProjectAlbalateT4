@@ -256,7 +256,7 @@ fun Project40(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter 5 values into two lists to know which is greater",
+                            text = "Enter 5 values into two lists to know\nwhich is greater",
                             textAlign = TextAlign.Center,
                         )
                     }

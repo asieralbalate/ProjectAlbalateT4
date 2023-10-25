@@ -39,7 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalate.ui.theme.MyBlack
-import com.example.proyectoalbalate.ui.theme.MyBrown
+import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
@@ -104,7 +104,7 @@ fun Project93(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         )
                     )
                     OutlinedTextField(
@@ -120,7 +120,7 @@ fun Project93(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         )
                     )
                     OutlinedTextField(
@@ -136,7 +136,7 @@ fun Project93(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         )
                     )
                     OutlinedTextField(
@@ -152,7 +152,7 @@ fun Project93(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         )
                     )
                     OutlinedTextField(
@@ -168,7 +168,7 @@ fun Project93(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         )
                     )
                     Row(
@@ -188,13 +188,13 @@ fun Project93(navController: NavHostController) {
                                 }
                                 firstNumber = ""
                                 secondNumber = ""
-                                thirdNumber = ""
-                                fourthNumber = ""
-                                fifthNumber = ""
+                                thirdNumber = "0"
+                                fourthNumber = "0"
+                                fifthNumber = "0"
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBrown, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -214,7 +214,7 @@ fun Project93(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
-                    containerColor = MyBrown,
+                    containerColor = MyBlue,
                     contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
@@ -236,7 +236,7 @@ fun Project93(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
-                    containerColor = MyBrown,
+                    containerColor = MyBlue,
                     contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
@@ -290,7 +290,7 @@ fun Project93(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         )
                     )
                     Spacer(modifier = Modifier.size(5.dp))
@@ -307,7 +307,7 @@ fun Project93(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         )
                     )
                     Spacer(modifier = Modifier.size(5.dp))
@@ -324,7 +324,7 @@ fun Project93(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         )
                     )
                     Spacer(modifier = Modifier.size(5.dp))
@@ -341,7 +341,7 @@ fun Project93(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         )
                     )
                     Spacer(modifier = Modifier.size(5.dp))
@@ -358,7 +358,7 @@ fun Project93(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         )
                     )
                     Row(
@@ -378,13 +378,13 @@ fun Project93(navController: NavHostController) {
                                 }
                                 firstNumber = ""
                                 secondNumber = ""
-                                thirdNumber = ""
-                                fourthNumber = ""
-                                fifthNumber = ""
+                                thirdNumber = "0"
+                                fourthNumber = "0"
+                                fifthNumber = "0"
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBrown, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -404,7 +404,7 @@ fun Project93(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyBrown,
+                    containerColor = MyBlue,
                     contentColor = MyWhite){
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
@@ -426,7 +426,7 @@ fun Project93(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomEnd),
-                    containerColor = MyBrown,
+                    containerColor = MyBlue,
                     contentColor = MyWhite
                 ) {
                     Icon(

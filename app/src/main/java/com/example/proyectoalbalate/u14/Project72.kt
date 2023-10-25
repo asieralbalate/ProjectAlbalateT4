@@ -41,6 +41,7 @@ import androidx.navigation.NavHostController
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
+import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -105,7 +106,7 @@ fun Project72(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyPurple
                         )
                     )
                     OutlinedTextField(
@@ -121,7 +122,7 @@ fun Project72(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyPurple
                         )
                     )
                     Row(
@@ -156,7 +157,7 @@ fun Project72(navController: NavHostController) {
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBrown, contentColor = MyWhite
+                                containerColor = MyPurple, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Calculate")
@@ -204,7 +205,7 @@ fun Project72(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
-                    containerColor = MyBrown,
+                    containerColor = MyPurple,
                     contentColor = MyWhite
                 ) {
                     Icon(
@@ -244,7 +245,7 @@ fun Project72(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter a number to find out your square or enter two to find out the product",
+                            text = "Enter a number to find out your square or\nenter two to find out the product",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -262,7 +263,7 @@ fun Project72(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyPurple
                         )
                     )
 
@@ -280,7 +281,7 @@ fun Project72(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyPurple
                         )
                     )
                     Row(
@@ -315,7 +316,7 @@ fun Project72(navController: NavHostController) {
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBrown, contentColor = MyWhite
+                                containerColor = MyPurple, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Calculate")
@@ -363,7 +364,7 @@ fun Project72(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomEnd),
-                    containerColor = MyBrown,
+                    containerColor = MyPurple,
                     contentColor = MyWhite
                 ) {
                     Icon(

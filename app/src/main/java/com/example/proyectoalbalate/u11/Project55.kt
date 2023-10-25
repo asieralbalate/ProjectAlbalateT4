@@ -115,10 +115,9 @@ fun Project55(navController: NavHostController) {
                             onClick = {
                                 outcome = ""
                                 if (number.toIntOrNull() != null) {
-                                    while (x <=12){
+                                    for (x in 1..12){
                                         val product = number.toInt() * x
                                         outcome += "$number * $x = $product\n"
-                                        x++
                                     }
                                     x = 1
                                 } else {
@@ -240,12 +239,15 @@ fun Project55(navController: NavHostController) {
                             onClick = {
                                 outcome = ""
                                 if (number.toIntOrNull() != null) {
-                                    while (x <=12){
+                                    if (number.toInt() in 1..10){
+                                    for (x in 1..12){
                                         val product = number.toInt() * x
                                         outcome += "$number * $x = $product\n"
-                                        x++
                                     }
                                     x = 1
+                                    } else {
+                                        outcome = "Number out of range"
+                                    }
                                 } else {
                                     outcome = "Introduce a number"
                                 }

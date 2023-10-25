@@ -41,7 +41,7 @@ import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-/*You enter two whole numbers through the keyboard, and their sum and product are printed.*/
+// You enter two whole numbers through the keyboard, and their sum and product are printed.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project5(navController: NavHostController) {

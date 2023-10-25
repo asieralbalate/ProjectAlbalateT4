@@ -213,7 +213,7 @@ fun FrontPage(navController: NavHostController) {
                                 containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
-                            Text( text = "U15: Parameters")
+                            Text( text = "U15: Param.")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
@@ -854,7 +854,7 @@ fun FrontPage(navController: NavHostController) {
                                 containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
-                            Text( text = "U15: Parameters")
+                            Text( text = "U15: Param.")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))

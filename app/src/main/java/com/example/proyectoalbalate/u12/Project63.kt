@@ -110,17 +110,25 @@ fun Project63(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                outcome = if (firstNumber.toFloatOrNull() != null
-                                ) {
-                                    if(firstNumber.toFloat() > 0) {
-                                        "The number is positive"
-                                    } else if (firstNumber.toFloat() < 0){
-                                        "The number is negative"
-                                    } else {
-                                        "The number is 0"
+                                outcome = when {
+                                    firstNumber.toFloatOrNull() != null -> {
+                                        when {
+                                            firstNumber.toFloat() > 0 -> {
+                                                "The number is positive"
+                                            }
+
+                                            firstNumber.toFloat() < 0 -> {
+                                                "The number is negative"
+                                            }
+
+                                            else -> {
+                                                "The number is 0"
+                                            }
+                                        }
                                     }
-                                } else {
-                                    "Introduce a number please"
+                                    else -> {
+                                        "Introduce a number please"
+                                    }
                                 }
                                 firstNumber = ""
                             },
@@ -233,17 +241,25 @@ fun Project63(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                outcome = if (firstNumber.toFloatOrNull() != null
-                                ) {
-                                    if(firstNumber.toFloat() > 0) {
-                                        "The number is positive"
-                                    } else if (firstNumber.toFloat() < 0){
-                                        "The number is negative"
-                                    } else {
-                                        "The number is 0"
+                                outcome = when {
+                                    firstNumber.toFloatOrNull() != null -> {
+                                        when {
+                                            firstNumber.toFloat() > 0 -> {
+                                                "The number is positive"
+                                            }
+
+                                            firstNumber.toFloat() < 0 -> {
+                                                "The number is negative"
+                                            }
+
+                                            else -> {
+                                                "The number is 0"
+                                            }
+                                        }
                                     }
-                                } else {
-                                    "Introduce a number please"
+                                    else -> {
+                                        "Introduce a number please"
+                                    }
                                 }
                                 firstNumber = ""
                             },

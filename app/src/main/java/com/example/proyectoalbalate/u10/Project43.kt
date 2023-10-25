@@ -87,7 +87,7 @@ fun Project43(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter numbers to get your average, enter 0 to get out",
+                            text = "Enter numbers to get your average",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -213,7 +213,7 @@ fun Project43(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter numbers to get your average\n, enter 0 to get out",
+                            text = "Enter numbers to get your average",
                             textAlign = TextAlign.Center,
                         )
                     }

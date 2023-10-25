@@ -90,9 +90,8 @@ fun Project37(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter the number of employees and their salary\n" +
-                                    "between 100 and 500 to find out how many earn\n" +
-                                    "less than 300 and how much is spent on wages",
+                            text = "Enter the number of employees and their salary between 100 and 500\n" +
+                                    "to find out how many earn less than 300 and how much is spent on wages",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -252,9 +251,11 @@ fun Project37(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter the number of employees and their salary\n" +
-                                    "between 100 and 500 to find out how many earn\n" +
-                                    "less than 300 and how much is spent on wages",
+                            text = "Enter the number of employees and\n" +
+                                    "their salary between 100 and 500\n" +
+                                    "to find out how many earn less\n" +
+                                    "than 300 and how much is spent\n" +
+                                    "on wages",
                             textAlign = TextAlign.Center,
                         )
                     }

@@ -41,7 +41,7 @@ import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-/* You enter the side length of a square and calculate its perimeter.*/
+// You enter the side length of a square and calculate its perimeter.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project6(navController: NavHostController) {

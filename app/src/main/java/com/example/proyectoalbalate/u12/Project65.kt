@@ -173,52 +173,66 @@ fun Project65(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (side2.toFloatOrNull() != null && side1.toFloatOrNull() != null && amountTriangles.toIntOrNull() != null && side3.toFloatOrNull() != null) {
-                                    if (x < amountTriangles.toInt()) {
-                                        val left = amountTriangles.toInt() - x
+                                when {
+                                    side2.toFloatOrNull() != null && side1.toFloatOrNull() != null && amountTriangles.toIntOrNull() != null && side3.toFloatOrNull() != null -> {
+                                        when {
+                                            x < amountTriangles.toInt() -> {
+                                                val left = amountTriangles.toInt() - x
 
-                                        outcome = if (side1 == side2 && side1 == side3){
-                                            equilateral++
-                                            "$left triangles left\n" +
-                                                    "Equilateral"
-                                        } else if (side1 == side2 || side1 == side3 || side2 == side3){
-                                            isosceles++
-                                            "$left triangles left\n" +
-                                                    "Isosceles"
-                                        } else {
-                                            scalene++
-                                            "$left triangles left\n" +
-                                                    "Scalene"
+                                                outcome = when {
+                                                    side1 == side2 && side1 == side3 -> {
+                                                        equilateral++
+                                                        "$left triangles left\n" +
+                                                                "Equilateral"
+                                                    }
+                                                    side1 == side2 || side1 == side3 || side2 == side3 -> {
+                                                        isosceles++
+                                                        "$left triangles left\n" +
+                                                                "Isosceles"
+                                                    }
+                                                    else -> {
+                                                        scalene++
+                                                        "$left triangles left\n" +
+                                                                "Scalene"
+                                                    }
+                                                }
+                                                x++
+                                            }
+                                            else -> {
+                                                outcome = when {
+                                                    side1 == side2 && side1 == side3 -> {
+                                                        equilateral++
+                                                        "Equilateral\n"
+                                                    }
+                                                    side1 == side2 || side1 == side3 || side2 == side3 -> {
+                                                        isosceles++
+                                                        "Isosceles\n"
+                                                    }
+                                                    else -> {
+                                                        scalene++
+                                                        "Scalene\n"
+                                                    }
+                                                }
+                                                outcome += "Equilateral: $equilateral\n" +
+                                                        "Isosceles: $isosceles\n" +
+                                                        "Scales: $scalene"
+                                                equilateral = 0
+                                                isosceles = 0
+                                                scalene = 0
+                                                x = 1
+                                            }
                                         }
-                                        x++
-                                    } else {
-                                        outcome = if (side1 == side2 && side1 == side3){
-                                            equilateral++
-                                            "Equilateral\n"
-                                        } else if (side1 == side2 || side1 == side3 || side2 == side3){
-                                            isosceles++
-                                            "Isosceles\n"
-                                        } else {
-                                            scalene++
-                                            "Scalene\n"
-                                        }
-                                        outcome += "Equilateral: $equilateral\n" +
-                                                "Isosceles: $isosceles\n" +
-                                                "Scales: $scalene"
-                                        equilateral = 0
-                                        isosceles = 0
-                                        scalene = 0
-                                        x = 1
+                                        side3 = ""
+                                        side2 = ""
+                                        side1 = ""
                                     }
-                                    side3 = ""
-                                    side2 = ""
-                                    side1 = ""
-                                } else {
-                                    outcome = "Introduce correct parameters"
-                                    side3 = ""
-                                    side2 = ""
-                                    side1 = ""
-                                    amountTriangles = ""
+                                    else -> {
+                                        outcome = "Introduce correct parameters"
+                                        side3 = ""
+                                        side2 = ""
+                                        side1 = ""
+                                        amountTriangles = ""
+                                    }
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -397,52 +411,66 @@ fun Project65(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (side2.toFloatOrNull() != null && side1.toFloatOrNull() != null && amountTriangles.toIntOrNull() != null && side3.toFloatOrNull() != null) {
-                                    if (x < amountTriangles.toInt()) {
-                                        val left = amountTriangles.toInt() - x
+                                when {
+                                    side2.toFloatOrNull() != null && side1.toFloatOrNull() != null && amountTriangles.toIntOrNull() != null && side3.toFloatOrNull() != null -> {
+                                        when {
+                                            x < amountTriangles.toInt() -> {
+                                                val left = amountTriangles.toInt() - x
 
-                                        outcome = if (side1 == side2 && side1 == side3){
-                                            equilateral++
-                                            "$left triangles left\n" +
-                                                    "Equilateral"
-                                        } else if (side1 == side2 || side1 == side3 || side2 == side3){
-                                            isosceles++
-                                            "$left triangles left\n" +
-                                                    "Isosceles"
-                                        } else {
-                                            scalene++
-                                            "$left triangles left\n" +
-                                                    "Scalene"
+                                                outcome = when {
+                                                    side1 == side2 && side1 == side3 -> {
+                                                        equilateral++
+                                                        "$left triangles left\n" +
+                                                                "Equilateral"
+                                                    }
+                                                    side1 == side2 || side1 == side3 || side2 == side3 -> {
+                                                        isosceles++
+                                                        "$left triangles left\n" +
+                                                                "Isosceles"
+                                                    }
+                                                    else -> {
+                                                        scalene++
+                                                        "$left triangles left\n" +
+                                                                "Scalene"
+                                                    }
+                                                }
+                                                x++
+                                            }
+                                            else -> {
+                                                outcome = when {
+                                                    side1 == side2 && side1 == side3 -> {
+                                                        equilateral++
+                                                        "Equilateral\n"
+                                                    }
+                                                    side1 == side2 || side1 == side3 || side2 == side3 -> {
+                                                        isosceles++
+                                                        "Isosceles\n"
+                                                    }
+                                                    else -> {
+                                                        scalene++
+                                                        "Scalene\n"
+                                                    }
+                                                }
+                                                outcome += "Equilateral: $equilateral\n" +
+                                                        "Isosceles: $isosceles\n" +
+                                                        "Scales: $scalene"
+                                                equilateral = 0
+                                                isosceles = 0
+                                                scalene = 0
+                                                x = 1
+                                            }
                                         }
-                                        x++
-                                    } else {
-                                        outcome = if (side1 == side2 && side1 == side3){
-                                            equilateral++
-                                            "Equilateral\n"
-                                        } else if (side1 == side2 || side1 == side3 || side2 == side3){
-                                            isosceles++
-                                            "Isosceles\n"
-                                        } else {
-                                            scalene++
-                                            "Scalene\n"
-                                        }
-                                        outcome += "Equilateral: $equilateral\n" +
-                                                "Isosceles: $isosceles\n" +
-                                                "Scales: $scalene"
-                                        equilateral = 0
-                                        isosceles = 0
-                                        scalene = 0
-                                        x = 1
+                                        side3 = ""
+                                        side2 = ""
+                                        side1 = ""
                                     }
-                                    side3 = ""
-                                    side2 = ""
-                                    side1 = ""
-                                } else {
-                                    outcome = "Introduce correct parameters"
-                                    side3 = ""
-                                    side2 = ""
-                                    side1 = ""
-                                    amountTriangles = ""
+                                    else -> {
+                                        outcome = "Introduce correct parameters"
+                                        side3 = ""
+                                        side2 = ""
+                                        side1 = ""
+                                        amountTriangles = ""
+                                    }
                                 }
                             },
                             modifier = Modifier.padding(10.dp),

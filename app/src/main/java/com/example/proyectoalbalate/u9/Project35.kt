@@ -225,7 +225,7 @@ fun Project35(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter the grades of 10 students to see how many have a 7 or more",
+                            text = "Enter the grades of 10 students to see\nhow many have a 7 or more",
                             textAlign = TextAlign.Center,
                         )
                     }

@@ -41,8 +41,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalate.ui.theme.MyBlack
+import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
+import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,7 +54,7 @@ fun Project73(navController: NavHostController) {
     var number by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     var x by remember { mutableStateOf(1) }
-    var lower by remember { mutableStateOf(0.00) }
+    var lower by remember { mutableStateOf(0) }
     var left by remember { mutableStateOf(3) }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -105,7 +107,7 @@ fun Project73(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyPurple
                         )
                     )
                     Row(
@@ -119,17 +121,18 @@ fun Project73(navController: NavHostController) {
                                     if (x < 3) {
                                         left--
                                         outcome = "$left number/s left"
-                                        if (number.toFloat() < lower) {
-                                            lower = number.toDouble()
+                                        if (number.toFloat() < lower.toFloat() || lower == 0) {
+                                            lower = number.toInt()
                                         }
                                         x++
                                     } else {
-                                        if (number.toFloat() < lower) {
-                                            lower = number.toDouble()
+                                        if (number.toFloat() < lower.toFloat()) {
+                                            lower = number.toInt()
                                         }
                                         outcome = "The lower is: $lower"
                                         x = 1
                                         left = 3
+                                        lower = 0
                                     }
                                 } else {
                                     outcome = "Introduce a number"
@@ -138,7 +141,7 @@ fun Project73(navController: NavHostController) {
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBrown, contentColor = MyWhite
+                                containerColor = MyPurple, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -158,7 +161,7 @@ fun Project73(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
-                    containerColor = MyBrown,
+                    containerColor = MyPurple,
                     contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
@@ -180,7 +183,7 @@ fun Project73(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
-                    containerColor = MyBrown,
+                    containerColor = MyBlue,
                     contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
@@ -235,7 +238,7 @@ fun Project73(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyPurple
                         ),
                         keyboardOptions = KeyboardOptions.Default.copy(
                             keyboardType = KeyboardType.Number
@@ -252,17 +255,18 @@ fun Project73(navController: NavHostController) {
                                     if (x < 3) {
                                         left--
                                         outcome = "$left number/s left"
-                                        if (number.toFloat() < lower) {
-                                            lower = number.toDouble()
+                                        if (number.toFloat() < lower.toFloat() || lower == 0) {
+                                            lower = number.toInt()
                                         }
                                         x++
                                     } else {
-                                        if (number.toFloat() < lower) {
-                                            lower = number.toDouble()
+                                        if (number.toFloat() < lower.toFloat()) {
+                                            lower = number.toInt()
                                         }
                                         outcome = "The lower is: $lower"
                                         x = 1
                                         left = 3
+                                        lower = 0
                                     }
                                 } else {
                                     outcome = "Introduce a number"
@@ -271,7 +275,7 @@ fun Project73(navController: NavHostController) {
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBrown, contentColor = MyWhite
+                                containerColor = MyPurple, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -291,7 +295,7 @@ fun Project73(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyBrown,
+                    containerColor = MyPurple,
                     contentColor = MyWhite){
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
@@ -313,7 +317,7 @@ fun Project73(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomEnd),
-                    containerColor = MyBrown,
+                    containerColor = MyBlue,
                     contentColor = MyWhite
                 ) {
                     Icon(

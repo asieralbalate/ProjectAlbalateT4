@@ -78,7 +78,7 @@ fun Project50(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Press the button to count how many multiples of 3, 5 and 9\nthere are in the range of 1 to 10000",
+                            text = "Press the button to count how many multiples of 3, 5 and 9 there are in the range of 1 to 10000",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -90,7 +90,7 @@ fun Project50(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                while (number<=10000){
+                                for (number in 1..10000){
                                     if (number % 3 == 0) {
                                         threes++
                                     }
@@ -103,8 +103,11 @@ fun Project50(navController: NavHostController) {
                                     outcome = "Multiples of three: $threes.\n" +
                                             "Multiples of five: $fives.\n" +
                                             "Multiples of eight: $eights."
-                                    number = 1
                                 }
+                                number = 1
+                                threes = 0
+                                fives = 0
+                                eights = 0
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -210,7 +213,7 @@ fun Project50(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                while (number<=10000){
+                                for (number in 1..10000){
                                     if (number % 3 == 0) {
                                         threes++
                                     }
@@ -223,8 +226,11 @@ fun Project50(navController: NavHostController) {
                                     outcome = "Multiples of three: $threes.\n" +
                                             "Multiples of five: $fives.\n" +
                                             "Multiples of eight: $eights."
-                                    number = 1
                                 }
+                                number = 1
+                                threes = 0
+                                fives = 0
+                                eights = 0
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(

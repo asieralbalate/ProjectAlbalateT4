@@ -42,7 +42,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalate.ui.theme.MyBlack
-import com.example.proyectoalbalate.ui.theme.MyBrown
+import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
@@ -107,7 +107,7 @@ fun Project97(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         ),
                         keyboardOptions = KeyboardOptions.Default.copy(
                             keyboardType = KeyboardType.Number
@@ -126,7 +126,7 @@ fun Project97(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         )
                     )
                     Row(
@@ -136,6 +136,7 @@ fun Project97(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
+                                outcome = ""
                                 if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
                                     if (x < 5) {
                                         left--
@@ -163,7 +164,7 @@ fun Project97(navController: NavHostController) {
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBrown, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -178,12 +179,12 @@ fun Project97(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project97") },
+                    onClick = { navController.navigate("Project95") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
-                    containerColor = MyBrown,
+                    containerColor = MyBlue,
                     contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
@@ -205,7 +206,7 @@ fun Project97(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
-                    containerColor = MyBrown,
+                    containerColor = MyBlue,
                     contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
@@ -260,7 +261,7 @@ fun Project97(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         ),
                         keyboardOptions = KeyboardOptions.Default.copy(
                             keyboardType = KeyboardType.Number
@@ -280,7 +281,7 @@ fun Project97(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBrown
+                            focusedIndicatorColor = MyBlue
                         ),
                         keyboardOptions = KeyboardOptions.Default.copy(
                             keyboardType = KeyboardType.Number
@@ -293,6 +294,7 @@ fun Project97(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
+                                outcome = ""
                                 if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
                                     if (x < 5) {
                                         left--
@@ -320,7 +322,7 @@ fun Project97(navController: NavHostController) {
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBrown, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -335,12 +337,12 @@ fun Project97(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project97") },
+                    onClick = { navController.navigate("Project95") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyBrown,
+                    containerColor = MyBlue,
                     contentColor = MyWhite){
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
@@ -362,7 +364,7 @@ fun Project97(navController: NavHostController) {
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomEnd),
-                    containerColor = MyBrown,
+                    containerColor = MyBlue,
                     contentColor = MyWhite
                 ) {
                     Icon(

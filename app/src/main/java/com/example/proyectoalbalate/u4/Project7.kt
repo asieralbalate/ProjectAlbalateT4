@@ -43,7 +43,7 @@ import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-/*The price of an item and the number of items are requested, and the total is displayed on the screen.*/
+//The price of an item and the number of items are requested, and the total is displayed on the screen.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project7(navController: NavHostController) {

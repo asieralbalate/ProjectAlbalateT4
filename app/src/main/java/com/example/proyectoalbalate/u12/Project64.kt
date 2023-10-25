@@ -147,49 +147,74 @@ fun Project64(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
-                                ) {
-                                    if (x < 5) {
-                                        left--
-                                        outcome = "$left number/s left"
-                                        x++
-                                        addition += if (firstNumber.toFloat() > secondNumber.toFloat()) {
-                                            if (firstNumber.toFloat() > thirdNumber.toFloat()) {
-                                                firstNumber.toFloat()
-                                            } else {
-                                                thirdNumber.toFloat()
+                                when {
+                                    firstNumber.toFloatOrNull() != null
+                                            && secondNumber.toFloatOrNull() != null
+                                            && thirdNumber.toFloatOrNull() != null -> {
+                                        when {
+                                            x < 5 -> {
+                                                left--
+                                                outcome = "$left number/s left"
+                                                x++
+                                                addition += when {
+                                                    firstNumber.toFloat() > secondNumber.toFloat() -> {
+                                                        when {
+                                                            firstNumber.toFloat() > thirdNumber.toFloat() -> {
+                                                                firstNumber.toFloat()
+                                                            }
+
+                                                            else -> {
+                                                                thirdNumber.toFloat()
+                                                            }
+                                                        }
+                                                    }
+
+                                                    else -> {
+                                                        when {
+                                                            secondNumber.toFloat() > thirdNumber.toFloat() -> {
+                                                                secondNumber.toFloat()
+                                                            }
+
+                                                            else -> {
+                                                                thirdNumber.toFloat()
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             }
-                                        } else {
-                                            if (secondNumber.toFloat() > thirdNumber.toFloat()) {
-                                                secondNumber.toFloat()
-                                            } else {
-                                                thirdNumber.toFloat()
+                                            else -> {
+                                                addition += when {
+                                                    firstNumber.toFloat() > secondNumber.toFloat() -> {
+                                                        if (firstNumber.toFloat() > thirdNumber.toFloat()) {
+                                                            firstNumber.toFloat()
+                                                        } else {
+                                                            thirdNumber.toFloat()
+                                                        }
+                                                    }
+
+                                                    else -> {
+                                                        when {
+                                                            secondNumber.toFloat() > thirdNumber.toFloat() -> {
+                                                                secondNumber.toFloat()
+                                                            }
+
+                                                            else -> {
+                                                                thirdNumber.toFloat()
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                outcome =
+                                                    "The cumulative value of the largest of each\nlist of 3 values is: $addition"
+                                                x = 1
+                                                left = 5
+                                                addition = 0.00
                                             }
                                         }
-                                    } else {
-                                        addition += if (firstNumber.toFloat() > secondNumber.toFloat()) {
-                                            if (firstNumber.toFloat() > thirdNumber.toFloat()) {
-                                                firstNumber.toFloat()
-                                            } else {
-                                                thirdNumber.toFloat()
-                                            }
-                                        } else {
-                                            if (secondNumber.toFloat() > thirdNumber.toFloat()) {
-                                                secondNumber.toFloat()
-                                            } else {
-                                                thirdNumber.toFloat()
-                                            }
-                                        }
-                                        outcome =
-                                            "The cumulative value of the largest of each list of 3 values is: $addition"
-                                        x = 1
-                                        left = 5
-                                        addition = 0.00
                                     }
-                                } else {
-                                    outcome = "Introduce all the numbers please"
+                                    else -> {
+                                        outcome = "Introduce all the numbers please"
+                                    }
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
@@ -282,7 +307,7 @@ fun Project64(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter 5 times 3 numbers to know the accumulated of the highest numbers",
+                            text = "Enter 5 times 3 numbers to know the\naccumulated of the highest numbers",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -345,49 +370,74 @@ fun Project64(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (firstNumber.toFloatOrNull() != null
-                                    && secondNumber.toFloatOrNull() != null
-                                    && thirdNumber.toFloatOrNull() != null
-                                ) {
-                                    if (x < 5) {
-                                        left--
-                                        outcome = "$left number/s left"
-                                        x++
-                                        addition += if (firstNumber.toFloat() > secondNumber.toFloat()) {
-                                            if (firstNumber.toFloat() > thirdNumber.toFloat()) {
-                                                firstNumber.toFloat()
-                                            } else {
-                                                thirdNumber.toFloat()
+                                when {
+                                    firstNumber.toFloatOrNull() != null
+                                            && secondNumber.toFloatOrNull() != null
+                                            && thirdNumber.toFloatOrNull() != null -> {
+                                        when {
+                                            x < 5 -> {
+                                                left--
+                                                outcome = "$left number/s left"
+                                                x++
+                                                addition += when {
+                                                    firstNumber.toFloat() > secondNumber.toFloat() -> {
+                                                        when {
+                                                            firstNumber.toFloat() > thirdNumber.toFloat() -> {
+                                                                firstNumber.toFloat()
+                                                            }
+
+                                                            else -> {
+                                                                thirdNumber.toFloat()
+                                                            }
+                                                        }
+                                                    }
+
+                                                    else -> {
+                                                        when {
+                                                            secondNumber.toFloat() > thirdNumber.toFloat() -> {
+                                                                secondNumber.toFloat()
+                                                            }
+
+                                                            else -> {
+                                                                thirdNumber.toFloat()
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             }
-                                        } else {
-                                            if (secondNumber.toFloat() > thirdNumber.toFloat()) {
-                                                secondNumber.toFloat()
-                                            } else {
-                                                thirdNumber.toFloat()
+                                            else -> {
+                                                addition += when {
+                                                    firstNumber.toFloat() > secondNumber.toFloat() -> {
+                                                        if (firstNumber.toFloat() > thirdNumber.toFloat()) {
+                                                            firstNumber.toFloat()
+                                                        } else {
+                                                            thirdNumber.toFloat()
+                                                        }
+                                                    }
+
+                                                    else -> {
+                                                        when {
+                                                            secondNumber.toFloat() > thirdNumber.toFloat() -> {
+                                                                secondNumber.toFloat()
+                                                            }
+
+                                                            else -> {
+                                                                thirdNumber.toFloat()
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                outcome =
+                                                    "The cumulative value of the largest of each list of 3 values is: $addition"
+                                                x = 1
+                                                left = 5
+                                                addition = 0.00
                                             }
                                         }
-                                    } else {
-                                        addition += if (firstNumber.toFloat() > secondNumber.toFloat()) {
-                                            if (firstNumber.toFloat() > thirdNumber.toFloat()) {
-                                                firstNumber.toFloat()
-                                            } else {
-                                                thirdNumber.toFloat()
-                                            }
-                                        } else {
-                                            if (secondNumber.toFloat() > thirdNumber.toFloat()) {
-                                                secondNumber.toFloat()
-                                            } else {
-                                                thirdNumber.toFloat()
-                                            }
-                                        }
-                                        outcome =
-                                            "The cumulative value of the largest of each list of 3 values is: $addition"
-                                        x = 1
-                                        left = 5
-                                        addition = 0.00
                                     }
-                                } else {
-                                    outcome = "Introduce all the numbers please"
+                                    else -> {
+                                        outcome = "Introduce all the numbers please"
+                                    }
                                 }
                             },
                             modifier = Modifier.padding(10.dp),
