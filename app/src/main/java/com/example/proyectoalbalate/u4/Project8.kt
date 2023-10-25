@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-
+// Enter three values to add the first two and multiply them by the third.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project8(navController: NavHostController) {

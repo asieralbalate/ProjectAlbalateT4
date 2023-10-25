@@ -41,7 +41,7 @@ import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter a person's salary, if it exceeds 3000 euros, display a message.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project10(navController: NavHostController) {

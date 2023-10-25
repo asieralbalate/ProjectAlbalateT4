@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter three whole numbers to calculate their sum and average.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project9(navController: NavHostController) {
@@ -149,9 +149,9 @@ fun Project9(navController: NavHostController) {
                                     val average: Float =
                                         (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat()) / 3
                                     val formattedAdditionResult = String.format("%.2f", addition)
-                                    val formattedAveragenResult = String.format("%.2f", average)
+                                    val formattedAverageResult = String.format("%.2f", average)
                                     "The addition of $firstNumber and $secondNumber and $thirdNumber equals: $formattedAdditionResult \n" +
-                                            "The arithmetic average is: $formattedAveragenResult"
+                                            "The arithmetic average is: $formattedAverageResult"
                                 } else {
                                     "Introduce all the numbers please"
                                 }
@@ -301,9 +301,9 @@ fun Project9(navController: NavHostController) {
                                     val average: Float =
                                         (firstNumber.toFloat() + secondNumber.toFloat() + thirdNumber.toFloat()) / 3
                                     val formattedAdditionResult = String.format("%.2f", addition)
-                                    val formattedAveragenResult = String.format("%.2f", average)
+                                    val formattedAverageResult = String.format("%.2f", average)
                                     "The addition of $firstNumber and $secondNumber and $thirdNumber equals: $formattedAdditionResult \n" +
-                                            "The arithmetic average is: $formattedAveragenResult"
+                                            "The arithmetic average is: $formattedAverageResult"
                                 } else {
                                     "Introduce all the numbers please"
                                 }

@@ -42,7 +42,8 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter three grades; if the average is greater than seven,
+// the message 'promoted' is displayed on the screen.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project13(navController: NavHostController) {

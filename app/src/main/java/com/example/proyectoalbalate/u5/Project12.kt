@@ -42,6 +42,8 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
+// We enter two different integers.
+// If the first one is smaller, we calculate the sum and subtraction; if the second one is smaller, we calculate the product and division.
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

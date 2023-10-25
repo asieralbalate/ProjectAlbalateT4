@@ -41,6 +41,7 @@ import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
+// Enter two different integers to determine which of the two is greater.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project11(navController: NavHostController) {
