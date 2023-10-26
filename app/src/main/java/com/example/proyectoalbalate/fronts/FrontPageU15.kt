@@ -42,7 +42,7 @@ fun FrontPageU15(navController: NavHostController) {
             Box(Modifier.fillMaxSize()) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
@@ -129,23 +129,23 @@ fun FrontPageU15(navController: NavHostController) {
                 )) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
                         text = "U15: Parameters",
-                        fontSize = 65.sp,
+                        fontSize = 40.sp,
                         fontWeight = FontWeight.ExtraBold,
                     )
                     Spacer(modifier = Modifier.size(10.dp))
-                    Row {
+                    Column {
                         Button(
                             onClick = {
                                 navController.navigate("Project77")
                             },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyPurple, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "P77: 2 Keys")
@@ -157,7 +157,7 @@ fun FrontPageU15(navController: NavHostController) {
                             },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyPurple, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "P78: Upward")

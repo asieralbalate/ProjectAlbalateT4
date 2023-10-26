@@ -43,7 +43,7 @@ fun FrontPageU9(navController: NavHostController) {
             Box(Modifier.fillMaxSize()) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
@@ -230,7 +230,7 @@ fun FrontPageU9(navController: NavHostController) {
                 )) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(

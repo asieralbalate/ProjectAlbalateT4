@@ -31,7 +31,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
-import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
 @Composable
@@ -42,7 +41,7 @@ fun FrontPageU16(navController: NavHostController) {
             Box(Modifier.fillMaxSize()) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
@@ -139,7 +138,7 @@ fun FrontPageU16(navController: NavHostController) {
                 )) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
@@ -148,14 +147,14 @@ fun FrontPageU16(navController: NavHostController) {
                         fontWeight = FontWeight.ExtraBold,
                     )
                     Spacer(modifier = Modifier.size(10.dp))
-                    Row {
+                    Column {
                         Button(
                             onClick = {
                                 navController.navigate("Project82")
                             },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyPurple, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "P82: 3 Integers")
@@ -165,7 +164,7 @@ fun FrontPageU16(navController: NavHostController) {
                             onClick = { navController.navigate("Project83") },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyPurple, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "P83: Square")
@@ -175,7 +174,7 @@ fun FrontPageU16(navController: NavHostController) {
                             onClick = { navController.navigate("Project84") },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyPurple, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "P84: Rectangle")

@@ -43,7 +43,7 @@ fun FrontPageU14(navController: NavHostController) {
             Box(Modifier.fillMaxSize()) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
@@ -130,16 +130,16 @@ fun FrontPageU14(navController: NavHostController) {
                 )) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
                         text = "U14: Functions",
-                        fontSize = 65.sp,
+                        fontSize = 40.sp,
                         fontWeight = FontWeight.ExtraBold,
                     )
                     Spacer(modifier = Modifier.size(10.dp))
-                    Row {
+                    Column {
                         Button(
                             onClick = {
                                 navController.navigate("Project72")

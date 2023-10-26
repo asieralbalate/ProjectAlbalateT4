@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -31,7 +32,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
-import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
 @Composable
@@ -42,7 +42,7 @@ fun FrontPageU17(navController: NavHostController) {
             Box(Modifier.fillMaxSize()) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
@@ -83,7 +83,9 @@ fun FrontPageU17(navController: NavHostController) {
                         ) {
                             Text(text = "P90: Rectangle*")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+                    }
+                    Spacer(modifier = Modifier.height(10.dp))
+                    Row {
                         Button(
                             onClick = { navController.navigate("Project91") },
                             modifier = Modifier.width(200.dp),
@@ -149,23 +151,23 @@ fun FrontPageU17(navController: NavHostController) {
                 )) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
                         text = "U17: Expression",
-                        fontSize = 65.sp,
+                        fontSize = 40.sp,
                         fontWeight = FontWeight.ExtraBold,
                     )
                     Spacer(modifier = Modifier.size(10.dp))
-                    Row {
+                    Column {
                         Button(
                             onClick = {
                                 navController.navigate("Project88")
                             },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyPurple, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "P88: 3 Integers*")
@@ -175,7 +177,7 @@ fun FrontPageU17(navController: NavHostController) {
                             onClick = { navController.navigate("Project89") },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyPurple, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "P89: Square*")
@@ -185,7 +187,7 @@ fun FrontPageU17(navController: NavHostController) {
                             onClick = { navController.navigate("Project90") },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyPurple, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "P90: Rectangle*")
@@ -195,7 +197,7 @@ fun FrontPageU17(navController: NavHostController) {
                             onClick = { navController.navigate("Project91") },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyPurple, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "P91: Words")

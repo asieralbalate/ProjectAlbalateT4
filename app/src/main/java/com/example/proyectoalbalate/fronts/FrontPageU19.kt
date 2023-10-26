@@ -42,7 +42,7 @@ fun FrontPageU19(navController: NavHostController) {
             Box(Modifier.fillMaxSize()) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
@@ -119,7 +119,7 @@ fun FrontPageU19(navController: NavHostController) {
                 )) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
@@ -135,7 +135,7 @@ fun FrontPageU19(navController: NavHostController) {
                             },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyPurple, contentColor = MyWhite
+                                containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "P95: TimesTable")

@@ -41,11 +41,11 @@ fun FrontPageU7(navController: NavHostController) {
             Box(Modifier.fillMaxSize()) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "U7: If (expression)",
+                        text = "U7: If (nested)",
                         fontSize = 65.sp,
                         fontWeight = FontWeight.ExtraBold,
                     )
@@ -162,12 +162,12 @@ fun FrontPageU7(navController: NavHostController) {
             Box(modifier = Modifier.fillMaxSize()) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "U7: If (expression)",
-                        fontSize = 45.sp,
+                        text = "U7: If (nested)",
+                        fontSize = 40.sp,
                         fontWeight = FontWeight.ExtraBold,
                     )
                     Spacer(modifier = Modifier.size(30.dp))
