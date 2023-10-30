@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter the values of the x and y coordinates through the keyboard to determine in which quadrant you are located.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project29(navController: NavHostController) {

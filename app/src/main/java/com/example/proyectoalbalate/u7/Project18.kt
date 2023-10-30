@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter three grades for a student to calculate their average.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project18(navController: NavHostController) {

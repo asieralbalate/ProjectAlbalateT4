@@ -42,7 +42,8 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter the day, month, and year through the keyboard to determine
+// if the provided date is in the first quarter of the year.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project24(navController: NavHostController) {

@@ -43,7 +43,7 @@ import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter three values through the keyboard and display the largest one on the screen.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project23(navController: NavHostController) {

@@ -42,7 +42,8 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter three values through the keyboard.
+// If they are equal, the program calculates the cube of the values.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project26(navController: NavHostController) {
@@ -149,9 +150,12 @@ fun Project26(navController: NavHostController) {
                                     && thirdNumber.toFloatOrNull() != null
                                 ) {
 
-                                    if (firstNumber.toFloat() == secondNumber.toFloat() && firstNumber.toFloat() == thirdNumber.toFloat()) ({
-                                        "The cube of $firstNumber is " + firstNumber.toFloat()*firstNumber.toFloat()*firstNumber.toFloat()
-                                    }).toString() else {"More luck next time"}
+                                    if (firstNumber.toFloat() == secondNumber.toFloat() && firstNumber.toFloat() == thirdNumber.toFloat()) {
+                                        val total = firstNumber.toFloat()*firstNumber.toFloat()*firstNumber.toFloat()
+                                        "The cube of $firstNumber is: $total"
+                                    } else {
+                                        "More luck next time"
+                                    }
                                 } else {
                                     "Introduce all the numbers please"
                                 }
@@ -304,9 +308,12 @@ fun Project26(navController: NavHostController) {
                                     && thirdNumber.toFloatOrNull() != null
                                 ) {
 
-                                    if (firstNumber.toFloat() == secondNumber.toFloat() && firstNumber.toFloat() == thirdNumber.toFloat()) ({
-                                        "The cube of $firstNumber is " + firstNumber.toFloat()*firstNumber.toFloat()*firstNumber.toFloat()
-                                    }).toString() else {"More luck next time"}
+                                    if (firstNumber.toFloat() == secondNumber.toFloat() && firstNumber.toFloat() == thirdNumber.toFloat()) {
+                                        val total = firstNumber.toFloat()*firstNumber.toFloat()*firstNumber.toFloat()
+                                        "The cube of $firstNumber is: $total"
+                                    } else {
+                                        "More luck next time"
+                                    }
                                 } else {
                                     "Introduce all the numbers please"
                                 }

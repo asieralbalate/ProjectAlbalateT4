@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter an integer value to display its square if it's even or its cube if it's odd.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project16(navController: NavHostController) {

@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter a number to determine if it has one, two, or three digits.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project21(navController: NavHostController) {

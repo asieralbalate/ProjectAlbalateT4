@@ -42,7 +42,8 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter three numbers through the keyboard.
+// If all of them are less than ten, it is displayed on the screen.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project27(navController: NavHostController) {

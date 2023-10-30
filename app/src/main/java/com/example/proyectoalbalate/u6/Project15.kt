@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter two integer values and display the greater one on the screen.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project15(navController: NavHostController) {

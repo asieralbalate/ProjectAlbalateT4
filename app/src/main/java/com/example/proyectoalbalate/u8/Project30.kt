@@ -43,7 +43,7 @@ import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter three numbers through the keyboard to determine which one is the largest and which one is the smallest.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project30(navController: NavHostController) {

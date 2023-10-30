@@ -43,7 +43,7 @@ import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter through the keyboard the total number of questions and the number of correct answers to determine the level of your test.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project22(navController: NavHostController) {
