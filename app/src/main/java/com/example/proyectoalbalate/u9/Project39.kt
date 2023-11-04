@@ -37,7 +37,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Press to view the screen the multiples of eight up to 500.
 @Composable
 fun Project39(navController: NavHostController) {
     val configuration = LocalConfiguration.current

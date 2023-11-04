@@ -44,7 +44,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter 10 integers to determine their sum and arithmetic mean.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project33(navController: NavHostController) {

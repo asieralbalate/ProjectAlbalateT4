@@ -44,7 +44,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter five values in the two lists to determine which one is larger.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project40(navController: NavHostController) {

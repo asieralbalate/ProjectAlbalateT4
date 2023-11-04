@@ -44,7 +44,8 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter as many numbers as you want through the keyboard, and display on the screen whether each number is zero, greater than zero, or less than zero.
+//When you enter 9999, the program ends and shows the sum of all the entered numbers.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project45(navController: NavHostController) {
@@ -116,6 +117,7 @@ fun Project45(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
+                                outcome = ""
                                 if (number.toFloatOrNull() != null) {
                                     if (number.toInt() != 9999) {
                                         sum += number.toFloat()
@@ -247,6 +249,7 @@ fun Project45(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
+                                outcome = ""
                                 if (number.toFloatOrNull() != null) {
                                     if (number.toInt() != 9999) {
                                         sum += number.toFloat()

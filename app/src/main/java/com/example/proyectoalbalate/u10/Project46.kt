@@ -45,7 +45,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter an account number and its operations with balances to determine whether you have a positive, negative, or zero balance.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -55,7 +55,7 @@ fun Project46(navController: NavHostController) {
     val listBalance by remember { mutableStateOf(mutableListOf<Pair<Int, Float>>()) }
     var accountNum by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
-    var total by remember { mutableStateOf("") }
+    var total by remember { mutableStateOf(0.0) }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -139,23 +139,22 @@ fun Project46(navController: NavHostController) {
                                 if (balance.toFloatOrNull() != null && accountNum.toIntOrNull() != null) {
                                     for (b in listBalance){
                                         if (accountNum.toInt() == b.first) {
-                                            total = b.second.toString()
+                                            total = b.second.toDouble()
                                         }
-                                        total += balance.toFloat()
-                                        listBalance.add(Pair(accountNum.toInt(), total.toFloat()))
-                                        outcome = if (total.toFloat() < 0.0) {
-                                            "Debt Balance"
-                                        } else if (total.toFloat() > 0.0) {
-                                            "Credit balance"
-                                        } else {
-                                            "Zero balance"
-                                        }
+                                    }
+                                    total += balance.toFloat()
+                                    listBalance.add(Pair(accountNum.toInt(), total.toFloat()))
+                                    outcome = if (total.toFloat() < 0.0) {
+                                        "Debt Balance"
+                                    } else if (total.toFloat() > 0.0) {
+                                        "Credit balance"
+                                    } else {
+                                        "Zero balance"
                                     }
                                     balance = ""
                                 } else {
                                     outcome = "Introduce correct parameters"
                                 }
-                                accountNum = ""
                                 balance = ""
                             },
                             modifier = Modifier.padding(10.dp),
@@ -293,23 +292,22 @@ fun Project46(navController: NavHostController) {
                                 if (balance.toFloatOrNull() != null && accountNum.toIntOrNull() != null) {
                                     for (b in listBalance){
                                         if (accountNum.toInt() == b.first) {
-                                            total = b.second.toString()
+                                            total = b.second.toDouble()
                                         }
-                                        total += balance.toFloat()
-                                        listBalance.add(Pair(accountNum.toInt(), total.toFloat()))
-                                        outcome = if (total.toFloat() < 0.0) {
-                                            "Debt Balance"
-                                        } else if (total.toFloat() > 0.0) {
-                                            "Credit balance"
-                                        } else {
-                                            "Zero balance"
-                                        }
+                                    }
+                                    total += balance.toFloat()
+                                    listBalance.add(Pair(accountNum.toInt(), total.toFloat()))
+                                    outcome = if (total.toInt() < 0.0) {
+                                        "Debt Balance"
+                                    } else if (total.toInt() > 0.0) {
+                                        "Credit balance"
+                                    } else {
+                                        "Zero balance"
                                     }
                                     balance = ""
                                 } else {
                                     outcome = "Introduce correct parameters"
                                 }
-                                accountNum = ""
                                 balance = ""
                             },
                             modifier = Modifier.padding(10.dp),

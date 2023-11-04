@@ -37,7 +37,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Press the button to view the series. To generate this series of 25 terms
 @Composable
 fun Project38(navController: NavHostController) {
     val configuration = LocalConfiguration.current

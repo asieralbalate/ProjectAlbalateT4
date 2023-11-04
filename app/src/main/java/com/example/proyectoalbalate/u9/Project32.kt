@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter an integer to display all whole numbers from 1 to the one you entered on the screen.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project32(navController: NavHostController) {

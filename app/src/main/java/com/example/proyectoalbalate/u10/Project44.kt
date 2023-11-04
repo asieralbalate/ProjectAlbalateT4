@@ -44,7 +44,9 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter the number of pieces and their weight to determine how many weigh less than 9.8 kg,
+// how many weigh between 9.8 and 10.2 kg, and how many weigh more.
+// Also, display the total number of pieces entered.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project44(navController: NavHostController) {

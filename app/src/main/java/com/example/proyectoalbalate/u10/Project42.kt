@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter a number between 0 and 999 to determine how many digits it has.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project42(navController: NavHostController) {

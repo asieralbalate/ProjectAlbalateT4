@@ -44,7 +44,8 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter the number of employees and their salaries, which should be between 100 and 500,
+// to determine how many of them earn between 100 and 300 and how many earn more than 300.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project37(navController: NavHostController) {

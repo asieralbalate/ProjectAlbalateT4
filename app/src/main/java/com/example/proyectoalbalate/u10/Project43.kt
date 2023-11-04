@@ -44,7 +44,8 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter as many values as you want to determine their average.
+// Enter 0 to end the program.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project43(navController: NavHostController) {

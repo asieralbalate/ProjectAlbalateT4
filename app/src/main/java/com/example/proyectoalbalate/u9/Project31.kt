@@ -38,7 +38,7 @@ import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Press the button to display the first 100 numbers on the screen.
 @Composable
 fun Project31(navController: NavHostController) {
     val configuration = LocalConfiguration.current

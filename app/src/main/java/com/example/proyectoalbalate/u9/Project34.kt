@@ -44,7 +44,8 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter the number of pieces and their profile to determine if they are suitable.
+// The profile should be between 1.20 and 1.30.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project34(navController: NavHostController) {
