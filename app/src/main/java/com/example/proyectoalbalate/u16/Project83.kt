@@ -44,13 +44,17 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter the side of a square to determine its perimeter.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project83(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var side by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
+    fun perimeter(side: Float): String {
+        val perimeter = side * 4
+        return "The perimeter is: $perimeter"
+    }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -113,8 +117,7 @@ fun Project83(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = if (side.toFloatOrNull() != null) {
-                                    val perimeter = side.toFloat() * 4
-                                    "The perimeter is: $perimeter"
+                                    perimeter(side.toFloat())
                                 } else {
                                     "Introduce an integer"
                                 }
@@ -171,7 +174,6 @@ fun Project83(navController: NavHostController) {
                         contentDescription = null) }
             }
         }
-
         else -> {
             Box(modifier = Modifier.fillMaxSize()) {
                 Column(
@@ -233,8 +235,7 @@ fun Project83(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = if (side.toFloatOrNull() != null) {
-                                    val perimeter = side.toFloat() * 4
-                                    "The perimeter is: $perimeter"
+                                    perimeter(side.toFloat())
                                 } else {
                                     "Introduce an integer"
                                 }

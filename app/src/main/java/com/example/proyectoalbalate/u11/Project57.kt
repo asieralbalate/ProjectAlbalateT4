@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter the number of points and their coordinates to determine in which quadrant the entered point is located.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project57(navController: NavHostController) {

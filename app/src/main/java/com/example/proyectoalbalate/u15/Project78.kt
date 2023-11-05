@@ -45,17 +45,28 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter three integers and sort them from highest to lowest.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project78(navController: NavHostController) {
+
     val configuration = LocalConfiguration.current
     var number by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     var x by remember { mutableStateOf(1) }
     val numbersList by remember { mutableStateOf(mutableListOf<Float>()) }
     var left by remember { mutableStateOf(3) }
+    fun numList(value: Float): String {
+        if (numbersList.size == 2) {
+            numbersList.add(value)
+            val list = numbersList.sorted()
+            return "${list[0]} , ${list[1]} , ${list[2]}"
+        } else  {
+            numbersList.add(value)
+            return "$left number/s left"
+        }
+    }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -251,13 +262,10 @@ fun Project78(navController: NavHostController) {
                                 if (number.toFloatOrNull() != null) {
                                     if (x < 3){
                                         left--
-                                        outcome = "$left number/s left"
-                                        numbersList.add(number.toFloat())
+                                        outcome = numList(number.toFloat())
                                         x++
                                     } else {
-                                        numbersList.add(number.toFloat())
-                                        val finalList = numbersList.sorted()
-                                        outcome = "${finalList[0]} , ${finalList[1]} , ${finalList[2]}"
+                                        outcome = numList(number.toFloat())
                                         x = 1
                                         left = 3
                                         numbersList.clear()
@@ -320,4 +328,5 @@ fun Project78(navController: NavHostController) {
             }
         }
     }
+
 }

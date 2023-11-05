@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter 3 values 5 times to determine the sum of only the largest values.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project64(navController: NavHostController) {

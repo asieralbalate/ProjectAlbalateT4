@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter a number through the keyboard to determine if it is positive, negative, or 0.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project63(navController: NavHostController) {

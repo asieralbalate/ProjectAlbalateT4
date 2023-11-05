@@ -43,13 +43,12 @@ import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter only one number to determine its square, enter two to determine their product.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project72(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var x by remember { mutableStateOf(1) }
-    var totalSquared by remember { mutableStateOf(0.00) }
     var squaredNumber by remember { mutableStateOf("") }
     var productNumber by remember { mutableStateOf("") }
     var total by remember { mutableStateOf(0.00) }
@@ -149,11 +148,13 @@ fun Project72(navController: NavHostController) {
                                         total = 0.00
                                     }
                                 } else if (squaredNumber.toFloatOrNull() != null) {
-                                    totalSquared = (squaredNumber.toFloat() * squaredNumber.toFloat()).toDouble()
+                                    val totalSquared = calculateSquared(squaredNumber.toFloat())
                                     outcome = "The square equals: $totalSquared"
                                 } else {
                                     outcome = "Introduce numbers please"
                                 }
+                                squaredNumber = ""
+                                productNumber = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -308,11 +309,13 @@ fun Project72(navController: NavHostController) {
                                         total = 0.00
                                     }
                                 } else if (squaredNumber.toFloatOrNull() != null) {
-                                    totalSquared = (squaredNumber.toFloat() * squaredNumber.toFloat()).toDouble()
+                                    val totalSquared = calculateSquared(squaredNumber.toFloat())
                                     outcome = "The square equals: $totalSquared"
                                 } else {
                                     outcome = "Introduce numbers please"
                                 }
+                                squaredNumber = ""
+                                productNumber = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -375,4 +378,9 @@ fun Project72(navController: NavHostController) {
             }
         }
     }
+}
+
+fun calculateSquared(number: Float): String {
+    var total = number * number
+    return total.toString()
 }

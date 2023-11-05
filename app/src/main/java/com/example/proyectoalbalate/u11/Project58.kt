@@ -44,7 +44,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter 10 values to determine how many are positive, how many are negative, how many are multiples of 15, and the accumulated value of only the even values.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project58(navController: NavHostController) {
@@ -131,7 +131,9 @@ fun Project58(navController: NavHostController) {
                                         if (number.toInt() % 15 == 0) {
                                             multiple++
                                         }
-                                        addition += number.toFloat()
+                                        if (number.toInt() % 2 == 0) {
+                                            addition += number.toFloat()
+                                        }
                                         x++
                                     } else {
                                         if (number.toFloat() < 0) {
@@ -143,7 +145,9 @@ fun Project58(navController: NavHostController) {
                                         if (number.toInt() % 15 == 0) {
                                             multiple++
                                         }
-                                        addition += number.toFloat()
+                                        if (number.toInt() % 2 == 0) {
+                                            addition += number.toFloat()
+                                        }
                                         outcome = "Positives: $positive\n" +
                                                 "Negative: $negative\n" +
                                                 "Multiple of 15: $multiple\n" +
@@ -273,7 +277,6 @@ fun Project58(navController: NavHostController) {
                         Button(
                             onClick = {
                                 if (number.toFloatOrNull() != null) {
-
                                     if (x < 10){
                                         left--
                                         outcome = "$left number/s left"
@@ -286,7 +289,9 @@ fun Project58(navController: NavHostController) {
                                         if (number.toInt() % 15 == 0) {
                                             multiple++
                                         }
-                                        addition += number.toFloat()
+                                        if (number.toInt() % 2 == 0) {
+                                            addition += number.toFloat()
+                                        }
                                         x++
                                     } else {
                                         if (number.toFloat() < 0) {
@@ -298,7 +303,9 @@ fun Project58(navController: NavHostController) {
                                         if (number.toInt() % 15 == 0) {
                                             multiple++
                                         }
-                                        addition += number.toFloat()
+                                        if (number.toInt() % 2 == 0) {
+                                            addition += number.toFloat()
+                                        }
                                         outcome = "Positives: $positive\n" +
                                                 "Negative: $negative\n" +
                                                 "Multiple of 15: $multiple\n" +

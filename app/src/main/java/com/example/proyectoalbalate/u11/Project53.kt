@@ -44,7 +44,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter 10 values through the keyboard, but only add the last 5.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project53(navController: NavHostController) {

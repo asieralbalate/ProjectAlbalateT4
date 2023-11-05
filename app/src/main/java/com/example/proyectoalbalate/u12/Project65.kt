@@ -44,7 +44,8 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter the number of triangles and the values of their sides to
+//determine if they are equilateral, isosceles, or scalene.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project65(navController: NavHostController) {

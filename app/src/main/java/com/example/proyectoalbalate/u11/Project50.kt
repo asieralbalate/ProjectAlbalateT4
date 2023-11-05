@@ -37,7 +37,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Press the button to display the multiples of 3, 5, and 9 in the values from 0 to 10,000 on the screen.
 @Composable
 fun Project50(navController: NavHostController) {
     val configuration = LocalConfiguration.current

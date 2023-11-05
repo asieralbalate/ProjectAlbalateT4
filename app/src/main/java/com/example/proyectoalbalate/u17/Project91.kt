@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter a character string to determine its size.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project91(navController: NavHostController) {

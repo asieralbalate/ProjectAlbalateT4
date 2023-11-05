@@ -44,7 +44,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter the number of values to read and the values to determine how many are even and how many are odd.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project51(navController: NavHostController) {

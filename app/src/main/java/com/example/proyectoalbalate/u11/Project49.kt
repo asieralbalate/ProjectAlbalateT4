@@ -44,7 +44,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter 10 student grades to determine how many are greater than seven and how many are lower.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project49(navController: NavHostController) {

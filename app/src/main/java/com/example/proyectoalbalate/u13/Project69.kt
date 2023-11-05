@@ -45,7 +45,7 @@ import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter the number of children in 10 families to determine how many have 0, 1, 2, or more children.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project69(navController: NavHostController) {

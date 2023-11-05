@@ -44,7 +44,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter the base and height of the triangles to calculate their area and determine which ones have an area greater than 12.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project52(navController: NavHostController) {

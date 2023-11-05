@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter between 2 and 5 integers to obtain their sum.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project93(navController: NavHostController) {
@@ -53,6 +53,10 @@ fun Project93(navController: NavHostController) {
     var fourthNumber by remember { mutableStateOf("0") }
     var fifthNumber by remember { mutableStateOf("0") }
     var outcome by remember { mutableStateOf("") }
+    fun sumat(first: Int, second: Int, third: Int, fourth: Int, fifth: Int): String {
+        val sum = first + second + third + fourth + fifth
+        return "The sum of the values is: $sum"
+    }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -178,11 +182,8 @@ fun Project93(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                outcome = if (secondNumber.toFloatOrNull() != null && firstNumber.toFloatOrNull() != null) {
-                                    val sum = firstNumber.toFloat() + secondNumber.toFloat() +
-                                            thirdNumber.toFloat() + fourthNumber.toFloat() +
-                                            fifthNumber.toFloat()
-                                    "The sum of the values is: $sum"
+                                outcome = if (secondNumber.toIntOrNull() != null && firstNumber.toIntOrNull() != null) {
+                                    sumat(firstNumber.toInt(), secondNumber.toInt(),thirdNumber.toInt(),fourthNumber.toInt(),fifthNumber.toInt())
                                 } else {
                                     "Introduce at least two numbers please"
                                 }
@@ -368,11 +369,8 @@ fun Project93(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                outcome = if (secondNumber.toFloatOrNull() != null && firstNumber.toFloatOrNull() != null) {
-                                    val sum = firstNumber.toFloat() + secondNumber.toFloat() +
-                                            thirdNumber.toFloat() + fourthNumber.toFloat() +
-                                            fifthNumber.toFloat()
-                                    "The sum of the values is: $sum"
+                                outcome = if (secondNumber.toIntOrNull() != null && firstNumber.toIntOrNull() != null) {
+                                    sumat(firstNumber.toInt(), secondNumber.toInt(),thirdNumber.toInt(),fourthNumber.toInt(),fifthNumber.toInt())
                                 } else {
                                     "Introduce at least two numbers please"
                                 }

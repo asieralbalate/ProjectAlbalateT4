@@ -45,7 +45,7 @@ import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+// Enter two passwords through the keyboard to determine if they are the same.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project77(navController: NavHostController) {

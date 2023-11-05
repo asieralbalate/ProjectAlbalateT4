@@ -44,7 +44,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter 3 values to determine the average of the three.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project82(navController: NavHostController) {
@@ -54,6 +54,16 @@ fun Project82(navController: NavHostController) {
     var x by remember { mutableStateOf(1) }
     var addition by remember { mutableStateOf(0) }
     var left by remember { mutableStateOf(3) }
+    fun average(number: Int): String {
+        if (x == 3) {
+            addition += number.toInt()
+            val average = addition / 3
+            return "The average is: $average."
+        } else  {
+            addition += number
+            return "$left number/s left"
+        }
+    }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -118,13 +128,10 @@ fun Project82(navController: NavHostController) {
                                 if (number.toIntOrNull() != null) {
                                     if (x < 3) {
                                         left--
-                                        outcome = "$left number/s left"
-                                        addition += number.toInt()
+                                        outcome = average(number.toInt())
                                         x++
                                     } else {
-                                        addition += number.toInt()
-                                        val average = addition / 3
-                                        outcome = "The average is: $average."
+                                        outcome = average(number.toInt())
                                         x = 1
                                         left = 3
                                         addition = 0
@@ -249,13 +256,10 @@ fun Project82(navController: NavHostController) {
                                 if (number.toIntOrNull() != null) {
                                     if (x < 3) {
                                         left--
-                                        outcome = "$left number/s left"
-                                        addition += number.toInt()
+                                        outcome = average(number.toInt())
                                         x++
                                     } else {
-                                        addition += number.toInt()
-                                        val average = addition / 3
-                                        outcome = "The average is: $average."
+                                        outcome = average(number.toInt())
                                         x = 1
                                         left = 3
                                         addition = 0

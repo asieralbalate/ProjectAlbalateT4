@@ -45,6 +45,7 @@ import com.example.proyectoalbalate.u17.Project89
 import com.example.proyectoalbalate.u18.Project93
 import com.example.proyectoalbalate.u19.Project95
 import com.example.proyectoalbalate.u20.Project97
+import com.example.proyectoalbalate.u21.Project103
 import com.example.proyectoalbalate.u4.Project5
 import com.example.proyectoalbalate.u4.Project6
 import com.example.proyectoalbalate.u4.Project7
@@ -167,6 +168,16 @@ class MainActivity : ComponentActivity() {
                         composable("Project93") { Project93(navController = navController) }
                         composable("Project95") { Project95(navController = navController) }
                         composable("Project97") { Project97(navController = navController) }
+                        composable("Project103") { Project103(navController = navController) }
+         /*               composable("Project104") { Project104(navController = navController) }
+                        composable("Project107") { Project107(navController = navController) }
+                        composable("Project108") { Project108(navController = navController) }
+                        composable("Project111") { Project111(navController = navController) }
+                        composable("Project115") { Project115(navController = navController) }
+                        composable("Project116") { Project116(navController = navController) }
+                        composable("Project118") { Project118(navController = navController) }
+                        composable("Project121") { Project121(navController = navController) }
+                        composable("Project124") { Project124(navController = navController) }*/
                         composable("FrontPageU4") { FrontPageU4(navController = navController) }
                         composable("FrontPageU5") { FrontPageU5(navController = navController) }
                         composable("FrontPageU6") { FrontPageU6(navController = navController) }
@@ -184,6 +195,13 @@ class MainActivity : ComponentActivity() {
                         composable("FrontPageU18") { FrontPageU18(navController = navController) }
                         composable("FrontPageU19") { FrontPageU19(navController = navController) }
                         composable("FrontPageU20") { FrontPageU20(navController = navController) }
+                        composable("FrontPageU21") { FrontPageU21(navController = navController) }
+                        composable("FrontPageU22") { FrontPageU22(navController = navController) }
+                        composable("FrontPageU23") { FrontPageU23(navController = navController) }
+                        composable("FrontPageU24") { FrontPageU24(navController = navController) }
+                        composable("FrontPageU25") { FrontPageU25(navController = navController) }
+                        composable("FrontPageU26") { FrontPageU26(navController = navController) }
+                        composable("FrontPageU27") { FrontPageU27(navController = navController) }
                         composable("FrontPage") { FrontPage(navController = navController)}
                         }
                     }

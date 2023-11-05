@@ -44,7 +44,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBrown
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter a number between 1 and 10 to display on the screen the multiplication table of that number with its first 12 values.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project55(navController: NavHostController) {

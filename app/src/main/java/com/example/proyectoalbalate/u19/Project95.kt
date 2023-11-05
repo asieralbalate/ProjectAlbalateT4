@@ -45,7 +45,9 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
+//Enter a number and its multiples to display on the screen
+// the multiplication table of the entered number with the values
+// of the corresponding multiples.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -54,7 +56,16 @@ fun Project95(navController: NavHostController) {
     var numMultiples by remember { mutableStateOf("10") }
     var number by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
+    var out by remember { mutableStateOf("") }
     var x by remember { mutableStateOf(0) }
+    fun table(value: Float, numMult: String): String {
+        while (x < numMult.toInt() + 1){
+            val product = value * x
+            out += "$value * $x = $product\n"
+            x++
+        }
+        return out
+    }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -137,15 +148,11 @@ fun Project95(navController: NavHostController) {
                             onClick = {
                                 outcome = ""
                                 if (number.toFloatOrNull() != null) {
-                                    outcome += "Multiplication table of $number\n"
-                                    while (x < numMultiples.toInt() + 1){
-                                        val product = number.toFloat() * x
-                                        outcome += "$number * $x = $product\n"
-                                        x++
-                                    }
+                                    outcome += table(number.toFloat(), numMultiples)
                                 } else {
                                     outcome = "Introduce correct parameters"
                                 }
+                                x = 0
                                 number = ""
                                 numMultiples = "10"
                             },
@@ -283,15 +290,11 @@ fun Project95(navController: NavHostController) {
                             onClick = {
                                 outcome = ""
                                 if (number.toFloatOrNull() != null) {
-                                    outcome += "Multiplication table of $number\n"
-                                    while (x < numMultiples.toInt() + 1){
-                                        val product = number.toFloat() * x
-                                        outcome += "$number * $x = $product\n"
-                                        x++
-                                    }
+                                    outcome += table(number.toFloat(), numMultiples)
                                 } else {
                                     outcome = "Introduce correct parameters"
                                 }
+                                x = 0
                                 number = ""
                                 numMultiples = "10"
                             },
