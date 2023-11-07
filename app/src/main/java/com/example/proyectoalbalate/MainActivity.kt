@@ -38,14 +38,23 @@ import com.example.proyectoalbalate.u14.Project72
 import com.example.proyectoalbalate.u14.Project73
 import com.example.proyectoalbalate.u15.Project77
 import com.example.proyectoalbalate.u15.Project78
+import com.example.proyectoalbalate.u22.Project107
+import com.example.proyectoalbalate.u22.Project108
 import com.example.proyectoalbalate.u17.Project91
 import com.example.proyectoalbalate.u16.Project83
 import com.example.proyectoalbalate.u17.Project88
 import com.example.proyectoalbalate.u17.Project89
 import com.example.proyectoalbalate.u18.Project93
 import com.example.proyectoalbalate.u19.Project95
+import com.example.proyectoalbalate.u23.Project111
 import com.example.proyectoalbalate.u20.Project97
 import com.example.proyectoalbalate.u21.Project103
+import com.example.proyectoalbalate.u21.Project104
+import com.example.proyectoalbalate.u24.Project115
+import com.example.proyectoalbalate.u24.Project116
+import com.example.proyectoalbalate.u25.Project118
+import com.example.proyectoalbalate.u26.Project121
+import com.example.proyectoalbalate.u27.Project124
 import com.example.proyectoalbalate.u4.Project5
 import com.example.proyectoalbalate.u4.Project6
 import com.example.proyectoalbalate.u4.Project7
@@ -169,7 +178,7 @@ class MainActivity : ComponentActivity() {
                         composable("Project95") { Project95(navController = navController) }
                         composable("Project97") { Project97(navController = navController) }
                         composable("Project103") { Project103(navController = navController) }
-         /*               composable("Project104") { Project104(navController = navController) }
+                        composable("Project104") { Project104(navController = navController) }
                         composable("Project107") { Project107(navController = navController) }
                         composable("Project108") { Project108(navController = navController) }
                         composable("Project111") { Project111(navController = navController) }
@@ -177,7 +186,7 @@ class MainActivity : ComponentActivity() {
                         composable("Project116") { Project116(navController = navController) }
                         composable("Project118") { Project118(navController = navController) }
                         composable("Project121") { Project121(navController = navController) }
-                        composable("Project124") { Project124(navController = navController) }*/
+                        composable("Project124") { Project124(navController = navController) }
                         composable("FrontPageU4") { FrontPageU4(navController = navController) }
                         composable("FrontPageU5") { FrontPageU5(navController = navController) }
                         composable("FrontPageU6") { FrontPageU6(navController = navController) }
