@@ -12,8 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -21,12 +19,9 @@ import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -36,21 +31,19 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.proyectoalbalate.u26.Partner
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGreen
 import com.example.proyectoalbalate.ui.theme.MyWhite
 import kotlin.random.Random
 
-//Enter five pairs of values to determine the greater of each pair.
+//Press the button to see 5 random integers and find out
+// which one is the largest and which one is the smallest.
 @SuppressLint("MutableCollectionMutableState")
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project124(navController: NavHostController) {
     val configuration = LocalConfiguration.current
@@ -203,7 +196,7 @@ fun Project124(navController: NavHostController) {
                                 outcome = ""
                                 outcome = ""
                                 val vector = Vector()
-                                outcome += "${vector.printArray()}"
+                                outcome += vector.printArray()
                                 outcome += "The smallest is: ${vector.getMin()}\n"
                                 outcome += "The biggest is: ${vector.getMax()}"
                             },
@@ -262,8 +255,8 @@ fun Project124(navController: NavHostController) {
     }
 }
 
-class Vector(){
-    private val array = IntArray(10)
+class Vector{
+    private val array = IntArray(5)
     init{charge()}
 
     private fun charge(){

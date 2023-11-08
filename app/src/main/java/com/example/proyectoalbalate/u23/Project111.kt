@@ -46,7 +46,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGreen
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter five pairs of values to determine the greater of each pair.
+//Enter the student's name and grade to find out how they are doing.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -352,7 +352,7 @@ class Student(name: String, grade: Int) {
         return studentName
     }
     fun calculateGrades(): String{
-        if (studentGrade >= 4) {
+        if (studentGrade <= 4) {
             return "REGULAR"
         } else {
             return "GREAT"

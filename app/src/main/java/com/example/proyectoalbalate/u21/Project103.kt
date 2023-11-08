@@ -45,7 +45,9 @@ import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter three values and display the smallest one on the screen.
+//Enter 8 numbers to determine the total,
+// the sum of those greater than 36,
+// and how many are greater than 50.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project103(navController: NavHostController) {

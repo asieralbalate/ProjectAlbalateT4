@@ -45,7 +45,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter three values and display the smallest one on the screen.
+//Enter 4 pairs to know the sum of each element.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project104(navController: NavHostController) {

@@ -45,7 +45,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGreen
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter five pairs of values to determine the greater of each pair.
+//Enter the name and age of the club members to find out who is the oldest and who the club members are.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -54,7 +54,7 @@ fun Project121(navController: NavHostController) {
     var seniority by remember { mutableStateOf("") }
     var name by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
-    var listPartner by remember { mutableStateOf(mutableListOf<Partner>()) }
+    val listPartner by remember { mutableStateOf(mutableListOf<Partner>()) }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -141,7 +141,7 @@ fun Project121(navController: NavHostController) {
                                     val partner = Partner(name, seniority.toInt())
                                     listPartner.add(partner)
                                     val club =
-                                        Club(name, listPartner)
+                                        Club(listPartner)
                                     outcome += partner.returnSeniority()
                                     if (listPartner.size == 3) {
                                         outcome += club.printClub()
@@ -291,7 +291,7 @@ fun Project121(navController: NavHostController) {
 
                                     val partner = Partner(name, seniority.toInt())
                                     listPartner.add(partner)
-                                    val club = Club(name, listPartner)
+                                    val club = Club(listPartner)
                                     outcome += partner.returnSeniority()
                                     if (listPartner.size == 3) {
                                         outcome += club.printClub()
@@ -359,18 +359,14 @@ fun Project121(navController: NavHostController) {
     }
 }
 
-class Partner(name: String, seniority: Int) {
-    val name = name
-    val seniority = seniority
+class Partner(val name: String, val seniority: Int) {
 
     fun returnSeniority():String{
         return "$name has a seniority of $seniority years.\n"
     }
 }
 
-class Club(name: String, listPartner: MutableList<Partner>){
-    val name = name
-    val listPartner = listPartner
+class Club(private val listPartner: MutableList<Partner>){
     fun printClub(): String {
         var aux = ""
         for (e in listPartner) {
@@ -389,9 +385,7 @@ class Club(name: String, listPartner: MutableList<Partner>){
                 maxSeniority = partner.seniority
             }
         }
-        if (olderPartner != null) {
-            return olderPartner.name
-        } else { return ""}
+        return olderPartner?.name ?: ""
     }
 
 }
