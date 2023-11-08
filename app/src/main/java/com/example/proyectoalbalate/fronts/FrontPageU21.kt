@@ -62,7 +62,7 @@ fun FrontPageU21(navController: NavHostController) {
                                 containerColor = MyPurple, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P103: ")
+                            Text(text = "P103: 8 Numbers")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -72,7 +72,7 @@ fun FrontPageU21(navController: NavHostController) {
                                 containerColor = MyPurple, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P104: ")
+                            Text(text = "P104: 4 Pairs")
                         }
                     }
                 }
@@ -135,7 +135,7 @@ fun FrontPageU21(navController: NavHostController) {
                 ) {
                     Text(
                         text = "U21: Arrays",
-                        fontSize = 40.sp,
+                        fontSize = 65.sp,
                         fontWeight = FontWeight.ExtraBold,
                     )
                     Spacer(modifier = Modifier.size(10.dp))
@@ -149,7 +149,7 @@ fun FrontPageU21(navController: NavHostController) {
                                 containerColor = MyPurple, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P103: ")
+                            Text(text = "P103: 8 Numbers")
                         }
                         Spacer(modifier = Modifier.size(30.dp))
                         Button(
@@ -159,7 +159,7 @@ fun FrontPageU21(navController: NavHostController) {
                                 containerColor = MyPurple, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P104: ")
+                            Text(text = "P104: 4 Pairs")
                         }
                     }
                 }

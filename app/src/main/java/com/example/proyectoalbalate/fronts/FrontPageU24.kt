@@ -62,7 +62,7 @@ fun FrontPageU24(navController: NavHostController) {
                                 containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P115: ")
+                            Text(text = "P115: Grades")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -74,7 +74,7 @@ fun FrontPageU24(navController: NavHostController) {
                                 containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P116: ")
+                            Text(text = "P116: Points")
                         }
                     }
                 }
@@ -151,7 +151,7 @@ fun FrontPageU24(navController: NavHostController) {
                                 containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P115: ")
+                            Text(text = "P115: Grades")
                         }
                         Spacer(modifier = Modifier.size(30.dp))
                         Button(
@@ -163,7 +163,7 @@ fun FrontPageU24(navController: NavHostController) {
                                 containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P116: ")
+                            Text(text = "P116: Points")
                         }
                     }
                 }

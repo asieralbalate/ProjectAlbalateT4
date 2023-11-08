@@ -62,7 +62,7 @@ fun FrontPageU27(navController: NavHostController) {
                                 containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P124: ")
+                            Text(text = "P124: 5 Numbers")
                         }
                     }
                 }
@@ -125,7 +125,7 @@ fun FrontPageU27(navController: NavHostController) {
                 ) {
                     Text(
                         text = "U27: Access",
-                        fontSize = 40.sp,
+                        fontSize = 65.sp,
                         fontWeight = FontWeight.ExtraBold,
                     )
                     Spacer(modifier = Modifier.size(10.dp))
@@ -139,7 +139,7 @@ fun FrontPageU27(navController: NavHostController) {
                                 containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P124: ")
+                            Text(text = "P124: 5 Numbers")
                         }
                     }
                 }

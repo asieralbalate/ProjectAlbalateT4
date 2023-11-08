@@ -62,7 +62,7 @@ fun FrontPageU23(navController: NavHostController) {
                                 containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P111: ")
+                            Text(text = "P111: Student")
                         }
                     }
                 }
@@ -139,7 +139,7 @@ fun FrontPageU23(navController: NavHostController) {
                                 containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P111: ")
+                            Text(text = "P111: Student")
                         }
                     }
                 }

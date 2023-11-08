@@ -62,7 +62,7 @@ fun FrontPageU26(navController: NavHostController) {
                                 containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P121: ")
+                            Text(text = "P121: Club")
                         }
                     }
                 }
@@ -139,7 +139,7 @@ fun FrontPageU26(navController: NavHostController) {
                                 containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P121: ")
+                            Text(text = "P121: Club")
                         }
                     }
                 }

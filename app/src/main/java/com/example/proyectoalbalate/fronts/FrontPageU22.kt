@@ -63,7 +63,7 @@ fun FrontPageU22(navController: NavHostController) {
                                 containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P107: ")
+                            Text(text = "P107: N Numbers")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -73,7 +73,7 @@ fun FrontPageU22(navController: NavHostController) {
                                 containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P108: ")
+                            Text(text = "P108: N Elements")
                         }
                     }
                 }
@@ -150,7 +150,7 @@ fun FrontPageU22(navController: NavHostController) {
                                 containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P107: ")
+                            Text(text = "P107: N Numbers")
                         }
                         Spacer(modifier = Modifier.size(30.dp))
                         Button(
@@ -160,7 +160,7 @@ fun FrontPageU22(navController: NavHostController) {
                                 containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P108: ")
+                            Text(text = "P108: N Elements")
                         }
                     }
                 }
