@@ -67,7 +67,7 @@ fun Project130(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 127",
+                            text = "Project 130",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -114,7 +114,7 @@ fun Project130(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project126") },
+                    onClick = { navController.navigate("Project127") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -125,7 +125,7 @@ fun Project130(navController: NavHostController) {
                         imageVector = Icons.Default.ArrowBack,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU28") },
+                    onClick = { navController.navigate("FrontPageU29") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -136,7 +136,7 @@ fun Project130(navController: NavHostController) {
                         imageVector = Icons.Default.KeyboardArrowUp,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project130") },
+                    onClick = { navController.navigate("Project133") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -164,7 +164,7 @@ fun Project130(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 127",
+                            text = "Project 130",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -212,7 +212,7 @@ fun Project130(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project126") },
+                    onClick = { navController.navigate("Project127") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -223,7 +223,7 @@ fun Project130(navController: NavHostController) {
                         imageVector = Icons.Default.ArrowBack,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU28") },
+                    onClick = { navController.navigate("FrontPageU29") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -234,7 +234,7 @@ fun Project130(navController: NavHostController) {
                         imageVector = Icons.Default.KeyboardArrowUp,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project130") },
+                    onClick = { navController.navigate("Project133") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
