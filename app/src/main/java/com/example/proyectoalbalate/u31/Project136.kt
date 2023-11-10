@@ -1,4 +1,4 @@
-package com.example.proyectoalbalate.u30
+package com.example.proyectoalbalate.u31
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -41,18 +41,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.proyectoalbalate.u25.Sons
+import com.example.proyectoalbalate.u28.Employee
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGreen
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter a number from one to nine to see a country in South America and its population.
+
+//Enter two numbers to know the highest
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project133(navController: NavHostController) {
+fun Project136(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var number by remember { mutableStateOf("") }
+    var secondNumber by remember { mutableStateOf("") }
+    var firstNumber by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -74,7 +76,7 @@ fun Project133(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 133",
+                            text = "Project 136",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -88,16 +90,15 @@ fun Project133(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter a number from one to nine to see a country\n" +
-                                    "in South America and its population.",
+                            text = "Enter two numbers to know the highest",
                             textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
-                        value = number,
-                        onValueChange = { number = it },
+                        value = firstNumber,
+                        onValueChange = { firstNumber = it },
                         label = {
-                            Text("Number")
+                            Text("First Number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -112,6 +113,22 @@ fun Project133(navController: NavHostController) {
                             keyboardType = KeyboardType.Number
                         ),
                     )
+                    OutlinedTextField(
+                        value = secondNumber,
+                        onValueChange = { secondNumber = it },
+                        label = {
+                            Text("Second Number")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyGreen
+                        )
+                    )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
@@ -120,24 +137,16 @@ fun Project133(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                if (number.toIntOrNull() != null) {
-                                    val countries: Countries = when {
-                                        number.toInt() == 1 -> Countries.BRASIL
-                                        number.toInt() == 2 -> Countries.COLOMBIA
-                                        number.toInt() == 3 -> Countries.PERU
-                                        number.toInt() == 4 -> Countries.VENEZUELA
-                                        number.toInt() == 5 -> Countries.CHILE
-                                        number.toInt() == 6 -> Countries.ECUADOR
-                                        number.toInt() == 7 -> Countries.BOLIVIA
-                                        number.toInt() == 8 -> Countries.PARAGUAY
-                                        number.toInt() == 9 -> Countries.URUGUAY
-                                        else -> {Countries.BRASIL}
-                                    }
-                                    outcome = "${countries.name} has ${countries.population} people"
+                                if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
+
+                                    outcome = "${Highest.max(firstNumber.toInt(), secondNumber.toInt())}\n" +
+                                            "${Highest.max(firstNumber.toFloat(), secondNumber.toFloat())}\n" +
+                                            "${Highest.max(firstNumber.toDouble(), secondNumber.toDouble())}"
                                 } else {
                                     outcome = "Introduce correct parameters"
                                 }
-                                number = ""
+                                firstNumber = ""
+                                secondNumber = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -156,38 +165,47 @@ fun Project133(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project130") },
+                    onClick = { navController.navigate("Project133") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
                     containerColor = MyGreen,
-                    contentColor = MyWhite) {
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU30") },
+                    onClick = { navController.navigate("FrontPageU31") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite) {
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project136") },
+                    onClick = { navController.navigate("Project139") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
                     containerColor = MyGreen,
-                    contentColor = MyWhite) {
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null) }
+                        contentDescription = null
+                    )
+                }
             }
         }
 
@@ -206,7 +224,7 @@ fun Project133(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 133",
+                            text = "Project 136",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -220,18 +238,36 @@ fun Project133(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter a number from one to nine to\n" +
-                                    "see a country in South America and\n" +
-                                    "its population.",
+                            text = "Enter two numbers to know the highest",
                             textAlign = TextAlign.Center,
                         )
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = number,
-                        onValueChange = { number = it },
+                        value = firstNumber,
+                        onValueChange = { firstNumber = it },
                         label = {
-                            Text("Number")
+                            Text("First Number")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyGreen
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
+                    )
+                    Spacer(modifier = Modifier.size(5.dp))
+                    OutlinedTextField(
+                        value = secondNumber,
+                        onValueChange = { secondNumber = it },
+                        label = {
+                            Text("Second Number")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -254,27 +290,16 @@ fun Project133(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                if (number.toIntOrNull() != null) {
+                                if (firstNumber.toFloatOrNull() != null && secondNumber.toFloatOrNull() != null) {
 
-                                    val countries: Countries = when {
-                                        number.toInt() == 1 -> Countries.BRASIL
-                                        number.toInt() == 2 -> Countries.COLOMBIA
-                                        number.toInt() == 3 -> Countries.PERU
-                                        number.toInt() == 4 -> Countries.VENEZUELA
-                                        number.toInt() == 5 -> Countries.CHILE
-                                        number.toInt() == 6 -> Countries.ECUADOR
-                                        number.toInt() == 7 -> Countries.BOLIVIA
-                                        number.toInt() == 8 -> Countries.PARAGUAY
-                                        number.toInt() == 9 -> Countries.URUGUAY
-                                        else -> {Countries.BRASIL}
-                                    }
-
-                                    outcome = "${countries.name} has ${countries.population} people"
-
+                                    outcome = "${Highest.max(firstNumber.toInt(), secondNumber.toInt())}\n" +
+                                            "${Highest.max(firstNumber.toFloat(), secondNumber.toFloat())}\n" +
+                                            "${Highest.max(firstNumber.toDouble(), secondNumber.toDouble())}"
                                 } else {
                                     outcome = "Introduce correct parameters"
                                 }
-                                number = ""
+                                firstNumber = ""
+                                secondNumber = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -293,29 +318,35 @@ fun Project133(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project130") },
+                    onClick = { navController.navigate("Project133") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyGreen,
-                    contentColor = MyWhite){
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU30") },
+                    onClick = { navController.navigate("FrontPageU31") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomCenter),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite){
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project136") },
+                    onClick = { navController.navigate("Project139") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -325,20 +356,18 @@ fun Project133(navController: NavHostController) {
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
             }
         }
     }
 }
 
-enum class Countries(val population: Int){
-    BRASIL (202450649),
-    COLOMBIA (50364000),
-    PERU (31151643),
-    VENEZUELA (31028337),
-    CHILE (18261884),
-    ECUADOR (16298217),
-    BOLIVIA (10888000),
-    PARAGUAY (6460000),
-    URUGUAY (3372000)
+object Highest{
+    fun max(x1: Int, x2: Int) = if (x1 > x2) x1 else x2
+
+    fun max(x1: Float, x2: Float) = if (x1 > x2) x1 else x2
+
+    fun max(x1: Double, x2: Double) = if (x1 > x2) x1 else x2
 }

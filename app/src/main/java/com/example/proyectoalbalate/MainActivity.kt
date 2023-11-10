@@ -59,6 +59,7 @@ import com.example.proyectoalbalate.u28.Project126
 import com.example.proyectoalbalate.u28.Project127
 import com.example.proyectoalbalate.u29.Project130
 import com.example.proyectoalbalate.u30.Project133
+import com.example.proyectoalbalate.u31.Project136
 import com.example.proyectoalbalate.u4.Project5
 import com.example.proyectoalbalate.u4.Project6
 import com.example.proyectoalbalate.u4.Project7
@@ -195,6 +196,7 @@ class MainActivity : ComponentActivity() {
                         composable("Project127") { Project127(navController = navController) }
                         composable("Project130") { Project130(navController = navController) }
                         composable("Project133") { Project133(navController = navController) }
+                        composable("Project136") { Project136(navController = navController) }
                         composable("FrontPageU4") { FrontPageU4(navController = navController) }
                         composable("FrontPageU5") { FrontPageU5(navController = navController) }
                         composable("FrontPageU6") { FrontPageU6(navController = navController) }
@@ -222,6 +224,7 @@ class MainActivity : ComponentActivity() {
                         composable("FrontPageU28") { FrontPageU28(navController = navController) }
                         composable("FrontPageU29") { FrontPageU29(navController = navController) }
                         composable("FrontPageU30") { FrontPageU30(navController = navController) }
+                        composable("FrontPageU31") { FrontPageU31(navController = navController) }
                         composable("FrontPage") { FrontPage(navController = navController)}
                         }
                     }
