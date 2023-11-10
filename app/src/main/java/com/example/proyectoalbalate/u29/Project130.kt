@@ -1,4 +1,4 @@
-package com.example.proyectoalbalate.u28
+package com.example.proyectoalbalate.u29
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -35,6 +35,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.proyectoalbalate.u28.Dice
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGreen
@@ -43,7 +44,7 @@ import com.example.proyectoalbalate.ui.theme.MyWhite
 //Press the button to roll a dice and know the value
 @SuppressLint("MutableCollectionMutableState")
 @Composable
-fun Project127(navController: NavHostController) {
+fun Project130(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
@@ -92,9 +93,9 @@ fun Project127(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                val dice = Dice(7)
+                                val dice = Dice2(7)
                                 dice.rollDice()
-                                outcome = dice.returnString()
+                                outcome = dice.toString()
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -190,9 +191,9 @@ fun Project127(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                val dice = Dice(7)
+                                val dice = Dice2(7)
                                 dice.rollDice()
-                                outcome = dice.returnString()
+                                outcome = dice.toString()
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -249,7 +250,7 @@ fun Project127(navController: NavHostController) {
     }
 }
 
-class Dice(number: Int) {
+class Dice2(number: Int) {
     var valueDice: Int = 1
         set(value) {
             if (value >= 1 && value <= 6){
@@ -258,14 +259,28 @@ class Dice(number: Int) {
                 field = 1
             }
         }
+
+    val dice = dataDice(valueDice)
     init {
         this.valueDice = number
     }
 
-   fun rollDice(){
-       valueDice = ((Math.random() * 6) + 1).toInt()
-   }
-    fun returnString():String{
-        return "Dice value: $valueDice"
+    fun rollDice(){
+        valueDice = ((Math.random() * 6) + 1).toInt()
+        dice.value = valueDice
+    }
+
+    override fun toString(): String {
+        return dice.toString()
+    }
+}
+
+data class dataDice(var value: Int) {
+    override fun toString(): String {
+        var chain = ""
+        for (i in 1..value){
+            chain += "*"
+        }
+        return chain
     }
 }
