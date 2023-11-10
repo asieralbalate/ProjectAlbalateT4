@@ -7,11 +7,13 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
@@ -27,14 +29,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.proyectoalbalate.ui.theme.MyBrown
+import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
-import com.example.proyectoalbalate.ui.theme.MyGrey
+import com.example.proyectoalbalate.ui.theme.MyGreen
+import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-
 @Composable
-fun FrontPageU4(navController: NavHostController) {
+fun FrontPageU28(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -45,76 +47,53 @@ fun FrontPageU4(navController: NavHostController) {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "U4: Console",
+                        text = "U28: Set / Get",
                         fontSize = 65.sp,
                         fontWeight = FontWeight.ExtraBold,
                     )
-                    Spacer(modifier = Modifier.size(30.dp))
+                    Spacer(modifier = Modifier.size(10.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("Project5")
+                                navController.navigate("Project126")
                             },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
+                                containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P5: Add / Multiply")
+                            Text(text = "P126: Employee")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
-
-                        Button(
-                            onClick = { navController.navigate("Project6") },
-                            modifier = Modifier.width(200.dp),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
-                            )
-                        ) {
-                            Text(text = "P6: Perimeter")
-                        }
-
-                        Spacer(modifier = Modifier.width(15.dp))
-
-                        Button(
-                            onClick = { navController.navigate("Project7") },
-                            modifier = Modifier.width(200.dp),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
-                            )
-                        ) {
-                            Text(text = "P7: Invoice")
-                        }
-                    }
-                    Spacer(modifier = Modifier.height(10.dp))
-                    Row {
                         Button(
                             onClick = {
-                                navController.navigate("Project8")
+                                navController.navigate("Project127")
                             },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
+                                containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P8: Add / Multiply*")
-                        }
-                        Spacer(modifier = Modifier.width(15.dp))
-
-                        Button(
-                            onClick = { navController.navigate("Project9") },
-                            modifier = Modifier.width(200.dp),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
-                            )
-                        ) {
-                            Text(text = "P9: Add / Average")
+                            Text(text = "P127: Dice")
                         }
                     }
                 }
-
             }
             Box(modifier = Modifier.fillMaxSize()) {
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPageU27") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.TopStart),
+                    containerColor = MyGreen,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
                     onClick = { navController.navigate("FrontPage") },
                     modifier = Modifier
@@ -130,12 +109,12 @@ fun FrontPageU4(navController: NavHostController) {
                     )
                 }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU5") },
+                    onClick = { navController.navigate("FrontPageU29") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
-                    containerColor = MyBrown,
+                    containerColor = MyGreen,
                     contentColor = MyWhite
                 ) {
                     Icon(
@@ -146,83 +125,64 @@ fun FrontPageU4(navController: NavHostController) {
             }
         }
         else -> {
-            Box(modifier = Modifier.fillMaxSize()) {
+            Box(modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(
+                    rememberScrollState()
+                )) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "U4: Console",
-                        fontSize = 65.sp,
+                        text = "U28: Set / Get",
+                        fontSize = 40.sp,
                         fontWeight = FontWeight.ExtraBold,
                     )
-                    Spacer(modifier = Modifier.size(30.dp))
-                    Row {
+                    Spacer(modifier = Modifier.size(10.dp))
+                    Column {
                         Button(
                             onClick = {
-                                navController.navigate("Project5")
+                                navController.navigate("Project126")
                             },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
+                                containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P5: Add / Multiply")
+                            Text(text = "P126: Employee")
                         }
-                    }
-                    Spacer(modifier = Modifier.size(30.dp))
-                    Row {
+                        Spacer(modifier = Modifier.size(30.dp))
                         Button(
-                            onClick = { navController.navigate("Project6") },
+                            onClick = {
+                                navController.navigate("Project127")
+                            },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
+                                containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P6: Perimeter")
-                        }
-                    }
-                    Spacer(modifier = Modifier.size(30.dp))
-                    Row {
-                        Button(
-                            onClick = { navController.navigate("Project7") },
-                            modifier = Modifier.width(200.dp),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
-                            )
-                        ) {
-                            Text(text = "P7: Invoice")
-                        }
-                    }
-                    Spacer(modifier = Modifier.size(30.dp))
-                    Row {
-                        Button(
-                            onClick = { navController.navigate("Project8") },
-                            modifier = Modifier.width(200.dp),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
-                            )
-                        ) {
-                            Text(text = "P8: Add / Multiply*")
-                        }
-                    }
-                    Spacer(modifier = Modifier.size(30.dp))
-                    Row {
-                        Button(
-                            onClick = { navController.navigate("Project9") },
-                            modifier = Modifier.width(200.dp),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
-                            )
-                        ) {
-                            Text(text = "P9: Add / Average")
+                            Text(text = "P127: Dice")
                         }
                     }
                 }
-
             }
             Box(modifier = Modifier.fillMaxSize()) {
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPageU27") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomStart),
+                    containerColor = MyGreen,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
                     onClick = { navController.navigate("FrontPage") },
                     modifier = Modifier
@@ -238,12 +198,12 @@ fun FrontPageU4(navController: NavHostController) {
                     )
                 }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU5") },
+                    onClick = { navController.navigate("FrontPageU29") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomEnd),
-                    containerColor = MyBrown,
+                    containerColor = MyGreen,
                     contentColor = MyWhite
                 ) {
                     Icon(
