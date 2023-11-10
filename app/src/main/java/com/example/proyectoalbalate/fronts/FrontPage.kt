@@ -394,11 +394,14 @@ fun FrontPage(navController: NavHostController) {
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU30")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGreen, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 30")
+                            Text(text = "U30:Enum Cl.")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -1070,11 +1073,14 @@ fun FrontPage(navController: NavHostController) {
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU30")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGreen, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 30")
+                            Text(text = "U30: Enum Cl.")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
