@@ -1,4 +1,4 @@
-package com.example.proyectoalbalate.u15
+package com.example.proyectoalbalate.u40
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -44,29 +44,18 @@ import androidx.navigation.NavHostController
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
+import com.example.proyectoalbalate.ui.theme.MyRed
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter three integers and sort them from highest to lowest.
+
+//Enter a string of characters to print it. We've used an extension function to print it.
+
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project78(navController: NavHostController) {
-
+fun Project160(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var number by remember { mutableStateOf("") }
+    var text by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
-    var x by remember { mutableStateOf(1) }
-    val numbersList by remember { mutableStateOf(mutableListOf<Float>()) }
-    var left by remember { mutableStateOf(3) }
-    fun numList(value: Float): String {
-        if (numbersList.size == 2) {
-            numbersList.add(value)
-            val list = numbersList.sorted()
-            return "${list[0]} , ${list[1]} , ${list[2]}"
-        } else  {
-            numbersList.add(value)
-            return "$left number/s left"
-        }
-    }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -87,7 +76,7 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 78",
+                            text = "Project 160",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -101,140 +90,15 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter 3 numbers",
+                            text = "Enter a string of characters to print it.",
                             textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
-                        value = number,
-                        onValueChange = { number = it },
+                        value = text,
+                        onValueChange = { text = it },
                         label = {
-                            Text("Numbers")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBlue
-                        )
-                    )
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Button(
-                            onClick = {
-                                if (number.toFloatOrNull() != null) {
-                                    if (x < 3){
-                                        left--
-                                        outcome = numList(number.toFloat())
-                                        x++
-                                    } else {
-                                        outcome = numList(number.toFloat())
-                                        x = 1
-                                        left = 3
-                                        numbersList.clear()
-                                    }
-                                } else {
-                                    outcome = "Introduce a number"
-                                }
-                                number = ""
-                            },
-                            modifier = Modifier.padding(10.dp),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBlue, contentColor = MyWhite
-                            )
-                        ) {
-                            Text(text = "Enter")
-                        }
-                    }
-                    Text(
-                        text = outcome,
-                        modifier = Modifier.padding(bottom = 20.dp),
-                        color = MyBlack
-                    )
-                }
-            }
-            Box(modifier = Modifier.fillMaxSize()) {
-                FloatingActionButton(
-                    onClick = { navController.navigate("Project77") },
-                    modifier = Modifier
-                        .padding(16.dp)
-                        .size(46.dp)
-                        .align(Alignment.TopStart),
-                    containerColor = MyBlue,
-                    contentColor = MyWhite) {
-                    Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null)}
-                FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU15") },
-                    modifier = Modifier
-                        .padding(16.dp)
-                        .size(46.dp)
-                        .align(Alignment.BottomStart),
-                    containerColor = MyDarkBrown,
-                    contentColor = MyWhite) {
-                    Icon(
-                        imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null)}
-                FloatingActionButton(
-                    onClick = { navController.navigate("Project82") },
-                    modifier = Modifier
-                        .padding(16.dp)
-                        .size(46.dp)
-                        .align(Alignment.TopEnd),
-                    containerColor = MyBlue,
-                    contentColor = MyWhite) {
-                    Icon(
-                        imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null) }
-            }
-        }
-
-        else -> {
-            Box(modifier = Modifier.fillMaxSize()) {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Top,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Row(
-                        modifier = Modifier
-                            .padding(top = 10.dp)
-                            .fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.Center
-                    ) {
-                        Text(
-                            text = "Project 78",
-                            textAlign = TextAlign.Center,
-                            fontSize = 30.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-                    }
-                    Row(
-                        modifier = Modifier
-                            .padding(top = 10.dp)
-                            .fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.Center
-                    ) {
-                        Text(
-                            text = "Enter 3 numbers",
-                            textAlign = TextAlign.Center,
-                        )
-                    }
-                    Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = number,
-                        onValueChange = { number = it },
-                        label = {
-                            Text("Numbers")
+                            Text("Text")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -256,21 +120,144 @@ fun Project78(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (number.toFloatOrNull() != null) {
-                                    if (x < 3){
-                                        left--
-                                        outcome = numList(number.toFloat())
-                                        x++
-                                    } else {
-                                        outcome = numList(number.toFloat())
-                                        x = 1
-                                        left = 3
-                                        numbersList.clear()
-                                    }
+                                outcome = ""
+                                if (!text.equals(null)) {
+                                    val aux = text
+                                    outcome += aux.print()
                                 } else {
-                                    outcome = "Introduce a number"
+                                    outcome = "Introduce correct parameters"
                                 }
-                                number = ""
+                                text = ""
+                            },
+                            modifier = Modifier.padding(10.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBlue, contentColor = MyWhite
+                            )
+                        ) {
+                            Text(text = "Enter")
+                        }
+                    }
+                    Text(
+                        text = outcome,
+                        modifier = Modifier.padding(bottom = 20.dp),
+                        color = MyBlack
+                    )
+                }
+            }
+            Box(modifier = Modifier.fillMaxSize()) {
+                FloatingActionButton(
+                    onClick = { navController.navigate("Project157") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.TopStart),
+                    containerColor = MyRed,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("FrontPageU40") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.BottomStart),
+                    containerColor = MyDarkBrown,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.KeyboardArrowUp,
+                        contentDescription = null
+                    )
+                }
+                FloatingActionButton(
+                    onClick = { navController.navigate("Project161") },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(46.dp)
+                        .align(Alignment.TopEnd),
+                    containerColor = MyBlue,
+                    contentColor = MyWhite
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
+                        contentDescription = null
+                    )
+                }
+            }
+        }
+
+        else -> {
+            Box(modifier = Modifier.fillMaxSize()) {
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    verticalArrangement = Arrangement.Top,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 10.dp)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "Project 160",
+                            textAlign = TextAlign.Center,
+                            fontSize = 30.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                    Row(
+                        modifier = Modifier
+                            .padding(top = 10.dp)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "Enter a string of characters to print it.",
+                            textAlign = TextAlign.Center,
+                        )
+                    }
+                    Spacer(modifier = Modifier.size(5.dp))
+                    OutlinedTextField(
+                        value = text,
+                        onValueChange = { text = it },
+                        label = {
+                            Text("Text")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyBlue
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
+                    )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Button(
+                            onClick = {
+                                outcome = ""
+                                if (!text.equals(null)) {
+                                    val aux = text
+                                    outcome += aux.print()
+                                } else {
+                                    outcome = "Introduce correct parameters"
+                                }
+                                text = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -289,29 +276,35 @@ fun Project78(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project77") },
+                    onClick = { navController.navigate("Project157") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyBlue,
-                    contentColor = MyWhite){
+                    containerColor = MyRed,
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU15") },
+                    onClick = { navController.navigate("FrontPageU40") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomCenter),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite){
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project82") },
+                    onClick = { navController.navigate("Project161") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -321,9 +314,14 @@ fun Project78(navController: NavHostController) {
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
             }
         }
     }
+}
 
+fun String.print():String {
+    return this
 }

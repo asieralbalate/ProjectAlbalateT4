@@ -1,4 +1,4 @@
-package com.example.proyectoalbalate.u15
+package com.example.proyectoalbalate.u35
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -12,8 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -21,12 +19,9 @@ import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -36,37 +31,24 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.proyectoalbalate.u32.Dice3
+import com.example.proyectoalbalate.u32.SquaredDice
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
+import com.example.proyectoalbalate.ui.theme.MyGreen
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter three integers and sort them from highest to lowest.
-@SuppressLint("MutableCollectionMutableState")
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun Project78(navController: NavHostController) {
 
+//Press the button to roll 5 dice at once and see their results. We've created a "Dice" class that rolls a die and displays the outcome. Inside our code, we've set up an array of dice, containing 5 dice. We rolled them and displayed the results.
+@SuppressLint("MutableCollectionMutableState")
+@Composable
+fun Project146(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var number by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
-    var x by remember { mutableStateOf(1) }
-    val numbersList by remember { mutableStateOf(mutableListOf<Float>()) }
-    var left by remember { mutableStateOf(3) }
-    fun numList(value: Float): String {
-        if (numbersList.size == 2) {
-            numbersList.add(value)
-            val list = numbersList.sorted()
-            return "${list[0]} , ${list[1]} , ${list[2]}"
-        } else  {
-            numbersList.add(value)
-            return "$left number/s left"
-        }
-    }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -87,7 +69,7 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 78",
+                            text = "Project 146",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -101,26 +83,11 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter 3 numbers",
+                            text = "Press the button to roll 5 dice at once and\n" +
+                                    "see their results.",
                             textAlign = TextAlign.Center,
                         )
                     }
-                    OutlinedTextField(
-                        value = number,
-                        onValueChange = { number = it },
-                        label = {
-                            Text("Numbers")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBlue
-                        )
-                    )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
@@ -128,28 +95,19 @@ fun Project78(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (number.toFloatOrNull() != null) {
-                                    if (x < 3){
-                                        left--
-                                        outcome = numList(number.toFloat())
-                                        x++
-                                    } else {
-                                        outcome = numList(number.toFloat())
-                                        x = 1
-                                        left = 3
-                                        numbersList.clear()
-                                    }
-                                } else {
-                                    outcome = "Introduce a number"
+                                outcome = ""
+                                val arrayDice: Array<Dice4> = arrayOf(Dice4(),Dice4(),Dice4(),Dice4(),Dice4())
+                                for (dice in arrayDice) {
+                                    dice.rollDice()
+                                    outcome += dice.print()
                                 }
-                                number = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBlue, contentColor = MyWhite
+                                containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "Enter")
+                            Text(text = "Roll")
                         }
                     }
                     Text(
@@ -161,18 +119,18 @@ fun Project78(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project77") },
+                    onClick = { navController.navigate("Project145") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
-                    containerColor = MyBlue,
+                    containerColor = MyGreen,
                     contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU15") },
+                    onClick = { navController.navigate("FrontPageU35") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -183,7 +141,7 @@ fun Project78(navController: NavHostController) {
                         imageVector = Icons.Default.KeyboardArrowUp,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project82") },
+                    onClick = { navController.navigate("Project147") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -211,7 +169,7 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 78",
+                            text = "Project 146",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -225,30 +183,12 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter 3 numbers",
+                            text = "Press the button to roll 5 dice at\n" +
+                                    "once and see their results.",
                             textAlign = TextAlign.Center,
                         )
                     }
                     Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = number,
-                        onValueChange = { number = it },
-                        label = {
-                            Text("Numbers")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBlue
-                        ),
-                        keyboardOptions = KeyboardOptions.Default.copy(
-                            keyboardType = KeyboardType.Number
-                        ),
-                    )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
@@ -256,25 +196,16 @@ fun Project78(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (number.toFloatOrNull() != null) {
-                                    if (x < 3){
-                                        left--
-                                        outcome = numList(number.toFloat())
-                                        x++
-                                    } else {
-                                        outcome = numList(number.toFloat())
-                                        x = 1
-                                        left = 3
-                                        numbersList.clear()
-                                    }
-                                } else {
-                                    outcome = "Introduce a number"
+                                outcome = ""
+                                val arrayDice: Array<Dice4> = arrayOf(Dice4(),Dice4(),Dice4(),Dice4(),Dice4())
+                                for (dice in arrayDice) {
+                                    dice.rollDice()
+                                    outcome += dice.print()
                                 }
-                                number = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBlue, contentColor = MyWhite
+                                containerColor = MyGreen, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -289,18 +220,18 @@ fun Project78(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project77") },
+                    onClick = { navController.navigate("Project145") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyBlue,
+                    containerColor = MyGreen,
                     contentColor = MyWhite){
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU15") },
+                    onClick = { navController.navigate("FrontPageU35") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -311,7 +242,7 @@ fun Project78(navController: NavHostController) {
                         imageVector = Icons.Default.KeyboardArrowUp,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project82") },
+                    onClick = { navController.navigate("Project147") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -325,5 +256,15 @@ fun Project78(navController: NavHostController) {
             }
         }
     }
+}
 
+class Dice4 (var value: Int = 1){
+
+    fun rollDice(){
+        value = ((Math.random() * 6) + 1).toInt()
+    }
+
+    fun print(): String{
+        return "$value\n"
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.proyectoalbalate.u15
+package com.example.proyectoalbalate.u36
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -41,32 +41,23 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.proyectoalbalate.u34.Rect
+import com.example.proyectoalbalate.u34.Square
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
+import com.example.proyectoalbalate.ui.theme.MyGreen
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter three integers and sort them from highest to lowest.
+
+//Enter two integers to see the four basic operations. We've created the "operate" function, which is higher-order than the "sum," "subtract," "multiply," and "divide" functions. You input both numbers, and then the results are printed.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project78(navController: NavHostController) {
-
+fun Project147(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var number by remember { mutableStateOf("") }
+    var secondValue by remember { mutableStateOf("") }
+    var firstValue by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
-    var x by remember { mutableStateOf(1) }
-    val numbersList by remember { mutableStateOf(mutableListOf<Float>()) }
-    var left by remember { mutableStateOf(3) }
-    fun numList(value: Float): String {
-        if (numbersList.size == 2) {
-            numbersList.add(value)
-            val list = numbersList.sorted()
-            return "${list[0]} , ${list[1]} , ${list[2]}"
-        } else  {
-            numbersList.add(value)
-            return "$left number/s left"
-        }
-    }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -87,7 +78,7 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 78",
+                            text = "Project 147",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -101,15 +92,34 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter 3 numbers",
+                            text = "Enter two integers to see the four basic operations.",
                             textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
-                        value = number,
-                        onValueChange = { number = it },
+                        value = firstValue,
+                        onValueChange = { firstValue = it },
                         label = {
-                            Text("Numbers")
+                            Text("First Value")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyBlue
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
+                    )
+                    OutlinedTextField(
+                        value = secondValue,
+                        onValueChange = { secondValue = it },
+                        label = {
+                            Text("Second Value")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -128,21 +138,41 @@ fun Project78(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (number.toFloatOrNull() != null) {
-                                    if (x < 3){
-                                        left--
-                                        outcome = numList(number.toFloat())
-                                        x++
-                                    } else {
-                                        outcome = numList(number.toFloat())
-                                        x = 1
-                                        left = 3
-                                        numbersList.clear()
-                                    }
+                                outcome = ""
+                                if (firstValue.toIntOrNull() != null && secondValue.toIntOrNull() != null) {
+                                    outcome = "Addition: ${
+                                        operate(
+                                            firstValue.toInt(),
+                                            secondValue.toInt(),
+                                            ::add
+                                        )
+                                    }\n" +
+                                            "Substraction: ${
+                                                operate(
+                                                    firstValue.toInt(),
+                                                    secondValue.toInt(),
+                                                    ::subs
+                                                )
+                                            }\n" +
+                                            "Product: ${
+                                                operate(
+                                                    firstValue.toInt(),
+                                                    secondValue.toInt(),
+                                                    ::mult
+                                                )
+                                            }" +
+                                            "Division: ${
+                                                operate(
+                                                    firstValue.toInt(),
+                                                    secondValue.toInt(),
+                                                    ::divide
+                                                )
+                                            }\n"
                                 } else {
-                                    outcome = "Introduce a number"
+                                    outcome = "Introduce correct parameters"
                                 }
-                                number = ""
+                                firstValue = ""
+                                secondValue = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -161,38 +191,47 @@ fun Project78(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project77") },
+                    onClick = { navController.navigate("Project146") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
-                    containerColor = MyBlue,
-                    contentColor = MyWhite) {
+                    containerColor = MyGreen,
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU15") },
+                    onClick = { navController.navigate("FrontPageU36") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite) {
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project82") },
+                    onClick = { navController.navigate("Project148") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
                     containerColor = MyBlue,
-                    contentColor = MyWhite) {
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null) }
+                        contentDescription = null
+                    )
+                }
             }
         }
 
@@ -211,7 +250,7 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 78",
+                            text = "Project 147",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -225,16 +264,37 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter 3 numbers",
+                            text = "Enter two integers to see the\n" +
+                                    "four basic operations.",
                             textAlign = TextAlign.Center,
                         )
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = number,
-                        onValueChange = { number = it },
+                        value = firstValue,
+                        onValueChange = { firstValue = it },
                         label = {
-                            Text("Numbers")
+                            Text("First Value")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyBlue
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
+                    )
+                    Spacer(modifier = Modifier.size(5.dp))
+                    OutlinedTextField(
+                        value = secondValue,
+                        onValueChange = { secondValue = it },
+                        label = {
+                            Text("Second Value")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -256,21 +316,41 @@ fun Project78(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (number.toFloatOrNull() != null) {
-                                    if (x < 3){
-                                        left--
-                                        outcome = numList(number.toFloat())
-                                        x++
-                                    } else {
-                                        outcome = numList(number.toFloat())
-                                        x = 1
-                                        left = 3
-                                        numbersList.clear()
-                                    }
+                                outcome = ""
+                                if (firstValue.toIntOrNull() != null && secondValue.toIntOrNull() != null) {
+                                    outcome = "Addition: ${
+                                        operate(
+                                            firstValue.toInt(),
+                                            secondValue.toInt(),
+                                            ::add
+                                        )
+                                    }\n" +
+                                            "Substraction: ${
+                                                operate(
+                                                    firstValue.toInt(),
+                                                    secondValue.toInt(),
+                                                    ::subs
+                                                )
+                                            }\n" +
+                                            "Product: ${
+                                                operate(
+                                                    firstValue.toInt(),
+                                                    secondValue.toInt(),
+                                                    ::mult
+                                                )
+                                            }" +
+                                            "Division: ${
+                                                operate(
+                                                    firstValue.toInt(),
+                                                    secondValue.toInt(),
+                                                    ::divide
+                                                )
+                                            }\n"
                                 } else {
-                                    outcome = "Introduce a number"
+                                    outcome = "Introduce correct parameters"
                                 }
-                                number = ""
+                                firstValue = ""
+                                secondValue = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -289,29 +369,35 @@ fun Project78(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project77") },
+                    onClick = { navController.navigate("Project146") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyBlue,
-                    contentColor = MyWhite){
+                    containerColor = MyGreen,
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU15") },
+                    onClick = { navController.navigate("FrontPageU36") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomCenter),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite){
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project82") },
+                    onClick = { navController.navigate("Project148") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -321,9 +407,19 @@ fun Project78(navController: NavHostController) {
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
             }
         }
     }
-
 }
+
+fun operate(v1: Int, v2: Int, fn: (Int, Int) -> Int): Int {
+    return fn(v1, v2)
+}
+
+fun add(x1: Int, x2: Int) = x1 + x2
+fun subs(x1: Int, x2: Int) = x1 - x2
+fun mult(x1: Int, x2: Int) = x1 * x2
+fun divide(x1: Int, x2: Int) = if (x2 != 0) x1 / x2 else x2

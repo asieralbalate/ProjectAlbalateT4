@@ -64,11 +64,25 @@ import com.example.proyectoalbalate.u33.Project141
 import com.example.proyectoalbalate.u32.Project139
 import com.example.proyectoalbalate.u34.Project142
 import com.example.proyectoalbalate.u34.Project143
+import com.example.proyectoalbalate.u35.Project145
+import com.example.proyectoalbalate.u35.Project146
+import com.example.proyectoalbalate.u36.Project147
+import com.example.proyectoalbalate.u36.Project148
+import com.example.proyectoalbalate.u37.Project149
+import com.example.proyectoalbalate.u37.Project150
+import com.example.proyectoalbalate.u37.Project151
+import com.example.proyectoalbalate.u37.Project153
+import com.example.proyectoalbalate.u39.Project157
 import com.example.proyectoalbalate.u4.Project5
 import com.example.proyectoalbalate.u4.Project6
 import com.example.proyectoalbalate.u4.Project7
 import com.example.proyectoalbalate.u4.Project8
 import com.example.proyectoalbalate.u4.Project9
+import com.example.proyectoalbalate.u40.Project160
+import com.example.proyectoalbalate.u40.Project161
+import com.example.proyectoalbalate.u42.Project172
+import com.example.proyectoalbalate.u45.Project178
+import com.example.proyectoalbalate.u45.Project179
 import com.example.proyectoalbalate.u5.Project10
 import com.example.proyectoalbalate.u5.Project11
 import com.example.proyectoalbalate.u5.Project12
@@ -205,6 +219,20 @@ class MainActivity : ComponentActivity() {
                         composable("Project141") { Project141(navController = navController) }
                         composable("Project142") { Project142(navController = navController) }
                         composable("Project143") { Project143(navController = navController) }
+                        composable("Project145") { Project145(navController = navController) }
+                        composable("Project146") { Project146(navController = navController) }
+                        composable("Project147") { Project147(navController = navController) }
+                        composable("Project148") { Project148(navController = navController) }
+                        composable("Project149") { Project149(navController = navController) }
+                        composable("Project150") { Project150(navController = navController) }
+                        composable("Project151") { Project151(navController = navController) }
+                        composable("Project153") { Project153(navController = navController) }
+                        composable("Project157") { Project157(navController = navController) }
+                        composable("Project160") { Project160(navController = navController) }
+                        composable("Project161") { Project161(navController = navController) }
+                        composable("Project172") { Project172(navController = navController) }
+                        composable("Project178") { Project178(navController = navController) }
+                        composable("Project179") { Project179(navController = navController) }
                         composable("FrontPageU4") { FrontPageU4(navController = navController) }
                         composable("FrontPageU5") { FrontPageU5(navController = navController) }
                         composable("FrontPageU6") { FrontPageU6(navController = navController) }

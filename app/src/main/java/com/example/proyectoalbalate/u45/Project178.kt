@@ -1,19 +1,15 @@
-package com.example.proyectoalbalate.u15
+package com.example.proyectoalbalate.u45
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -21,12 +17,10 @@ import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
+
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -36,7 +30,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -44,29 +37,15 @@ import androidx.navigation.NavHostController
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
+import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter three integers and sort them from highest to lowest.
-@SuppressLint("MutableCollectionMutableState")
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun Project78(navController: NavHostController) {
 
+//Press the button to create a list of 100 random elements ranging from 0 to 20 and count how many are between 1 and 4, 5 and 8, 10 and 13. Also, print whether the value 20 is present. We've created an immutable list of elements with a Math.random function to fill it. Later, we apply the different conditions to the list and display the results.
+
+@Composable
+fun Project178(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var number by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
-    var x by remember { mutableStateOf(1) }
-    val numbersList by remember { mutableStateOf(mutableListOf<Float>()) }
-    var left by remember { mutableStateOf(3) }
-    fun numList(value: Float): String {
-        if (numbersList.size == 2) {
-            numbersList.add(value)
-            val list = numbersList.sorted()
-            return "${list[0]} , ${list[1]} , ${list[2]}"
-        } else  {
-            numbersList.add(value)
-            return "$left number/s left"
-        }
-    }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -87,7 +66,7 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 78",
+                            text = "Project 178",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -101,26 +80,11 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter 3 numbers",
+                            text = "Press the button to create a list of 100\n" +
+                                    "random elements ranging from 0 to 20",
                             textAlign = TextAlign.Center,
                         )
                     }
-                    OutlinedTextField(
-                        value = number,
-                        onValueChange = { number = it },
-                        label = {
-                            Text("Numbers")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(8.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBlue
-                        )
-                    )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
@@ -128,25 +92,33 @@ fun Project78(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (number.toFloatOrNull() != null) {
-                                    if (x < 3){
-                                        left--
-                                        outcome = numList(number.toFloat())
-                                        x++
-                                    } else {
-                                        outcome = numList(number.toFloat())
-                                        x = 1
-                                        left = 3
-                                        numbersList.clear()
+                                outcome = ""
+                                val list = List(100) { ((Math.random() * 21)).toInt() }
+                                outcome += "Actual List:\n"
+                                outcome += "$list"
+                                var cant1 = 0
+                                var cant2 = 0
+                                var cant3 = 0
+                                list.forEach {
+                                    when (it) {
+                                        in 1..4 -> cant1++
+                                        in 5..8 -> cant2++
+                                        in 10..13 -> cant3++
                                     }
-                                } else {
-                                    outcome = "Introduce a number"
                                 }
-                                number = ""
+                                outcome += "\nAmount between 1 and 4: $cant1\n" +
+                                        "Amount between 5 and 8: $cant2\n" +
+                                        "Amount between 10 and 13: $cant3\n"
+                                if (list.contains(20)) {
+                                    outcome += "The list contains 20"
+                                } else {
+                                    outcome += "The list doesn't contain 20"
+                                }
+
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBlue, contentColor = MyWhite
+                                containerColor = MyPurple, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -161,38 +133,47 @@ fun Project78(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project77") },
+                    onClick = { navController.navigate("Project172") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
                     containerColor = MyBlue,
-                    contentColor = MyWhite) {
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU15") },
+                    onClick = { navController.navigate("FrontPageU45") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite) {
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project82") },
+                    onClick = { navController.navigate("Project179") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
-                    containerColor = MyBlue,
-                    contentColor = MyWhite) {
+                    containerColor = MyPurple,
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null) }
+                        contentDescription = null
+                    )
+                }
             }
         }
 
@@ -211,7 +192,7 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 78",
+                            text = "Project 178",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -225,30 +206,13 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter 3 numbers",
+                            text = "Press the button to create a list\n" +
+                                    "of 100 random elements ranging\n" +
+                                    "from 0 to 20",
                             textAlign = TextAlign.Center,
                         )
                     }
-                    Spacer(modifier = Modifier.size(5.dp))
-                    OutlinedTextField(
-                        value = number,
-                        onValueChange = { number = it },
-                        label = {
-                            Text("Numbers")
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        singleLine = true,
-                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
-                        colors = TextFieldDefaults.textFieldColors(
-                            containerColor = MyWhite,
-                            focusedIndicatorColor = MyBlue
-                        ),
-                        keyboardOptions = KeyboardOptions.Default.copy(
-                            keyboardType = KeyboardType.Number
-                        ),
-                    )
+
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
@@ -256,25 +220,32 @@ fun Project78(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (number.toFloatOrNull() != null) {
-                                    if (x < 3){
-                                        left--
-                                        outcome = numList(number.toFloat())
-                                        x++
-                                    } else {
-                                        outcome = numList(number.toFloat())
-                                        x = 1
-                                        left = 3
-                                        numbersList.clear()
+                                outcome = ""
+                                val list = List(100) { ((Math.random() * 21)).toInt() }
+                                outcome += "Actual List:\n"
+                                outcome += "$list"
+                                var cant1 = 0
+                                var cant2 = 0
+                                var cant3 = 0
+                                list.forEach {
+                                    when (it) {
+                                        in 1..4 -> cant1++
+                                        in 5..8 -> cant2++
+                                        in 10..13 -> cant3++
                                     }
-                                } else {
-                                    outcome = "Introduce a number"
                                 }
-                                number = ""
+                                outcome += "\nAmount between 1 and 4: $cant1\n" +
+                                        "Amount between 5 and 8: $cant2\n" +
+                                        "Amount between 10 and 13: $cant3\n"
+                                if (list.contains(20)) {
+                                    outcome += "The list contains 20"
+                                } else {
+                                    outcome += "The list doesn't contain 20"
+                                }
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBlue, contentColor = MyWhite
+                                containerColor = MyPurple, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -289,41 +260,48 @@ fun Project78(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project77") },
+                    onClick = { navController.navigate("Project172") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyBlue,
-                    contentColor = MyWhite){
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU15") },
+                    onClick = { navController.navigate("FrontPageU45") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomCenter),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite){
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project82") },
+                    onClick = { navController.navigate("Project179") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomEnd),
-                    containerColor = MyBlue,
+                    containerColor = MyPurple,
                     contentColor = MyWhite
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
             }
         }
     }
-
 }

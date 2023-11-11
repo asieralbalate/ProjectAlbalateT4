@@ -56,24 +56,24 @@ fun FrontPageU36(navController: NavHostController) {
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("Project148")
+                                navController.navigate("Project147")
                             },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
                                 containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P148: Operate")
+                            Text(text = "P147 : Operate")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
-                            onClick = { navController.navigate("Project149") },
+                            onClick = { navController.navigate("Project148") },
                             modifier = Modifier.width(200.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
                                 containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P149: Legal Age")
+                            Text(text = "P148: Legal Age")
                         }
                     }
                 }
@@ -143,6 +143,18 @@ fun FrontPageU36(navController: NavHostController) {
                     Column {
                         Button(
                             onClick = {
+                                navController.navigate("Project147")
+                            },
+                            modifier = Modifier.width(200.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBlue, contentColor = MyWhite
+                            )
+                        ) {
+                            Text(text = "P147: Operate")
+                        }
+                        Spacer(modifier = Modifier.size(30.dp))
+                        Button(
+                            onClick = {
                                 navController.navigate("Project148")
                             },
                             modifier = Modifier.width(200.dp),
@@ -150,19 +162,7 @@ fun FrontPageU36(navController: NavHostController) {
                                 containerColor = MyBlue, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P148: Operate")
-                        }
-                        Spacer(modifier = Modifier.size(30.dp))
-                        Button(
-                            onClick = {
-                                navController.navigate("Project149")
-                            },
-                            modifier = Modifier.width(200.dp),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBlue, contentColor = MyWhite
-                            )
-                        ) {
-                            Text(text = "P149: Legal Age")
+                            Text(text = "P148: Legal Age")
                         }
                     }
                 }

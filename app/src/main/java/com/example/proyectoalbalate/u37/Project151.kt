@@ -1,4 +1,4 @@
-package com.example.proyectoalbalate.u15
+package com.example.proyectoalbalate.u37
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -42,31 +42,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.proyectoalbalate.ui.theme.MyBlack
-import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
+import com.example.proyectoalbalate.ui.theme.MyRed
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter three integers and sort them from highest to lowest.
+import java.lang.StringBuilder
+
+//Enter a string of characters to separate the vowels, lowercase letters, and non-alphabetic characters. We've used a function with a lambda expression that returns a boolean. Later, within the structure, we use this function to filter the received message.
+
+
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project78(navController: NavHostController) {
-
+fun Project151(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var number by remember { mutableStateOf("") }
+    var text by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
-    var x by remember { mutableStateOf(1) }
-    val numbersList by remember { mutableStateOf(mutableListOf<Float>()) }
-    var left by remember { mutableStateOf(3) }
-    fun numList(value: Float): String {
-        if (numbersList.size == 2) {
-            numbersList.add(value)
-            val list = numbersList.sorted()
-            return "${list[0]} , ${list[1]} , ${list[2]}"
-        } else  {
-            numbersList.add(value)
-            return "$left number/s left"
-        }
-    }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -87,7 +77,7 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 78",
+                            text = "Project 151",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -101,25 +91,29 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter 3 numbers",
+                            text = "Enter a string of characters to separate the vowels,\n" +
+                                    "lowercase letters, and non-alphabetic characters.",
                             textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
-                        value = number,
-                        onValueChange = { number = it },
+                        value = text,
+                        onValueChange = { text = it },
                         label = {
-                            Text("Numbers")
+                            Text("Text")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(8.dp),
+                            .padding(10.dp),
                         singleLine = true,
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBlue
-                        )
+                            focusedIndicatorColor = MyRed
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
                     )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -128,25 +122,32 @@ fun Project78(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (number.toFloatOrNull() != null) {
-                                    if (x < 3){
-                                        left--
-                                        outcome = numList(number.toFloat())
-                                        x++
-                                    } else {
-                                        outcome = numList(number.toFloat())
-                                        x = 1
-                                        left = 3
-                                        numbersList.clear()
+                                outcome = ""
+                                if (!text.equals(null)) {
+                                    outcome += "Original String: $text\n"
+                                    val result1 = filter(text) {
+                                        it == 'a' || it == 'e' || it == 'i' || it == 'o' || it == 'u' ||
+                                            it == 'A' || it == 'E' || it == 'I' || it == 'O' || it == 'U'
                                     }
+                                    outcome += "Only vowels: $result1\n"
+
+                                    val result2 = filter(text) {
+                                        it in 'a'..'z'
+                                    }
+                                    outcome += "Only lowercase: $result2\n"
+
+                                    val result3 = filter(text) {
+                                        it !in 'a'..'z' && it !in 'A'..'Z'
+                                    }
+                                    outcome += "Only non-alphabetic characters: $result3"
                                 } else {
-                                    outcome = "Introduce a number"
+                                    outcome = "Introduce correct parameters"
                                 }
-                                number = ""
+                                text = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBlue, contentColor = MyWhite
+                                containerColor = MyRed, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -161,38 +162,47 @@ fun Project78(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project77") },
+                    onClick = { navController.navigate("Project150") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
-                    containerColor = MyBlue,
-                    contentColor = MyWhite) {
+                    containerColor = MyRed,
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU15") },
+                    onClick = { navController.navigate("FrontPageU37") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite) {
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project82") },
+                    onClick = { navController.navigate("Project153") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
-                    containerColor = MyBlue,
-                    contentColor = MyWhite) {
+                    containerColor = MyRed,
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null) }
+                        contentDescription = null
+                    )
+                }
             }
         }
 
@@ -211,7 +221,7 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 78",
+                            text = "Project 151",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -225,16 +235,18 @@ fun Project78(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter 3 numbers",
+                            text = "Enter a string of characters to separate\n" +
+                                    "the vowels,lowercase letters, and\n" +
+                                    "non-alphabetic characters.",
                             textAlign = TextAlign.Center,
                         )
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = number,
-                        onValueChange = { number = it },
+                        value = text,
+                        onValueChange = { text = it },
                         label = {
-                            Text("Numbers")
+                            Text("Text")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -243,7 +255,7 @@ fun Project78(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBlue
+                            focusedIndicatorColor = MyRed
                         ),
                         keyboardOptions = KeyboardOptions.Default.copy(
                             keyboardType = KeyboardType.Number
@@ -256,25 +268,32 @@ fun Project78(navController: NavHostController) {
                     ) {
                         Button(
                             onClick = {
-                                if (number.toFloatOrNull() != null) {
-                                    if (x < 3){
-                                        left--
-                                        outcome = numList(number.toFloat())
-                                        x++
-                                    } else {
-                                        outcome = numList(number.toFloat())
-                                        x = 1
-                                        left = 3
-                                        numbersList.clear()
+                                outcome = ""
+                                if (!text.equals(null)) {
+                                    outcome += "Original String: $text\n"
+                                    val result1 = filter(text) {
+                                        it == 'a' || it == 'e' || it == 'i' || it == 'o' || it == 'u' ||
+                                            it == 'A' || it == 'E' || it == 'I' || it == 'O' || it == 'U'
                                     }
+                                    outcome += "Only vowels: $result1\n"
+
+                                    val result2 = filter(text) {
+                                        it in 'a'..'z'
+                                    }
+                                    outcome += "Only lowercase: $result2\n"
+
+                                    val result3 = filter(text) {
+                                        it !in 'a'..'z' && it !in 'A'..'Z'
+                                    }
+                                    outcome += "Only non-alphabetic characters: $result3"
                                 } else {
-                                    outcome = "Introduce a number"
+                                    outcome = "Introduce correct parameters"
                                 }
-                                number = ""
+                                text = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBlue, contentColor = MyWhite
+                                containerColor = MyRed, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -289,41 +308,58 @@ fun Project78(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project77") },
+                    onClick = { navController.navigate("Project150") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyBlue,
-                    contentColor = MyWhite){
+                    containerColor = MyRed,
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU15") },
+                    onClick = { navController.navigate("FrontPageU37") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomCenter),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite){
+                    contentColor = MyWhite
+                ) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project82") },
+                    onClick = { navController.navigate("Project153") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomEnd),
-                    containerColor = MyBlue,
+                    containerColor = MyRed,
                     contentColor = MyWhite
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null)}
+                        contentDescription = null
+                    )
+                }
             }
         }
     }
+}
 
+fun filter(chain: String, fn: (Char) -> Boolean): String {
+    val ch = StringBuilder()
+    for (elem in chain) {
+        if (fn(elem)) {
+            ch.append(elem)
+        }
+    }
+    return ch.toString()
 }
