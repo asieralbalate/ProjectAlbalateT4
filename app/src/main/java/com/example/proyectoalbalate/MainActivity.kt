@@ -1,4 +1,4 @@
-package com.example.proyectoalbalatet4
+package com.example.proyectoalbalate
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -62,6 +62,8 @@ import com.example.proyectoalbalate.u30.Project133
 import com.example.proyectoalbalate.u31.Project136
 import com.example.proyectoalbalate.u33.Project141
 import com.example.proyectoalbalate.u32.Project139
+import com.example.proyectoalbalate.u34.Project142
+import com.example.proyectoalbalate.u34.Project143
 import com.example.proyectoalbalate.u4.Project5
 import com.example.proyectoalbalate.u4.Project6
 import com.example.proyectoalbalate.u4.Project7
@@ -201,6 +203,8 @@ class MainActivity : ComponentActivity() {
                         composable("Project136") { Project136(navController = navController) }
                         composable("Project139") { Project139(navController = navController) }
                         composable("Project141") { Project141(navController = navController) }
+                        composable("Project142") { Project142(navController = navController) }
+                        composable("Project143") { Project143(navController = navController) }
                         composable("FrontPageU4") { FrontPageU4(navController = navController) }
                         composable("FrontPageU5") { FrontPageU5(navController = navController) }
                         composable("FrontPageU6") { FrontPageU6(navController = navController) }
@@ -231,6 +235,21 @@ class MainActivity : ComponentActivity() {
                         composable("FrontPageU31") { FrontPageU31(navController = navController) }
                         composable("FrontPageU32") { FrontPageU32(navController = navController) }
                         composable("FrontPageU33") { FrontPageU33(navController = navController) }
+                        composable("FrontPageU34") { FrontPageU34(navController = navController) }
+                        composable("FrontPageU35") { FrontPageU35(navController = navController) }
+                        composable("FrontPageU36") { FrontPageU36(navController = navController) }
+                        composable("FrontPageU37") { FrontPageU37(navController = navController) }
+                        composable("FrontPageU38") { FrontPageU38(navController = navController) }
+                        composable("FrontPageU39") { FrontPageU39(navController = navController) }
+                        composable("FrontPageU40") { FrontPageU40(navController = navController) }
+                        composable("FrontPageU41") { FrontPageU41(navController = navController) }
+                        composable("FrontPageU42") { FrontPageU42(navController = navController) }
+                        composable("FrontPageU43") { FrontPageU43(navController = navController) }
+                        composable("FrontPageU44") { FrontPageU44(navController = navController) }
+                        composable("FrontPageU45") { FrontPageU45(navController = navController) }
+                        composable("FrontPageU46") { FrontPageU46(navController = navController) }
+                        composable("FrontPageU47") { FrontPageU47(navController = navController) }
+                        composable("FrontPageU48") { FrontPageU48(navController = navController) }
                         composable("FrontPage") { FrontPage(navController = navController)}
                         }
                     }

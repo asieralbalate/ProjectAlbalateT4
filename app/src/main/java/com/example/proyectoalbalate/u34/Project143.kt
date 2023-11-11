@@ -1,4 +1,4 @@
-package com.example.proyectoalbalate.u33
+package com.example.proyectoalbalate.u34
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -41,22 +41,18 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.proyectoalbalate.u31.Highest
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGreen
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
-// Enter the account holder's name and an amount
-// of money to find out how a regular account and
-// a fixed-term (30 months/2%)account would be.
+//Enter the parameters x and y of a point to determine in which dimension it is located.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project141(navController: NavHostController) {
+fun Project143(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var moneyAmount by remember { mutableStateOf("") }
-    var name by remember { mutableStateOf("") }
+    var shortSide by remember { mutableStateOf("") }
+    var side by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -78,7 +74,7 @@ fun Project141(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 141",
+                            text = "Project 143",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -92,17 +88,15 @@ fun Project141(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter the account holder's name and an amount\n" +
-                                    "of money to find out how a regular account and\n" +
-                                    "a fixed-term (30 months/2%)account would be.",
+                            text = "Enter one value for a Square, two values for Rectangle",
                             textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
-                        value = name,
-                        onValueChange = { name = it },
+                        value = side,
+                        onValueChange = { side = it },
                         label = {
-                            Text("Name")
+                            Text("Side / Long Side")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -118,10 +112,10 @@ fun Project141(navController: NavHostController) {
                         ),
                     )
                     OutlinedTextField(
-                        value = moneyAmount,
-                        onValueChange = { moneyAmount = it },
+                        value = shortSide,
+                        onValueChange = { shortSide = it },
                         label = {
-                            Text("Amount")
+                            Text("Short Side")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -141,15 +135,19 @@ fun Project141(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                if (!name.equals(null) && moneyAmount.toFloatOrNull() != null) {
-                                    val bank = Bank(name, moneyAmount.toDouble())
-                                    val newAccount = FixAccount(name, moneyAmount.toDouble(),30,2.0)
-                                    outcome = "${newAccount.print2()}"
-                                } else {
+                                if (side.toIntOrNull() != null && shortSide.toIntOrNull() == null) {
+                                    val shape = Square(side.toInt())
+                                    outcome = "Square Perimeter: ${shape.calcPerim()}\n" +
+                                            "Square Area: ${shape.calcArea()}"
+                                } else if (side.toIntOrNull() != null && shortSide.toIntOrNull() != null){
+                                    val shape = Rect(side.toInt(), shortSide.toInt())
+                                    outcome = "Rectangle Perimeter: ${shape.calcPerim()}\n" +
+                                            "Rectangle Area: ${shape.calcArea()}"
+                                }else {
                                     outcome = "Introduce correct parameters"
                                 }
-                                name = ""
-                                moneyAmount = ""
+                                side = ""
+                                shortSide = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -168,47 +166,38 @@ fun Project141(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project139") },
+                    onClick = { navController.navigate("Project142") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
                     containerColor = MyGreen,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU33") },
+                    onClick = { navController.navigate("FrontPageU34") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project142") },
+                    onClick = { navController.navigate("Project145") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
                     containerColor = MyGreen,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null) }
             }
         }
 
@@ -227,7 +216,7 @@ fun Project141(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 141",
+                            text = "Project 143",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -241,18 +230,17 @@ fun Project141(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter the account holder's name and an amount\n" +
-                                    "of money to find out how a regular account and\n" +
-                                    "a fixed-term account would be.",
+                            text = "Enter one value for a Square,\n" +
+                                    "two values for Rectangle",
                             textAlign = TextAlign.Center,
                         )
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = name,
-                        onValueChange = { name = it },
+                        value = side,
+                        onValueChange = { side = it },
                         label = {
-                            Text("Name")
+                            Text("Side / Long Side")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -269,10 +257,10 @@ fun Project141(navController: NavHostController) {
                     )
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = moneyAmount,
-                        onValueChange = { moneyAmount = it },
+                        value = shortSide,
+                        onValueChange = { shortSide = it },
                         label = {
-                            Text("Amount")
+                            Text("Short Side")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -295,15 +283,19 @@ fun Project141(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                if (!name.equals(null) && moneyAmount.toFloatOrNull() != null) {
-                                    val bank = Bank(name, moneyAmount.toDouble())
-                                    val newAccount = FixAccount(name, moneyAmount.toDouble(), 30, 2.0)
-                                    outcome = "${newAccount.print2()}"
-                                } else {
+                                if (side.toIntOrNull() != null && shortSide.toIntOrNull() == null) {
+                                    val shape = Square(side.toInt())
+                                    outcome = "Square Perimeter: ${shape.calcPerim()}\n" +
+                                            "Square Area: ${shape.calcArea()}"
+                                } else if (side.toIntOrNull() != null && shortSide.toIntOrNull() != null){
+                                    val shape = Rect(side.toInt(), shortSide.toInt())
+                                    outcome = "Rectangle Perimeter: ${shape.calcPerim()}\n" +
+                                            "Rectangle Area: ${shape.calcArea()}"
+                                }else {
                                     outcome = "Introduce correct parameters"
                                 }
-                                name = ""
-                                moneyAmount = ""
+                                side = ""
+                                shortSide = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -322,35 +314,29 @@ fun Project141(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project139") },
+                    onClick = { navController.navigate("Project142") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyGreen,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite){
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU33") },
+                    onClick = { navController.navigate("FrontPageU34") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomCenter),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite){
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project142") },
+                    onClick = { navController.navigate("Project145") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -360,35 +346,36 @@ fun Project141(navController: NavHostController) {
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
             }
         }
     }
 }
 
-
-abstract class Account(val name: String, val amount: Double){
-    open fun print2(): String{
-         return "Regular Account\n" +
-                 "Name:  $name\n" +
-                 "Amount: $amount"
+interface Shape{
+    fun calcArea():Int
+    fun calcPerim():Int
+    fun result(): String{
+        return "Shape Data\n"
     }
 }
 
-class Bank (name: String, amount: Double): Account(name, amount){
-    override fun print2(): String {
-        return "Bank account\n" + super.print2()
+class Square(val side: Int): Shape{
+    override fun calcArea(): Int {
+        return side*side
     }
+
+    override fun calcPerim(): Int {
+        return side*4
+    }
+
 }
 
-class FixAccount(name: String, amount: Double, val period: Int, val interest: Double): Account(name, amount){
-    override fun print2(): String {
-        val returnMoney = amount * interest / 100
-        return "Special account\n" +
-                "Period of days: $period\n" +
-                "Interests: $interest\n" +
-                "Amount of interest: $returnMoney\n" + super.print2()
+class Rect(val longSide:Int, val shortSide: Int): Shape{
+    override fun calcArea(): Int {
+        return longSide*shortSide
+    }
+    override fun calcPerim(): Int {
+        return ((longSide * 2) + (shortSide * 2))
     }
 }

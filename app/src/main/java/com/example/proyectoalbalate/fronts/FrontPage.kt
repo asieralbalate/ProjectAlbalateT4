@@ -444,172 +444,190 @@ fun FrontPage(navController: NavHostController) {
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU34")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGreen, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 34")
+                            Text(text = "U34: Interface")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU35")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGreen, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 35")
+                            Text(text = "U35: Arr.+Obj.")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU36")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBlue, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 36")
+                            Text(text = "U36: High Order")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU37")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyRed, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 37")
+                            Text(text = "U37: Lambdas")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU38")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyRed, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 38")
+                            Text(text = "U38: Data Type")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU39")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyRed, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 39")
+                            Text(text = "U39: Variables")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU40")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBlue, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 40")
+                            Text(text = "U40: Extension")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU41")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 41")
+                            Text(text = "U41: Overload")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU42")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBlue, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 42")
+                            Text(text = "U42: Param.")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU43")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 43")
+                            Text(text = "U43: Nulls")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU44")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyPurple, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 44")
+                            Text(text = "U44: Collection")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU45")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyPurple, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 45")
+                            Text(text = "U45: Lists")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU46")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyPurple, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 46")
+                            Text(text = "U46: Maps")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU47")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyPurple, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 47")
+                            Text(text = "U47: Sets")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU48")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyPurple, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 48")
-                        }
-                        Spacer(modifier = Modifier.width(15.dp))
-                        Button(
-                            onClick = {
-                                navController.navigate("FrontPageU4")
-                            },
-                            modifier = Modifier.width(150.dp)
-                        ) {
-                            Text(text = "Unit ")
-                        }
-                        Spacer(modifier = Modifier.width(15.dp))
-                        Button(
-                            onClick = {
-                                navController.navigate("FrontPageU4")
-                            },
-                            modifier = Modifier.width(150.dp)
-                        ) {
-                            Text(text = "Unit ")
-                        }
-                        Spacer(modifier = Modifier.width(15.dp))
-                        Button(
-                            onClick = {
-                                navController.navigate("FrontPageU4")
-                            },
-                            modifier = Modifier.width(150.dp)
-                        ) {
-                            Text(text = "Unit ")
+                            Text(text = "U48: Package")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
@@ -1134,160 +1152,196 @@ fun FrontPage(navController: NavHostController) {
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU34")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGreen, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 34")
+                            Text(text = "U34: Interface")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU35")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGreen, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 35")
+                            Text(text = "U35: Arr.+Obj.")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU36")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBlue, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 36")
+                            Text(text = "U36: High Order")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU37")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyRed, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 37")
+                            Text(text = "U37: Lambdas")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU38")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyRed, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 38")
+                            Text(text = "U38: Data Type")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU39")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyRed, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 39")
+                            Text(text = "U39: Variables")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU40")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBlue, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 40")
+                            Text(text = "U40: Extension")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU41")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 41")
+                            Text(text = "U41: Overload")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU42")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyBlue, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 42")
+                            Text(text = "U42: Param.")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU43")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyGrey, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 43")
+                            Text(text = "U43: Nulls")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU44")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyPurple, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 44")
+                            Text(text = "U44: Collection")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU45")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyPurple, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 45")
+                            Text(text = "U45: Lists")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU46")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyPurple, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 46")
+                            Text(text = "U46: Maps")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU47")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyPurple, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 47")
+                            Text(text = "U47: Sets")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
                     Row {
                         Button(
                             onClick = {
-                                navController.navigate("FrontPageU4")
+                                navController.navigate("FrontPageU48")
                             },
-                            modifier = Modifier.width(150.dp)
+                            modifier = Modifier.width(150.dp),
+                            colors = ButtonDefaults.filledTonalButtonColors(
+                                containerColor = MyPurple, contentColor = MyWhite
+                            )
                         ) {
-                            Text(text = "Unit 48")
-                        }
-                        Spacer(modifier = Modifier.width(15.dp))
-                        Button(
-                            onClick = {
-                                navController.navigate("FrontPageU4")
-                            },
-                            modifier = Modifier.width(150.dp)
-                        ) {
-                            Text(text = "End")
+                            Text(text = "U48: Package")
                         }
                     }
                     Spacer(modifier = Modifier.size(15.dp))
