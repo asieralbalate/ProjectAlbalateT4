@@ -42,19 +42,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.proyectoalbalate.u36.add
-import com.example.proyectoalbalate.u36.divide
-import com.example.proyectoalbalate.u36.mult
-import com.example.proyectoalbalate.u36.operate
-import com.example.proyectoalbalate.u36.subs
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
-import com.example.proyectoalbalate.ui.theme.MyGreen
 import com.example.proyectoalbalate.ui.theme.MyRed
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-//Enter two integers to see their sum, subtraction, and how the first value is raised to the power of the second. We have created an "operate" function with a lambda inside that allows us to perform the desired operation. The function prints the results within the same function.
+//Enter two integers to see their sum, subtraction, and how the first value is raised to the power of the second.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -97,7 +91,7 @@ fun Project149(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter two integers to see addition, substraction and\n" +
+                            text = "Enter two integers to see addition, subtraction and\n" +
                                     "raise the first value to the second",
                             textAlign = TextAlign.Center,
                         )
@@ -148,13 +142,13 @@ fun Project149(navController: NavHostController) {
                                 if (firstValue.toIntOrNull() != null && secondValue.toIntOrNull() != null) {
                                     val add = operate2(
                                         firstValue.toInt(),
-                                        secondValue.toInt(),
-                                        { x, y -> x + y })
+                                        secondValue.toInt()
+                                    ) { x, y -> x + y }
                                     val subs = operate2(
                                         firstValue.toInt(),
-                                        secondValue.toInt(),
-                                        { x, y -> x - y })
-                                    var raise = operate2(2, 4
+                                        secondValue.toInt()
+                                    ) { x, y -> x - y }
+                                    val raise = operate2(2, 4
                                     ) { x, y ->
                                         var value = 1
                                         for (i in 1..y) {
@@ -164,7 +158,7 @@ fun Project149(navController: NavHostController) {
                                     }
 
                                     outcome = "Addition: $add\n" +
-                                            "Substraction: $subs\n" +
+                                            "Subtraction: $subs\n" +
                                             "Raise $firstValue to $secondValue: $raise"
                                 } else {
                                     outcome = "Introduce correct parameters"
@@ -264,7 +258,7 @@ fun Project149(navController: NavHostController) {
                     ) {
                         Text(
                             text = "Enter two integers to see addition,\n" +
-                                    "substraction and raise the first\n" +
+                                    "subtraction and raise the first\n" +
                                     "value to the second",
                             textAlign = TextAlign.Center,
                         )
@@ -320,13 +314,13 @@ fun Project149(navController: NavHostController) {
                                 if (firstValue.toIntOrNull() != null && secondValue.toIntOrNull() != null) {
                                     val add = operate2(
                                         firstValue.toInt(),
-                                        secondValue.toInt(),
-                                        { x, y -> x + y })
+                                        secondValue.toInt()
+                                    ) { x, y -> x + y }
                                     val subs = operate2(
                                         firstValue.toInt(),
-                                        secondValue.toInt(),
-                                        { x, y -> x - y })
-                                    var raise = operate2(2, 4
+                                        secondValue.toInt()
+                                    ) { x, y -> x - y }
+                                    val raise = operate2(firstValue.toInt(), secondValue.toInt()
                                     ) { x, y ->
                                         var value = 1
                                         for (i in 1..y) {
@@ -336,7 +330,7 @@ fun Project149(navController: NavHostController) {
                                     }
 
                                     outcome = "Addition: $add\n" +
-                                            "Substraction: $subs\n" +
+                                            "Subtraction: $subs\n" +
                                             "Raise $firstValue to $secondValue: $raise"
                                 } else {
                                     outcome = "Introduce correct parameters"

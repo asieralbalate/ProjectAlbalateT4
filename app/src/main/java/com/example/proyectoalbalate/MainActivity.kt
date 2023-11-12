@@ -80,6 +80,7 @@ import com.example.proyectoalbalate.u4.Project8
 import com.example.proyectoalbalate.u4.Project9
 import com.example.proyectoalbalate.u40.Project160
 import com.example.proyectoalbalate.u40.Project161
+import com.example.proyectoalbalate.u41.Project162
 import com.example.proyectoalbalate.u42.Project172
 import com.example.proyectoalbalate.u45.Project178
 import com.example.proyectoalbalate.u45.Project179
@@ -234,6 +235,7 @@ class MainActivity : ComponentActivity() {
                         composable("Project157") { Project157(navController = navController) }
                         composable("Project160") { Project160(navController = navController) }
                         composable("Project161") { Project161(navController = navController) }
+                        composable("Project162") { Project162(navController = navController) }
                         composable("Project172") { Project172(navController = navController) }
                         composable("Project178") { Project178(navController = navController) }
                         composable("Project179") { Project179(navController = navController) }

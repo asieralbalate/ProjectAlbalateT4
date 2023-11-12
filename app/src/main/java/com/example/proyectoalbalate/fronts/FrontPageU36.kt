@@ -32,7 +32,6 @@ import androidx.navigation.NavHostController
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGreen
-import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyRed
 import com.example.proyectoalbalate.ui.theme.MyWhite
 

@@ -30,7 +30,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -48,7 +47,8 @@ import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter day, month, and year to save an event in the calendar and see if there is any event on that same day. We've created a data class "Fecha" (date), then a function that loads all this data, and finally a function that prints them all.
+
+//Enter day, month, and year to save an event in the calendar and see if there is any event on that same day.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -173,7 +173,7 @@ fun Project186(navController: NavHostController) {
                             onClick = {
                                 outcome = ""
                                 if (day.toIntOrNull() != null && month.toIntOrNull() != null && year.toIntOrNull() != null && !activity.equals(null)) {
-                                    var date = Date(day.toInt(), month.toInt(), year.toInt())
+                                    val date = Date(day.toInt(), month.toInt(), year.toInt())
                                     outcome += checkDate(date, listDates)
                                     listDates[date] = activity
                                     outcome += printDates(listDates)
@@ -365,7 +365,7 @@ fun Project186(navController: NavHostController) {
                             onClick = {
                                 outcome = ""
                                 if (day.toIntOrNull() != null && month.toIntOrNull() != null && year.toIntOrNull() != null && !activity.equals(null)) {
-                                    var date = Date(day.toInt(), month.toInt(), year.toInt())
+                                    val date = Date(day.toInt(), month.toInt(), year.toInt())
                                     listDates[date] = activity
                                     outcome += printDates(listDates)
                                     outcome += checkDate(date, listDates)
@@ -445,10 +445,10 @@ fun printDates(calendar: MutableMap<Date, String>): String{
 
 fun checkDate(date: Date,calendar: MutableMap<Date, String>): String{
     var aux = ""
-    if (date in calendar) {
-        aux += "Activities same day: ${calendar[date]}\n\n"
+    aux += if (date in calendar) {
+        "Activities same day: ${calendar[date]}\n\n"
     } else {
-        aux += "No activities this day\n\n"
+        "No activities this day\n\n"
     }
     return aux
 }

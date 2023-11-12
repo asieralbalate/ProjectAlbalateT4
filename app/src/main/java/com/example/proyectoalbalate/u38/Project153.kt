@@ -48,7 +48,7 @@ import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyRed
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-//Enter 10 numbers to determine how many are less than 50 or if all of them are. We've used a FloatArray within the program's structure for this purpose.
+//Enter 10 numbers to determine how many are less than 50 or if all of them are.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -364,5 +364,3 @@ fun Project153(navController: NavHostController) {
         }
     }
 }
-
-

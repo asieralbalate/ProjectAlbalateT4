@@ -45,7 +45,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter a number to see it in all its data types. For this, we've created another document within the same package that contains the functions called from the main class.
+//Enter a number to see it in all its data types.
 
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)

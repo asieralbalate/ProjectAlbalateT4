@@ -47,7 +47,7 @@ import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGreen
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-//Type in the code, name, and price of an item to see how it changes after applying taxes. We've set up a data class with the item code, description, and price. There's also a function that bumps up the product prices by 10%, and finally, another function that prints out all the items in the list.
+//Type in the code, name, and price of an item to see how it changes after applying taxes.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

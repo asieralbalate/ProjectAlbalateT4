@@ -42,15 +42,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.proyectoalbalate.u34.Rect
-import com.example.proyectoalbalate.u34.Square
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGreen
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-//Enter two integers to see the four basic operations. We've created the "operate" function, which is higher-order than the "sum," "subtract," "multiply," and "divide" functions. You input both numbers, and then the results are printed.
+//Enter two integers to see the four basic operations.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -161,7 +159,7 @@ fun Project147(navController: NavHostController) {
                                                     secondValue.toInt(),
                                                     ::mult
                                                 )
-                                            }" +
+                                            }\n" +
                                             "Division: ${
                                                 operate(
                                                     firstValue.toInt(),
@@ -340,7 +338,7 @@ fun Project147(navController: NavHostController) {
                                                     secondValue.toInt(),
                                                     ::mult
                                                 )
-                                            }" +
+                                            }\n" +
                                             "Division: ${
                                                 operate(
                                                     firstValue.toInt(),

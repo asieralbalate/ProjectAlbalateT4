@@ -42,7 +42,7 @@ import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-//Press the button to create a list of 100 random elements ranging from 0 to 20 and count how many are between 1 and 4, 5 and 8, 10 and 13. Also, print whether the value 20 is present. We've created an immutable list of elements with a Math.random function to fill it. Later, we apply the different conditions to the list and display the results.
+//Press the button to create a list of 100 random elements ranging from 0 to 20 and count how many are between 1 and 4, 5 and 8, 10 and 13.
 
 @Composable
 fun Project178(navController: NavHostController) {

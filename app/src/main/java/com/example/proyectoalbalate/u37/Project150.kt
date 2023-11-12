@@ -41,7 +41,7 @@ import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyRed
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-//Press the button to see a random series of 10 numbers between 0 and 99 with different characteristics. We've created a "printIf" function that contains a lambda expression that returns true or false. Later, in the button part, we create an array and store the numbers. We then apply the conditions using the "printIf" function and print the results.
+//Press the button to see a random series of 10 numbers between 0 and 99 with different characteristics.
 @SuppressLint("MutableCollectionMutableState")
 @Composable
 fun Project150(navController: NavHostController) {

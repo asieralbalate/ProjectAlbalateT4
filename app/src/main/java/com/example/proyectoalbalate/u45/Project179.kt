@@ -47,7 +47,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter the name and salary of an employee to find out how much they all cost together. We've declared an "Employee" class with a name and salary that provides this information. Then, we've created a function that calculates the sum of the salaries and returns the total. Finally, we've created a list of employees to add them one by one.
+//Enter the name and salary of an employee to find out how much they all cost together.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

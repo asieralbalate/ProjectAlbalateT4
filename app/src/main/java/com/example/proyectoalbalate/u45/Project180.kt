@@ -48,7 +48,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter the heights of 5 people to find out how many are taller or shorter than the average height. We've created an immutable list of heights, calculated the average, and compared each person's height to increment the corresponding counters.
+//Enter the heights of 5 people to find out how many are taller or shorter than the average height.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

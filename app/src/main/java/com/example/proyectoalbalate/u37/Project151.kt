@@ -46,10 +46,8 @@ import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyRed
 import com.example.proyectoalbalate.ui.theme.MyWhite
-import java.lang.StringBuilder
 
-//Enter a string of characters to separate the vowels, lowercase letters, and non-alphabetic characters. We've used a function with a lambda expression that returns a boolean. Later, within the structure, we use this function to filter the received message.
-
+//Enter a string of characters to separate the vowels, lowercase letters, and non-alphabetic characters.
 
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)

@@ -46,7 +46,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter a number to see all the integers up to the entered value. We've used an extension function that calculates and prints the quantity of values up to the entered number.
+//Enter a number to see all the integers up to the entered value.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project161(navController: NavHostController) {

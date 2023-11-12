@@ -48,18 +48,14 @@ import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGrey
 import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter ages to determine if they are greater or less than 18. We've used a function with a variable number of parameters for this purpose.
+//Enter ages to determine if they are greater or less than 18.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project172(navController: NavHostController) {
-
     val configuration = LocalConfiguration.current
     var age by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
-    var x by remember { mutableStateOf(1) }
-    val numbersList by remember { mutableStateOf(mutableListOf<Float>()) }
-    var left by remember { mutableStateOf(3) }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {

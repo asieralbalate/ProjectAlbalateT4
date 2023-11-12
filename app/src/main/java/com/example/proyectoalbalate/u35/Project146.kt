@@ -36,15 +36,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.proyectoalbalate.u32.Dice3
-import com.example.proyectoalbalate.u32.SquaredDice
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyGreen
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-//Press the button to roll 5 dice at once and see their results. We've created a "Dice" class that rolls a die and displays the outcome. Inside our code, we've set up an array of dice, containing 5 dice. We rolled them and displayed the results.
+//Press the button to roll 5 dice at once and see their results.
 @SuppressLint("MutableCollectionMutableState")
 @Composable
 fun Project146(navController: NavHostController) {

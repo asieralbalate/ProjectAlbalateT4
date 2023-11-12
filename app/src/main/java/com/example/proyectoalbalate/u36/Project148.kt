@@ -46,7 +46,7 @@ import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyRed
 import com.example.proyectoalbalate.ui.theme.MyWhite
-//Enter a person's age to determine if they are of legal age. We've created a "Person" class with the age value. Later, we've created different functions based on the country and its specific conditions. The output on the screen will indicate whether you are or are not of legal age.
+//Enter a person's age to determine if they are of legal age.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project148(navController: NavHostController) {
@@ -125,7 +125,7 @@ fun Project148(navController: NavHostController) {
                                     if (person.legal(::legalEEUU)){
                                         outcome += "Are legal age in USA"
                                     } else {
-                                        outcome = "Are not legal age in USA"
+                                        outcome += "Are not legal age in USA"
                                     }
                                 } else {
                                     outcome = "Introduce correct parameters"
@@ -257,7 +257,7 @@ fun Project148(navController: NavHostController) {
                                     if (person.legal(::legalEEUU)){
                                         outcome += "Are legal age in USA"
                                     } else {
-                                        outcome = "Are not legal age in USA"
+                                        outcome += "Are not legal age in USA"
                                     }
                                 } else {
                                     outcome = "Introduce correct parameters"
