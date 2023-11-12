@@ -81,6 +81,12 @@ import com.example.proyectoalbalate.u4.Project9
 import com.example.proyectoalbalate.u40.Project160
 import com.example.proyectoalbalate.u40.Project161
 import com.example.proyectoalbalate.u41.Project162
+import com.example.proyectoalbalate.u41.Project163
+import com.example.proyectoalbalate.u41.Project164
+import com.example.proyectoalbalate.u41.Project165
+import com.example.proyectoalbalate.u41.Project167
+import com.example.proyectoalbalate.u41.Project168
+import com.example.proyectoalbalate.u41.Project169
 import com.example.proyectoalbalate.u42.Project172
 import com.example.proyectoalbalate.u45.Project178
 import com.example.proyectoalbalate.u45.Project179
@@ -236,6 +242,12 @@ class MainActivity : ComponentActivity() {
                         composable("Project160") { Project160(navController = navController) }
                         composable("Project161") { Project161(navController = navController) }
                         composable("Project162") { Project162(navController = navController) }
+                        composable("Project163") { Project163(navController = navController) }
+                        composable("Project164") { Project164(navController = navController) }
+                        composable("Project165") { Project165(navController = navController) }
+                        composable("Project167") { Project167(navController = navController) }
+                        composable("Project168") { Project168(navController = navController) }
+                        composable("Project169") { Project169(navController = navController) }
                         composable("Project172") { Project172(navController = navController) }
                         composable("Project178") { Project178(navController = navController) }
                         composable("Project179") { Project179(navController = navController) }

@@ -17,7 +17,6 @@ import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -253,7 +252,7 @@ fun Project162(navController: NavHostController) {
                         imageVector = Icons.Default.KeyboardArrowUp,
                         contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project162") },
+                    onClick = { navController.navigate("Project163") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)

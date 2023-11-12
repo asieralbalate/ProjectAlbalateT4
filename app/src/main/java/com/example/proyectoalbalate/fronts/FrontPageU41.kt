@@ -61,7 +61,7 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P162: ")
+                            Text(text = "P162: Vector")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -71,7 +71,7 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P163: ")
+                            Text(text = "P163: N*Vector")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -81,7 +81,7 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P164: ")
+                            Text(text = "P164: +-Vector")
                         }
                     }
                     Spacer(modifier = Modifier.height(10.dp))
@@ -95,19 +95,7 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P165: ")
-                        }
-                        Spacer(modifier = Modifier.width(15.dp))
-                        Button(
-                            onClick = {
-                                navController.navigate("Project166")
-                            },
-                            modifier = Modifier.width(200.dp),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
-                            )
-                        ) {
-                            Text(text = "P166: ")
+                            Text(text = "P165: Person")
                         }
                         Spacer(modifier = Modifier.width(15.dp))
                         Button(
@@ -117,11 +105,9 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P167: ")
+                            Text(text = "P167: Dice")
                         }
-                    }
-                    Spacer(modifier = Modifier.height(10.dp))
-                    Row {
+                        Spacer(modifier = Modifier.width(15.dp))
                         Button(
                             onClick = { navController.navigate("Project168") },
                             modifier = Modifier.width(200.dp),
@@ -129,9 +115,11 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P168: ")
+                            Text(text = "P168: Vector")
                         }
-                        Spacer(modifier = Modifier.width(15.dp))
+                    }
+                    Spacer(modifier = Modifier.height(10.dp))
+                    Row {
                         Button(
                             onClick = { navController.navigate("Project169") },
                             modifier = Modifier.width(200.dp),
@@ -139,7 +127,7 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P169: ")
+                            Text(text = "P169: Student")
                         }
                     }
 
@@ -214,7 +202,7 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P162: ")
+                            Text(text = "P162: Vector")
                         }
 
                     }
@@ -227,7 +215,7 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P163: ")
+                            Text(text = "P163: N*Vector")
                         }
 
                     }
@@ -240,7 +228,7 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P164: ")
+                            Text(text = "P164: +-Vector")
                         }
 
                     }
@@ -253,21 +241,7 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P165: ")
-                        }
-
-                    }
-                    Spacer(modifier = Modifier.size(30.dp))
-                    Row {
-                        Button(
-                            onClick = {
-                                navController.navigate("Project166")},
-                            modifier = Modifier.width(200.dp),
-                            colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyGrey, contentColor = MyWhite
-                            )
-                        ) {
-                            Text(text = "P166: ")
+                            Text(text = "P165: Person")
                         }
 
                     }
@@ -280,7 +254,7 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P167: ")
+                            Text(text = "P167: Dice")
                         }
 
                     }
@@ -293,7 +267,7 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P168: ")
+                            Text(text = "P168: Vector")
                         }
 
                     }
@@ -306,7 +280,7 @@ fun FrontPageU41(navController: NavHostController) {
                                 containerColor = MyGrey, contentColor = MyWhite
                             )
                         ) {
-                            Text(text = "P169: ")
+                            Text(text = "P169: Student")
                         }
 
                     }
