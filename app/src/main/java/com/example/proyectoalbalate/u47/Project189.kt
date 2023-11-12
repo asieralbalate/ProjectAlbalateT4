@@ -1,4 +1,4 @@
-package com.example.proyectoalbalate.u45
+package com.example.proyectoalbalate.u47
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -42,10 +42,9 @@ import com.example.proyectoalbalate.ui.theme.MyDarkBrown
 import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
 
-//Press the button to create a list of 100 random elements ranging from 0 to 20 and count how many are between 1 and 4, 5 and 8, 10 and 13. Also, print whether the value 20 is present. We've created an immutable list of elements with a Math.random function to fill it. Later, we apply the different conditions to the list and display the results.
-
+//Press the button to create and store 6 random numbers between 1 and 50 and try your luck. We've created a function that generates a lottery ticket, a number generator, and finally, a winning condition.
 @Composable
-fun Project178(navController: NavHostController) {
+fun Project189(navController: NavHostController) {
     val configuration = LocalConfiguration.current
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
@@ -68,7 +67,7 @@ fun Project178(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 178",
+                            text = "Project 189",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -82,8 +81,9 @@ fun Project178(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Press the button to create a list of 100\n" +
-                                    "random elements ranging from 0 to 20",
+                            text = "Press the button to create and store 6\n" +
+                                    "random numbers between 1 and 50 and try\n" +
+                                    "your luck.",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -95,28 +95,13 @@ fun Project178(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                val list = List(100) { ((Math.random() * 21)).toInt() }
-                                outcome += "Actual List:\n"
-                                outcome += "$list"
-                                var cant1 = 0
-                                var cant2 = 0
-                                var cant3 = 0
-                                list.forEach {
-                                    when (it) {
-                                        in 1..4 -> cant1++
-                                        in 5..8 -> cant2++
-                                        in 10..13 -> cant3++
-                                    }
-                                }
-                                outcome += "\nAmount between 1 and 4: $cant1\n" +
-                                        "Amount between 5 and 8: $cant2\n" +
-                                        "Amount between 10 and 13: $cant3\n"
-                                if (list.contains(20)) {
-                                    outcome += "The list contains 20"
-                                } else {
-                                    outcome += "The list doesn't contain 20"
-                                }
-
+                                val ticket: MutableSet<Int> = mutableSetOf()
+                                loteryTicket(ticket)
+                                outcome += "Ticket: $ticket\n"
+                                val tries: MutableSet<Int> = mutableSetOf()
+                                tries(tries)
+                                outcome += "Try: $tries\n"
+                                outcome += checkWin(ticket,tries)
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -128,7 +113,7 @@ fun Project178(navController: NavHostController) {
                     }
                     Text(
                         text = outcome,
-                        modifier = Modifier.padding(start = 30.dp, bottom = 20.dp),
+                        modifier = Modifier.padding(start = 10.dp, bottom = 20.dp),
                         color = MyBlack
                     )
                     Spacer(modifier = Modifier.height(50.dp))
@@ -136,7 +121,7 @@ fun Project178(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project172") },
+                    onClick = { navController.navigate("Project186") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -150,7 +135,7 @@ fun Project178(navController: NavHostController) {
                     )
                 }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU45") },
+                    onClick = { navController.navigate("FrontPageU47") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -164,7 +149,7 @@ fun Project178(navController: NavHostController) {
                     )
                 }
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project179") },
+                    onClick = { navController.navigate("Project191") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -195,7 +180,7 @@ fun Project178(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 178",
+                            text = "Project 189",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -209,9 +194,9 @@ fun Project178(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Press the button to create a list\n" +
-                                    "of 100 random elements ranging\n" +
-                                    "from 0 to 20",
+                            text = "Press the button to create and store\n" +
+                                    "6 random numbers between 1 and 50\n" +
+                                    "and try your luck.",
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -224,27 +209,13 @@ fun Project178(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                val list = List(100) { ((Math.random() * 21)).toInt() }
-                                outcome += "Actual List:\n"
-                                outcome += "$list"
-                                var cant1 = 0
-                                var cant2 = 0
-                                var cant3 = 0
-                                list.forEach {
-                                    when (it) {
-                                        in 1..4 -> cant1++
-                                        in 5..8 -> cant2++
-                                        in 10..13 -> cant3++
-                                    }
-                                }
-                                outcome += "\nAmount between 1 and 4: $cant1\n" +
-                                        "Amount between 5 and 8: $cant2\n" +
-                                        "Amount between 10 and 13: $cant3\n"
-                                if (list.contains(20)) {
-                                    outcome += "The list contains 20"
-                                } else {
-                                    outcome += "The list doesn't contain 20"
-                                }
+                                val ticket: MutableSet<Int> = mutableSetOf()
+                                loteryTicket(ticket)
+                                outcome += "Ticket: $ticket\n"
+                                val tries: MutableSet<Int> = mutableSetOf()
+                                tries(tries)
+                                outcome += "Try: $tries\n"
+                                outcome += checkWin(ticket,tries)
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
@@ -263,7 +234,7 @@ fun Project178(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project172") },
+                    onClick = { navController.navigate("Project186") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -277,7 +248,7 @@ fun Project178(navController: NavHostController) {
                     )
                 }
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU45") },
+                    onClick = { navController.navigate("FrontPageU47") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -291,7 +262,7 @@ fun Project178(navController: NavHostController) {
                     )
                 }
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project179") },
+                    onClick = { navController.navigate("Project191") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -307,4 +278,35 @@ fun Project178(navController: NavHostController) {
             }
         }
     }
+}
+
+fun loteryTicket(ticket: MutableSet<Int>) {
+    do {
+        val value = ((Math.random() * 50) + 1).toInt()
+        ticket.add(value)
+    } while (ticket.size!=6)
+}
+
+fun tries (tries: MutableSet<Int>){
+    do {
+        val value = ((Math.random() * 50) + 1).toInt()
+        tries.add(value)
+    } while (tries.size != 50)
+}
+
+fun checkWin(ticket: MutableSet<Int>, tries: MutableSet<Int>): String{
+    var luck = 0
+    var amountTries = 0
+    var tries1 = 0
+    for (tr in tries){
+        amountTries++
+        if (tr in ticket) {
+            luck++
+            if (luck == 6) {
+                tries1 = amountTries
+                break
+            }
+        }
+    }
+    return "Have done $tries1 tries until win"
 }

@@ -1,4 +1,4 @@
-package com.example.proyectoalbalate.u37
+package com.example.proyectoalbalate.u38
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -140,7 +141,7 @@ fun Project153(navController: NavHostController) {
                                             outcome += "Not all values below 50"
                                         }
 
-                                        aux = 0
+                                        aux = -1
                                     }
                                     outcome += "You can continue introducing numbers"
                                     aux++
@@ -162,6 +163,7 @@ fun Project153(navController: NavHostController) {
                         modifier = Modifier.padding(bottom = 20.dp),
                         color = MyBlack
                     )
+                    Spacer(modifier = Modifier.height(50.dp))
                 }
             }
             Box(modifier = Modifier.fillMaxSize()) {
@@ -291,10 +293,10 @@ fun Project153(navController: NavHostController) {
                                         } else {
                                             outcome += "Not all values below 50\n"
                                         }
-                                        aux = 0
+                                        aux = -1
                                     }
                                     outcome += "You can continue introducing numbers"
-                                    aux = aux +1
+                                    aux++
                                 } else {
                                     outcome = "Introduce correct parameters"
                                 }

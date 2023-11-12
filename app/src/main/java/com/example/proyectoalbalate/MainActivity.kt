@@ -71,7 +71,7 @@ import com.example.proyectoalbalate.u36.Project148
 import com.example.proyectoalbalate.u37.Project149
 import com.example.proyectoalbalate.u37.Project150
 import com.example.proyectoalbalate.u37.Project151
-import com.example.proyectoalbalate.u37.Project153
+import com.example.proyectoalbalate.u38.Project153
 import com.example.proyectoalbalate.u39.Project157
 import com.example.proyectoalbalate.u4.Project5
 import com.example.proyectoalbalate.u4.Project6
@@ -83,6 +83,10 @@ import com.example.proyectoalbalate.u40.Project161
 import com.example.proyectoalbalate.u42.Project172
 import com.example.proyectoalbalate.u45.Project178
 import com.example.proyectoalbalate.u45.Project179
+import com.example.proyectoalbalate.u45.Project180
+import com.example.proyectoalbalate.u46.Project186
+import com.example.proyectoalbalate.u47.Project189
+import com.example.proyectoalbalate.u48.Project191
 import com.example.proyectoalbalate.u5.Project10
 import com.example.proyectoalbalate.u5.Project11
 import com.example.proyectoalbalate.u5.Project12
@@ -233,6 +237,10 @@ class MainActivity : ComponentActivity() {
                         composable("Project172") { Project172(navController = navController) }
                         composable("Project178") { Project178(navController = navController) }
                         composable("Project179") { Project179(navController = navController) }
+                        composable("Project180") { Project180(navController = navController) }
+                        composable("Project186") { Project186(navController = navController) }
+                        composable("Project189") { Project189(navController = navController) }
+                        composable("Project191") { Project191(navController = navController) }
                         composable("FrontPageU4") { FrontPageU4(navController = navController) }
                         composable("FrontPageU5") { FrontPageU5(navController = navController) }
                         composable("FrontPageU6") { FrontPageU6(navController = navController) }

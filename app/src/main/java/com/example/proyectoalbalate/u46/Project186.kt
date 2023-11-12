@@ -1,4 +1,4 @@
-package com.example.proyectoalbalate.u40
+package com.example.proyectoalbalate.u46
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -30,6 +30,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -45,18 +46,20 @@ import androidx.navigation.NavHostController
 import com.example.proyectoalbalate.ui.theme.MyBlack
 import com.example.proyectoalbalate.ui.theme.MyBlue
 import com.example.proyectoalbalate.ui.theme.MyDarkBrown
-import com.example.proyectoalbalate.ui.theme.MyRed
+import com.example.proyectoalbalate.ui.theme.MyPurple
 import com.example.proyectoalbalate.ui.theme.MyWhite
-
-//Enter a string of characters to print it. We've used an extension function to print it.
-
+//Enter day, month, and year to save an event in the calendar and see if there is any event on that same day. We've created a data class "Fecha" (date), then a function that loads all this data, and finally a function that prints them all.
 @SuppressLint("MutableCollectionMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project160(navController: NavHostController) {
+fun Project186(navController: NavHostController) {
     val configuration = LocalConfiguration.current
-    var text by remember { mutableStateOf("") }
+    var day by remember { mutableStateOf("") }
+    var month by remember { mutableStateOf("") }
+    var year by remember { mutableStateOf("") }
+    var activity by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
+    val listDates by remember { mutableStateOf(mutableMapOf<Date, String>()) }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Box(Modifier.fillMaxSize()) {
@@ -77,7 +80,7 @@ fun Project160(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 160",
+                            text = "Project 186",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -91,28 +94,75 @@ fun Project160(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter a string of characters to print it.",
+                            text = "Enter day, month, and year to save an event in\n" +
+                                    "the calendar and see if there is any event on\n" +
+                                    "that same day.",
                             textAlign = TextAlign.Center,
                         )
                     }
                     OutlinedTextField(
-                        value = text,
-                        onValueChange = { text = it },
+                        value = day,
+                        onValueChange = { day = it },
                         label = {
-                            Text("Text")
+                            Text("Day")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(10.dp),
+                            .padding(8.dp),
                         singleLine = true,
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBlue
-                        ),
-                        keyboardOptions = KeyboardOptions.Default.copy(
-                            keyboardType = KeyboardType.Number
-                        ),
+                            focusedIndicatorColor = MyPurple
+                        )
+                    )
+                    OutlinedTextField(
+                        value = month,
+                        onValueChange = { month = it },
+                        label = {
+                            Text("Month")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyPurple
+                        )
+                    )
+                    OutlinedTextField(
+                        value = year,
+                        onValueChange = { year = it },
+                        label = {
+                            Text("Year")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyPurple
+                        )
+                    )
+                    OutlinedTextField(
+                        value = activity,
+                        onValueChange = { activity = it },
+                        label = {
+                            Text("Activity")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyPurple
+                        )
                     )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -122,17 +172,23 @@ fun Project160(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                if (!text.equals(null)) {
-                                    val aux = text
-                                    outcome += aux.print()
+                                if (day.toIntOrNull() != null && month.toIntOrNull() != null && year.toIntOrNull() != null && !activity.equals(null)) {
+                                    var date = Date(day.toInt(), month.toInt(), year.toInt())
+                                    outcome += checkDate(date, listDates)
+                                    listDates[date] = activity
+                                    outcome += printDates(listDates)
+
                                 } else {
-                                    outcome = "Introduce correct parameters"
+                                    outcome = "Introduce a number"
                                 }
-                                text = ""
+                                day = ""
+                                month = ""
+                                year = ""
+                                activity = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBlue, contentColor = MyWhite
+                                containerColor = MyPurple, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -148,54 +204,47 @@ fun Project160(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project157") },
+                    onClick = { navController.navigate("Project180") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopStart),
-                    containerColor = MyRed,
-                    contentColor = MyWhite
-                ) {
+                    containerColor = MyPurple,
+                    contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU40") },
+                    onClick = { navController.navigate("FrontPageU46") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project161") },
+                    onClick = { navController.navigate("Project189") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.TopEnd),
-                    containerColor = MyBlue,
-                    contentColor = MyWhite
-                ) {
+                    containerColor = MyPurple,
+                    contentColor = MyWhite) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null) }
             }
         }
 
         else -> {
             Box(modifier = Modifier.fillMaxSize()) {
                 Column(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .verticalScroll(rememberScrollState()),
                     verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -207,7 +256,7 @@ fun Project160(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Project 160",
+                            text = "Project 186",
                             textAlign = TextAlign.Center,
                             fontSize = 30.sp,
                             fontWeight = FontWeight.Bold
@@ -221,16 +270,18 @@ fun Project160(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Enter a string of characters to print it.",
+                            text = "Enter day, month, and year to save\n" +
+                                    "an event in the calendar and see if\n" +
+                                    "there is any event on that same day.",
                             textAlign = TextAlign.Center,
                         )
                     }
                     Spacer(modifier = Modifier.size(5.dp))
                     OutlinedTextField(
-                        value = text,
-                        onValueChange = { text = it },
+                        value = day,
+                        onValueChange = { day = it },
                         label = {
-                            Text("Text")
+                            Text("Day")
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -239,7 +290,67 @@ fun Project160(navController: NavHostController) {
                         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
                         colors = TextFieldDefaults.textFieldColors(
                             containerColor = MyWhite,
-                            focusedIndicatorColor = MyBlue
+                            focusedIndicatorColor = MyPurple
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
+                    )
+                    Spacer(modifier = Modifier.size(5.dp))
+                    OutlinedTextField(
+                        value = month,
+                        onValueChange = { month = it },
+                        label = {
+                            Text("Month")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyPurple
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
+                    )
+                    Spacer(modifier = Modifier.size(5.dp))
+                    OutlinedTextField(
+                        value = year,
+                        onValueChange = { year = it },
+                        label = {
+                            Text("Year")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyPurple
+                        ),
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Number
+                        ),
+                    )
+                    Spacer(modifier = Modifier.size(5.dp))
+                    OutlinedTextField(
+                        value = activity,
+                        onValueChange = { activity = it },
+                        label = {
+                            Text("Activity")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        singleLine = true,
+                        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
+                        colors = TextFieldDefaults.textFieldColors(
+                            containerColor = MyWhite,
+                            focusedIndicatorColor = MyPurple
                         ),
                         keyboardOptions = KeyboardOptions.Default.copy(
                             keyboardType = KeyboardType.Number
@@ -253,17 +364,22 @@ fun Project160(navController: NavHostController) {
                         Button(
                             onClick = {
                                 outcome = ""
-                                if (!text.equals(null)) {
-                                    val aux = text
-                                    outcome += aux.print()
+                                if (day.toIntOrNull() != null && month.toIntOrNull() != null && year.toIntOrNull() != null && !activity.equals(null)) {
+                                    var date = Date(day.toInt(), month.toInt(), year.toInt())
+                                    listDates[date] = activity
+                                    outcome += printDates(listDates)
+                                    outcome += checkDate(date, listDates)
                                 } else {
-                                    outcome = "Introduce correct parameters"
+                                    outcome = "Introduce a number"
                                 }
-                                text = ""
+                                day = ""
+                                month = ""
+                                year = ""
+                                activity = ""
                             },
                             modifier = Modifier.padding(10.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = MyBlue, contentColor = MyWhite
+                                containerColor = MyPurple, contentColor = MyWhite
                             )
                         ) {
                             Text(text = "Enter")
@@ -278,35 +394,29 @@ fun Project160(navController: NavHostController) {
             }
             Box(modifier = Modifier.fillMaxSize()) {
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project157") },
+                    onClick = { navController.navigate("Project180") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomStart),
-                    containerColor = MyRed,
-                    contentColor = MyWhite
-                ) {
+                    containerColor = MyPurple,
+                    contentColor = MyWhite){
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("FrontPageU40") },
+                    onClick = { navController.navigate("FrontPageU46") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
                         .align(Alignment.BottomCenter),
                     containerColor = MyDarkBrown,
-                    contentColor = MyWhite
-                ) {
+                    contentColor = MyWhite){
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowUp,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
                 FloatingActionButton(
-                    onClick = { navController.navigate("Project161") },
+                    onClick = { navController.navigate("Project189") },
                     modifier = Modifier
                         .padding(16.dp)
                         .size(46.dp)
@@ -316,14 +426,29 @@ fun Project160(navController: NavHostController) {
                 ) {
                     Icon(
                         imageVector = Icons.Default.ArrowForward,
-                        contentDescription = null
-                    )
-                }
+                        contentDescription = null)}
             }
         }
     }
 }
 
-fun String.print():String {
-    return this
+data class Date(val day: Int, val month: Int, val year: Int)
+
+fun printDates(calendar: MutableMap<Date, String>): String{
+    var aux = ""
+    for ((date, activity) in calendar){
+        aux += "Date: ${date.day}/${date.month}/${date.year}\n" +
+                "Activity: $activity\n\n"
+    }
+    return aux
+}
+
+fun checkDate(date: Date,calendar: MutableMap<Date, String>): String{
+    var aux = ""
+    if (date in calendar) {
+        aux += "Activities same day: ${calendar[date]}\n\n"
+    } else {
+        aux += "No activities this day\n\n"
+    }
+    return aux
 }
